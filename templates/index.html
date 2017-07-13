@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="google-site-verification" content="2QfKSG5ZPM__yZMnpIm5IJY1x52uhrgyVfbKCbOh0Xk" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta propery="og:title" content="Arturo Guerra">
+        <meta propery="og:type" content="website">
+        <meta propery="og:image" content="static/webicon.png">
+        <meta propery="og:description" content="This is Arturo Guerra's personal dank website">
+        <title>Arturo's Vebsite</title>
+        <link rel="stylesheet" href="static/bulma.css">
+        <link rel="stylesheet" href="static/hero.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+        <link rel="icon" type="image/png" href="/static/webicon.png", size="10x10">
+        <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    </head>
+    <header>
+        {% include 'heroheader.html' %}
+    </header>
+    <body>
+        <section class="hero is-dark is-large header-image">
+            <div class="hero-body">
+                <div class="container has-text-centered">
+                    <h1 class="title">
+                        Arturo Guerra
+                    </h1>
+                    <h2 class="subtitle">
+                        Home of the Dixionary
+                    </h2>
+                    <h3>#Vindows 11<h3>
+                </div>
+            </div>
+            <div class="hero-foot">
+                {% include 'herofoot.html' %}
+            </div>
+        </section>
+        <section class="hero is-info is-small">
+            <div class="hero-body">
+                <div class="container has-text-centered">
+                    <div class="columns">
+                        <div class="column">
+                            <div class="title">
+                                <h1><span>Programming</span></h1>
+                            </div>
+                            <div class="subtitle">
+                                <span> All the Important Shit HTML, CSS, C#, VB jk not true</span>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="title">
+                                <a href="https://discord.gg/ssl">
+                                    <h1><span>Discord<span></h1>
+                                </a>
+                            </div>
+                            <div class="subtitle">
+                                <span>You can find me there</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+    <footer>
+        {% include 'footer.html' %}
+    </footer>
+    </body>
+</html>
