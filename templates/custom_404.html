@@ -3,14 +3,16 @@
     <head>
         <meta charset="utf-8">
         <title>404 Madarchod</title>
-        <link rel="stylesheet" href="css/bulma.css">
-        <link rel="stylesheet" href="css/hero.css">
+        <link rel="stylesheet" href="/static/css/bulma.css">
+        <link rel="stylesheet" href="/static/css/hero.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
         <link rel="icon" type="image/png" href="/static/webicon.png", size="10x10">
         <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-        <script src="/scripts/includefiles.js"></script>
     </head>
     <body>
+        <header>
+            {% include 'heroheader.html' %}
+        </header>
         <section class="hero is-dark is-large header-image">
             <div class="hero-body">
                 <div class="container has-text-centered">
@@ -24,7 +26,7 @@
             </div>
         </section>
         <footer class="footer">
-            <footer id="page-footer"></footer>
+            {% include 'footer.html' %}
         </footer>
     </body>
 </html>
