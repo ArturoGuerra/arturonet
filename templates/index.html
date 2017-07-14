@@ -7,19 +7,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta propery="og:title" content="Arturo Guerra">
         <meta propery="og:type" content="website">
-        <meta propery="og:image" content="static/webicon.png">
+        <meta propery="og:image" content="{{url_for('static', filename='assets/webicon.png')}}">
         <meta propery="og:description" content="This is Arturo Guerra's personal dank website">
         <title>Arturo's Vebsite</title>
-        <link rel="stylesheet" href="static/css/bulma.css">
-        <link rel="stylesheet" href="static/css/hero.css">
+        <link rel="stylesheet" href="{{url_for('static', filename='css/bulma.css')}}">
+        <link rel="stylesheet" href="{{url_for('static', filename='css/hero.css')}}">
+        <link rel="stylesheet" href="{{url_for('static', filename='css/particles.css')}}">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
-        <link rel="icon" type="image/png" href="/static/webicon.png", size="10x10">
+        <link rel="icon" type="image/png" href="{{url_for('static', filename='assets/webicon.png')}}", size="10x10">
         <script src="//code.jquery.com/jquery-1.10.2.js"></script>
     </head>
-    <header>
-        {% include 'heroheader.html' %}
-    </header>
     <body>
+        <header>
+            {% include 'herohead.html' %}
+        </header>
         <section class="hero is-dark is-large header-image">
             <div class="hero-body">
                 <div class="container has-text-centered">
@@ -34,35 +35,57 @@
             </div>
             <div class="hero-foot">
                 {% include 'herofoot.html' %}
-            </div>
         </section>
-        <section class="hero is-info is-small">
-            <div class="hero-body">
-                <div class="container has-text-centered">
-                    <div class="columns">
-                        <div class="column">
-                            <div class="title">
-                                <h1><span>Programming</span></h1>
-                            </div>
-                            <div class="subtitle">
-                                <span> All the Important Shit HTML, CSS, C#, VB jk not true</span>
-                            </div>
-                        </div>
-                        <div class="column">
-                            <div class="title">
-                                <a href="https://discord.gg/ssl">
-                                    <h1><span>Discord<span></h1>
-                                </a>
-                            </div>
-                            <div class="subtitle">
-                                <span>You can find me there</span>
-                            </div>
-                        </div>
+        </div>
+        <div class="section">
+            <nav class="level">
+                <div class="level-item has-text-centered">
+                    <div>
+                        <p class="headline">Programing</p>
+                        <p class="title">Go to my <a href="https://github.com/ArturoGuerra">GitHub</a></p>
                     </div>
                 </div>
+                <div class="level-item has-text-centered">
+                    <div>
+                        <p class="headline">Discord</p>
+                        <p class="title">You can find me <a href="https://discord.gg/ssl">Here</a></p>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <hr>
+        <section class='hero hero-body'>
+            <div class="container notification has-text-centered">
+                <p class="title">
+                    <img src="{{ url_for('static', filename='assets/myface.jpg')}}" width="50" style="border-radius: 16%; vertical-align:middle;"> About Me
+                </p>
+                <hr>
+                <p class="content">
+                    My name is Arturo Guerra, I'm 18 and planning to study Computer Science in the near future. I love messing with computers which has developed my love and interest for fixing hardware and programing.
+                    I'm currently one of the main developers of <strong><a href="auttaja.us">Auttaja</a></strong> a very nice <strong><a href='https://discordapp.com'>Discord</a></strong> bot that currenly server around
+                    400 servers. I also enjoy fixing computer hardware ie. Phones and Computer, and I did that as a job when I was living in canada.
+                </p>
+                <p class="content">
+                    I have about year and a half of experience programing in python and consider myself fairly experienced on it. I also have knowledge in JavaScript and some C, But of cource TXT is my main programing
+                    language and consider myself a professional notepad coder looool. That last part was totaly serious. I'm currenly gettings into web development and thats why I made this website. If you want to see my
+                    other projects go to my <strong><a href="https://github.com/ArturoGuerra">GitHub</a></strong> or click on the projects tab at the top of the website.
+                </p>
+            </div>
         </section>
-    <footer>
+        <hr>
+        <section class="section">
+            <div class="container notification has-text-centered">
+                <div class="columns">
+                    <div class="column">
+                        <iframe src="https://discordapp.com/widget?id=194533269180514305&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
+                    </div>
+                    <div class="column">
+                        <a class="twitter-timeline" data-width="350" data-height="500" data-theme="dark" href="https://twitter.com/Ar2roGuerra">Tweets by Ar2roGuerra</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <hr>
         {% include 'footer.html' %}
-    </footer>
     </body>
 </html>
