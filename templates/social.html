@@ -1,23 +1,22 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta propery="og:title" content="Social Media page for arturonet.com">
         <meta propery="og:type" content="website">
-        <meta propery="og:image" content="static/webicon.png">
+        <meta propery="og:image" content="{{ url_for('static', filename='webicon.png') }}">
         <meta propery="og:description" content="Social media related to Arturo Guerra">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Daddy Social Media</title>
-        <link rel="stylesheet" href="css/bulma.css">
-        <link rel="stylesheet" href="css/hero.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bulma.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/hero.css') }}">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
-        <link rel="icon" type="image/png" href="static/webicon.png", size="10x10">
+        <link rel="icon" type="image/png" href="{{ url_for('static', filename='assets/webicon.png') }}", size="10x10">
         <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-        <script src="/scripts/includefiles.js"></script>
     </head>
     <body>
-        <nav id="heroheader"></nav>
+        {% include 'herohead.html' %}
         <section class="hero is-dark is-large header-image">
             <div class="hero-body">
                 <div class="container has-text-centered">
@@ -27,10 +26,11 @@
                     <h2 class="subtitle">
                         DISCORD
                     </h2>
+                    <h3>#HEILHITLER<h3>
                 </div>
             </div>
             <div class="hero-foot">
-                <footer id="herofoot"></footer>
+                {% include 'herofoot.html' %}
             </div>
         </section>
         <section class="section">
@@ -42,8 +42,6 @@
                 </div>
             </div>
         </section>
-        <footer class="footer">
-            <footer id="page-footer"></footer>
-        </footer>
     </body>
+    <footer>{% include 'footer.html' %}</footer>
 </html>

@@ -3,14 +3,16 @@
     <head>
         <meta charset="utf-8">
         <title>404 Madarchod</title>
-        <link rel="stylesheet" href="css/bulma.css">
-        <link rel="stylesheet" href="css/hero.css">
+        <link rel="stylesheet" href="/static/css/bulma.css">
+        <link rel="stylesheet" href="/static/css/hero.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
-        <link rel="icon" type="image/png" href="/static/webicon.png", size="10x10">
+        <link rel="icon" type="image/png" href="{{ url_for('static', filename='assets/webicon.png') }}", size="10x10">
         <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-        <script src="/scripts/includefiles.js"></script>
     </head>
     <body>
+        <header>
+            {% include 'herohead.html' %}
+        </header>
         <section class="hero is-dark is-large header-image">
             <div class="hero-body">
                 <div class="container has-text-centered">
@@ -20,11 +22,12 @@
                     <h2 class="subtitle">
                         RIP Daddy Dev fucked up
                     </h2>
+                    <h3><strike>#MakeAmericaGreatAgain</strike></h3>
                 </div>
             </div>
         </section>
         <footer class="footer">
-            <footer id="page-footer"></footer>
+            {% include 'footer.html' %}
         </footer>
     </body>
 </html>
