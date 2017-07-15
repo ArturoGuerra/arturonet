@@ -1,7 +1,7 @@
 <nav class="navbar">
     <div class="navbar-brand">
         <span class="navbar-item">
-            <img src="static/webicon.png" style="border-radius: 60%; display: block; height: auto; width: auto;">
+            <img src="{{ url_for('static', filename='assets/webicon.png') }}" style="border-radius: 60%; display: block; height: auto; width: auto;">
             <strong>&nbsp; Arturo Guerra</strong>
         </span>
         <div class="navbar-burger is-active" data-target="navMenu">
@@ -33,6 +33,6 @@
                 </ul>
             </div>
          </div>
-        <script src="{{url_for('static', filename='scripts/page.js')}}"></script>
+        <script src="{{ url_for('static', filename='scripts/page.js') }}"></script>
     </div>
 </nav>

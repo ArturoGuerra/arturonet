@@ -7,14 +7,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta propery="og:title" content="Arturo Guerra">
         <meta propery="og:type" content="website">
-        <meta propery="og:image" content="{{url_for('static', filename='assets/webicon.png')}}">
+        <meta propery="og:image" content="{{ url_for('static', filename='assets/webicon.png') }}">
         <meta propery="og:description" content="This is Arturo Guerra's personal dank website">
         <title>Arturo's Vebsite</title>
-        <link rel="stylesheet" href="{{url_for('static', filename='css/bulma.css')}}">
-        <link rel="stylesheet" href="{{url_for('static', filename='css/hero.css')}}">
-        <link rel="stylesheet" href="{{url_for('static', filename='css/particles.css')}}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bulma.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/hero.css') }}">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
-        <link rel="icon" type="image/png" href="{{url_for('static', filename='assets/webicon.png')}}", size="10x10">
+        <link rel="icon" type="image/png" href="{{ url_for('static', filename='assets/webicon.png') }}", size="10x10">
         <script src="//code.jquery.com/jquery-1.10.2.js"></script>
     </head>
     <body>
@@ -57,7 +56,7 @@
         <section class='hero hero-body'>
             <div class="container notification has-text-centered">
                 <p class="title">
-                    <img src="{{ url_for('static', filename='assets/myface.jpg')}}" width="50" style="border-radius: 16%; vertical-align:middle;"> About Me
+                    <img src="{{ url_for('static', filename='assets/myface.jpg') }}" width="50" style="border-radius: 16%; vertical-align:middle;"> About Me
                 </p>
                 <hr>
                 <p class="content">
@@ -85,7 +84,6 @@
                 </div>
             </div>
         </section>
-        <hr>
         {% include 'footer.html' %}
     </body>
 </html>
