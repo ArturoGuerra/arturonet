@@ -12,7 +12,6 @@ def social():
 
 @app.route('/projects')
 def projects():
-    abort(404)
     return render_template('projects.html')
 
 @app.errorhandler(404)
