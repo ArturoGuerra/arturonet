@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        {% block head %}
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="google-site-verification" content="2QfKSG5ZPM__yZMnpIm5IJY1x52uhrgyVfbKCbOh0Xk" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta propery="og:title" content="{% block ogtitle %}{% endblock %}">
+        <meta propery="og:type" content="website">
+        <meta propery="og:image" content="{{ url_for('static', filename='assets/webicon.png') }}">
+        <meta propery="og:description" content="{% block ogdescription %}{% endblock %}">
+        <title>{% block title %}{% endblock %} - Arturo's Vebsite</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bulma.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/hero.css') }}">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+        <link rel="icon" type="image/png" href="{{ url_for('static', filename='assets/webicon.png') }}", size="10x10">
+        <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+        {% endblock %}
+    </head>
+    <body>
+        {% set herofoot_items = [('https://discord.gg/ssl', 'SSL'), ('https://github.com/ArturoGuerra', 'GitHub'),
+        ('https://dixionary.com', 'Dixionary'), ('inwite.dixionary.com', 'Dixionary Serwer')] -%}
+        {% set navbar_items = [('/', 'home', 'Home'), ('/social', 'social', 'Social'),
+        ('/projects', 'projects', 'Projects')] -%}
+        {% set active_page = active_page|default('home') -%}
+        <header>
+            <nav class="navbar has-shadow">
+                <div class="navbar-brand">
+                    <span class="navbar-item">
+                        <img src="{{ url_for('static', filename='assets/webicon.png') }}" style="border-radius: 60%; display: block; height: auto; width: auto;">
+                        <strong>&nbsp; Arturo Guerra</strong>
+                    </span>
+                    <div class="navbar-burger is-active" data-target="navMenu">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </div>
+                </div>
+                <div class="navbar-menu" id="navMenu">
+                    <div id="NavBarDesktop" class="navbar-item navbar-end">
+                        <div class="tabs">
+                            <ul>
+                                {% for href, id, caption in navbar_items %}
+                                <li id="{{ id }}" class="{% if id == active_page %}is-active{% endif %}">
+                                    <a href="{{ href|e }}">
+                                        <span>{{ caption }}</span>
+                                    </a>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                     </div>
+                </div>
+            </nav>
+        </header>
+        {% block hero %}
+        <section class="hero is-dark is-large header-image">
+            <div class="hero-body">
+                <div class="container has-text-centered">
+                    <h1 class="title">
+                        {% block bodytitle %}{% endblock %}
+                    </h1>
+                    <h2 class="subtitle">
+                        {% block bodysubtitle %}{% endblock %}
+                    </h2>
+                    <h3>{% block bodyother %}{% endblock %}<h3>
+                </div>
+            </div>
+            <div class="hero-foot">
+                <div class="tabs is-boxed is-centered">
+                    <div class="container">
+                        <ul>
+                            {% for href, caption in herofoot_items %}
+                            <li>
+                                <a href="{{ href|e }}">
+                                    <span>{{ caption }}</span>
+                                </a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {% endblock %}
+        {% block body %}
+        {% endblock %}
+        <footer class="footer">
+            {% block footer %}
+            <div class="container">
+                <div class="content has-text-centered">
+                    <p>
+                    <strong><a href="/">ArturoNet.com</a><strong> powered by Hitler and ISIS. JK NOT TRUE</strong>. Made by <a href="/404">TheOfficialDixionary</a>
+                    </p>
+                    <p>
+                    <a class="icon" href="https://github.com/ArturoGuerra/arturonet">
+                        <i class="fa fa-github"></i>
+                    </a>
+                    </p>
+                </div>
+            </div>
+            {% endblock %}
+        </footer>
+    </body>
+</html>
