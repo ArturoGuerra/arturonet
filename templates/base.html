@@ -37,9 +37,9 @@
                       <span></span>
                     </div>
                 </div>
-                <div class="navbar-menu is-hidden-touch">
+                <div class="navbar-menu is-hidden-touch" id="NavBarDesktop">
                     <div class="navbar-item navbar-end">
-                        <div class="tabs" id="NavBarDesktop">
+                        <div class="tabs">
                             <ul>
                                 {% for href, id, caption in navbar_items %}
                                 <li id="{{ id }}" class="{% if id == active_page %}is-active{% endif %}">
@@ -52,6 +52,7 @@
                         </div>
                      </div>
                 </div>
+                <script src="{{ url_for('static', filename='scripts/burger.js') }}"></script>
             </nav>
         </header>
         {% block hero %}
