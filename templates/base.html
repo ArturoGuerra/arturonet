@@ -20,7 +20,7 @@
     </head>
     <body>
         {% set herofoot_items = [('https://discord.gg/ssl', 'SSL'), ('https://github.com/ArturoGuerra', 'GitHub'),
-        ('https://dixionary.com', 'Dixionary'), ('inwite.dixionary.com', 'Dixionary Serwer')] -%}
+        ('https://dixionary.com', 'Dixionary'), ('https://inwite.dixionary.com', 'Dixionary Serwer')] -%}
         {% set navbar_items = [('/', 'home', 'Home'), ('/social', 'social', 'Social'),
         ('/projects', 'projects', 'Projects')] -%}
         {% set active_page = active_page|default('home') -%}
@@ -31,15 +31,15 @@
                         <img src="{{ url_for('static', filename='assets/webicon.png') }}" style="border-radius: 60%; display: block; height: auto; width: auto;">
                         <strong>&nbsp; Arturo Guerra</strong>
                     </span>
-                    <div class="navbar-burger is-active" data-target="navMenu">
+                    <div class="navbar-burger burger" data-target="NavBarDesktop">
                       <span></span>
                       <span></span>
                       <span></span>
                     </div>
                 </div>
-                <div class="navbar-menu" id="navMenu">
-                    <div id="NavBarDesktop" class="navbar-item navbar-end">
-                        <div class="tabs">
+                <div class="navbar-menu is-hidden-touch">
+                    <div class="navbar-item navbar-end">
+                        <div class="tabs" id="NavbarDesktop">
                             <ul>
                                 {% for href, id, caption in navbar_items %}
                                 <li id="{{ id }}" class="{% if id == active_page %}is-active{% endif %}">
@@ -68,7 +68,7 @@
                 </div>
             </div>
             <div class="hero-foot">
-                <div class="tabs is-boxed is-centered">
+                <div class="tabs is-boxed is-centered is-hidden-touch">
                     <div class="container">
                         <ul>
                             {% for href, caption in herofoot_items %}

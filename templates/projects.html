@@ -20,8 +20,8 @@
             <tr>
                 <th>Name</th>
                 <th>Language</th>
-                <th>Forks</th>
-                <th>Forked</th>
+                <th class="is-hidden-touch">Forks</th>
+                <th class="is-hidden-touch">Forked</th>
             </th>
         </thead>
         <tbody>
@@ -29,8 +29,8 @@
             <tr>
                 <th><a href="{{ repo.url }}">{{ repo.name }}</a></th>
                 <th>{{ repo.language }}</th>
-                <th>{{ repo.forks }}</th>
-                <th>{{ repo.forked }}</th>
+                <th class="is-hidden-touch">{{ repo.forks }}</th>
+                <th class="is-hidden-touch">{{ repo.forked }}</th>
             </tr>
             {% endfor %}
         </tbody>
