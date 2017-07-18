@@ -1,7 +1,17 @@
 from flask import *
-
+import requests
 app = Flask(__name__)
 
+
+class  Repos():
+    def __init__(self, name, language, html_url, owner, ownerurl, forks, forked):
+        self.name = name
+        self.url = html_url
+        self.language = language
+        self.owner = owner
+        self.ownerurl = ownerurl
+        self.forks = forks
+        self.forked = forked
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -12,7 +22,15 @@ def social():
 
 @app.route('/projects')
 def projects():
-    return render_template('projects.html')
+    reposList = list()
+    r = requests.get("https://api.github.com/users/ArturoGuerra/repos")
+    repos_json = r.json()
+    for repo in repos_json:
+        try:
+            reposList.append(Repos(repo['name'], repo['language'], repo['html_url'], repo['owner']['login'], repo['owner']['html_url'], repo['forks_count'], repo['fork']))
+        except Exception as e:
+            print(e)
+    return render_template('projects.html', repos=reposList)
 
 @app.errorhandler(404)
 def page_not_found(error):

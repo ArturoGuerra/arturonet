@@ -10,8 +10,32 @@
 <section class="hero">
     <div class="hero-body">
         <div class="container has-text-centered">
-            <p>Coming soon..</p>
+            <h1 class="title is-2"><strong>My GitHub Projects</h1>
         </div>
     </div>
+</section>
+<section class="container">
+    <table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Language</th>
+            <th>Owner</th>
+            <th>Forks</th>
+            <th>Forked</th> 
+        </th>
+    </thead>
+    <tbody>
+        {% for repo in repos %}
+        <tr>
+            <th><a href="{{ repo.url }}">{{ repo.name }}</a></th>
+            <th>{{ repo.language }}</th>
+            <th><a href="{{ repo.ownerurl }}">{{ repo.owner }}</a></th>
+            <th>{{ repo.forks }}</th>
+            <th>{{ repo.forked }}</th>
+        </tr>
+        {% endfor %}
+    </tbody>
+    </table>
 </section>
 {% endblock %}
