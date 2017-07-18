@@ -24,6 +24,7 @@
         {% set navbar_items = [('/', 'home', 'Home'), ('/social', 'social', 'Social'),
         ('/projects', 'projects', 'Projects')] -%}
         {% set active_page = active_page|default('home') -%}
+        {% block header %}
         <header>
             <nav class="navbar has-shadow">
                 <div class="navbar-brand">
@@ -55,6 +56,7 @@
                 <script src="{{ url_for('static', filename='scripts/burger.js') }}"></script>
             </nav>
         </header>
+        {% endblock %}
         {% block hero %}
         <section class="hero is-dark is-large header-image">
             <div class="hero-body">
@@ -87,8 +89,8 @@
         {% endblock %}
         {% block body %}
         {% endblock %}
+        {% block footer %}
         <footer class="footer">
-            {% block footer %}
             <div class="container">
                 <div class="content has-text-centered">
                     <p>
@@ -101,7 +103,7 @@
                     </p>
                 </div>
             </div>
-            {% endblock %}
         </footer>
+        {% endblock %}
     </body>
 </html>
