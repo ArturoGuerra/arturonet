@@ -4,12 +4,10 @@ app = Flask(__name__)
 
 
 class  Repos():
-    def __init__(self, name, language, html_url, owner, ownerurl, forks, forked):
+    def __init__(self, name, language, html_url, forks, forked):
         self.name = name
         self.url = html_url
         self.language = language
-        self.owner = owner
-        self.ownerurl = ownerurl
         self.forks = forks
         self.forked = forked
 @app.route('/')
@@ -27,7 +25,7 @@ def projects():
     repos_json = r.json()
     for repo in repos_json:
         try:
-            reposList.append(Repos(repo['name'], repo['language'], repo['html_url'], repo['owner']['login'], repo['owner']['html_url'], repo['forks_count'], repo['fork']))
+            reposList.append(Repos(repo['name'], repo['language'], repo['html_url'], repo['forks_count'], repo['fork']))
         except Exception as e:
             print(e)
     return render_template('projects.html', repos=reposList)

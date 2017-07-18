@@ -16,26 +16,24 @@
 </section>
 <section class="container">
     <table class="table">
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Language</th>
-            <th>Owner</th>
-            <th>Forks</th>
-            <th>Forked</th> 
-        </th>
-    </thead>
-    <tbody>
-        {% for repo in repos %}
-        <tr>
-            <th><a href="{{ repo.url }}">{{ repo.name }}</a></th>
-            <th>{{ repo.language }}</th>
-            <th><a href="{{ repo.ownerurl }}">{{ repo.owner }}</a></th>
-            <th>{{ repo.forks }}</th>
-            <th>{{ repo.forked }}</th>
-        </tr>
-        {% endfor %}
-    </tbody>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Language</th>
+                <th>Forks</th>
+                <th>Forked</th>
+            </th>
+        </thead>
+        <tbody>
+            {% for repo in repos %}
+            <tr>
+                <th><a href="{{ repo.url }}">{{ repo.name }}</a></th>
+                <th>{{ repo.language }}</th>
+                <th>{{ repo.forks }}</th>
+                <th>{{ repo.forked }}</th>
+            </tr>
+            {% endfor %}
+        </tbody>
     </table>
 </section>
 {% endblock %}
