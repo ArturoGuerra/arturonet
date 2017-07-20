@@ -38,7 +38,7 @@
                       <span></span>
                     </div>
                 </div>
-                <div class="navbar-menu is-hidden-touch" id="NavBarDesktop">
+                <div class="navbar-menu is-hidden-touch">
                     <div class="navbar-item navbar-end">
                         <div class="tabs">
                             <ul>
@@ -61,13 +61,8 @@
         <section class="hero is-dark is-medium header-image">
             <div class="hero-body">
                 <div class="container has-text-centered">
-                    <h1 class="title">
-                        {% block bodytitle %}{% endblock %}
-                    </h1>
-                    <h2 class="subtitle">
-                        {% block bodysubtitle %}{% endblock %}
-                    </h2>
-                    <h3>{% block bodyother %}{% endblock %}<h3>
+                    {% block herocontent %}
+                    {% endblock %}
                 </div>
             </div>
             <div class="hero-foot">
