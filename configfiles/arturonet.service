@@ -1,0 +1,13 @@
+[Unit]
+Description = uWSGI instance to run ArturoNet
+After = network.target
+
+[Service]
+User=arturo
+Group=www-data
+WorkingDirectory=/var/www/arturonet
+Enviroment="PATH=/var/www/arturonet/venv/bin"
+ExecStart=/var/www/arturonet/venv/bin/uwsgi --ini arturonet.ini
+
+[Install]
+WantedBy=muti-user.target

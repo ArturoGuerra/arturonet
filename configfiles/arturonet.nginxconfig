@@ -44,10 +44,10 @@ server {
  	    include uwsgi_params;
         uwsgi_pass unix:/var/www/arturonet/arturonet.sock;
     }
-	location /static/ {
+	location /static {
 		# First attempt to serve request as file, then
 		# as directory, then fall back to displaying a 404.
-        root /var/www/arturonet/static;
+        root /var/www/arturonet;
     }
 
 	# pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
