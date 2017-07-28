@@ -23,7 +23,7 @@ server {
 #	listen 443 ssl;
 #	listen [::]:443 ssl;
 	
-    #server_name arturonet.com;
+    server_name arturonet.com;
 	#
 	# Note: You should disable gzip for SSL traffic.
 	# See: https://bugs.debian.org/773332
@@ -41,8 +41,8 @@ server {
 	location / {
 		# First attempt to serve request as file, then
 		# as directory, then fall back to displaying a 404.
- 	    include uwsgi_params;
-        uwsgi_pass unix:/var/www/arturonet/arturonet.sock;
+ 	    include proxy_params;
+        proxy_pass http://unix:/var/www/arturonet/arturonet.sock;
     }
 	location /static {
 		# First attempt to serve request as file, then
