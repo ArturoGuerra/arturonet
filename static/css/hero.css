@@ -42,3 +42,22 @@ background-image: radial-gradient(ellipse farthest-corner at right bottom, rgba(
     vertical-align: middle;
     border-radius: 3px;
 }
+
+
+/* CSS For bulma's new navbar items */
+a.is-tab {
+    color:rgba(74, 74, 74, 0.8);
+}
+a.is-tab:hover {
+    border-bottom:1px solid #00d1b2;
+    color:#484848;
+    border-top:1px solid transparent;
+    padding:calc(0.60rem - 1px) 1rem;
+    border-bottom-color:#00d1b2;
+    border-top-color:transparent;
+}
+a.is-tab.is-active {
+    border-bottom:2px solid #00d1b2;
+    color:#00d1b2;
+    padding-bottom:calc(0.60rem - 2px);
+}
