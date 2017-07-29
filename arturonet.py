@@ -16,6 +16,3 @@ url('views.projects', ['/projects'])
 @app.errorhandler(404)
 def page_not_found(error):
     return render_template("custom_404.html"), 404
-
-if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=8080, debug=True)
