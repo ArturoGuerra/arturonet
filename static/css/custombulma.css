@@ -1,6 +1,9 @@
 /* css for bulma's new navbar items */
 a.is-tab {
+    border-bottom:2px solid transparent;
     color:rgba(74, 74, 74, 0.8);
+    border-top:2px solid transparent;
+    padding:calc(0.60rem - 2px) 1rem;
 }
 a.is-tab:hover {
     border-bottom:2px solid #00d1b2;
