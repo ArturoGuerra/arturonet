@@ -14,16 +14,24 @@
 # Default server configuration
 #
 server {
- 	listen 80 default;
+ 	listen 80;
     listen [::]:80;
+    server_name www.arturonet.com;
+    return 301 https://$host$request_uri;
+}
 
-
+server {
     # SSL configuration
 	#
-#	listen 443 ssl;
-#	listen [::]:443 ssl;
-	
-    server_name arturonet.com;
+	listen 443 ssl http2;
+	listen [::]:443 ssl http2;
+    ssl on;
+    server_name www.arturonet.com;
+    ssl_certificate /var/www/arturonet/sslcerts/arturonet.pem;
+    ssl_certificate /var/www/arturonet/sslcerts/dixionary.key;
+    ssl_client_certificate /var/www/artronet/sslcerts/cloudflare.crt;
+    ssl_verify_client on;
+
 	#
 	# Note: You should disable gzip for SSL traffic.
 	# See: https://bugs.debian.org/773332

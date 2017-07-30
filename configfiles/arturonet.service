@@ -3,11 +3,11 @@ Description = uWSGI instance to run ArturoNet
 After = network.target
 
 [Service]
-User=arturo
+User=root
 Group=www-data
 WorkingDirectory=/var/www/arturonet
 Enviroment="PATH=/var/www/arturonet/venv/bin"
-ExecStart=/var/www/arturonet/venv/bin/gunicorn --bind unix:arturonet.sock --reload --access-logfile /var/log/arturonet.log wsgi:app
+ExecStart=/var/www/arturonet/venv/bin/gunicorn --bind unix:arturonet.sock --reload --access-logfile - wsgi:app
 
 [Install]
 WantedBy=muti-user.target
