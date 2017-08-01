@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="google-site-verification" content="2QfKSG5ZPM__yZMnpIm5IJY1x52uhrgyVfbKCbOh0Xk" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta propery="og:title" content="Arturo Guerra">
+        <meta propery="og:type" content="website">
+        <meta propery="og:image" content="/static/assets/webicon.png">
+        <meta propery="og:description" content="Arturo Guerra's personal website">
+        <title><%-blocks.headtitle -%> - Arturo's Vebsite</title>
+        <link rel="stylesheet" href="/static/css/bulma.css">
+        <link rel="stylesheet" href="/static/css/hero.css">
+        <link rel="stylesheet" href="/static/css/custombulma.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+        <link rel="icon" type="image/png" href="/static/assets/webicon.png", size="10x10">
+        <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    </head>
+    <body>
+        <% var active_page %>
+        <% var herofoot_items = [['https://discord.gg/ssl', 'SSL'], ['https://github.com/ArturoGuerra', 'GitHub'],
+        ['https://dixionary.com', 'Dixionary'], ['https://inwite.dixionary.com', 'Dixionary Serwer']] -%>
+        <% var navbar_items = [['/', 'home', 'Home'], ['/social', 'social', 'Social'],
+        ['/projects', 'projects', 'Projects']] -%>
+        <header>
+            <nav class="navbar has-shadow">
+                <div class="navbar-brand">
+                    <a href="/" class="navbar-item">
+                        <img src="/static/assets/webicon.png" style="border-radius: 60%; display: block; height: auto; width: auto;">
+                        <strong>&nbsp Arturo Guerra</strong>
+                    </a>
+                    <div class="navbar-burger burger" data-target="navbar-items">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </div>
+                </div>
+                <div class="navbar-menu" id="navbar-items">
+                    <div class="navbar-end">
+                        <% for (let i in navbar_items) { %>
+                        <a id="<%= navbar_items[i][1] %>" href="<%= navbar_items[i][0] %>" class="navbar-item is-tab">
+                            <span><%= navbar_items[i][2] %></span>
+                        </a>
+                        <% } %>
+                     </div>
+                </div>
+                <script src="static/scripts/burger.js"></script>
+            </nav>
+        </header>
+        <section class="hero is-dark is-medium header-image">
+            <div class="hero-body">
+                <div class="container has-text-centered">
+                    <%-blocks.herobody -%>
+                </div>
+            </div>
+            <div class="hero-foot">
+                <div class="tabs is-boxed is-centered is-hidden-touch">
+                    <div class="container">
+                        <ul>
+                            <% for (let i in herofoot_items) { %>
+                            <li>
+                                <a href="<%= herofoot_items[i][0] %>">
+                                    <span><%= herofoot_items[i][1] %></span>
+                                </a>
+                            </li>
+                            <% } %>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <%-body -%>
+        <footer class="footer">
+            <div class="container">
+                <div class="content has-text-centered">
+                    <p>
+                    <strong><a href="/">ArturoNet.com</a><strong> powered by Hitler and ISIS. JK NOT TRUE</strong>. Made by <a href="/404">TheOfficialDixionary</a>
+                    </p>
+                    <p>
+                    <a class="icon" href="https://github.com/ArturoGuerra/arturonet">
+                        <i class="fa fa-github"></i>
+                    </a>
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

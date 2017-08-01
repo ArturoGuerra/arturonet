@@ -1,0 +1,18 @@
+{
+  "name": "arturonet",
+  "version": "1.0.0",
+  "description": "Arturo Guerra personal website",
+  "main": "arturonet.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.5.7",
+    "ejs-blocks": "^0.1.4",
+    "ejs-locals": "^1.0.2",
+    "express": "^4.15.3",
+    "expressjs": "^1.0.1"
+  }
+}
