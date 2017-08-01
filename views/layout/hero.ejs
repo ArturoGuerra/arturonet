@@ -1,0 +1,22 @@
+<section class="hero is-dark is-medium header-image">
+    <div class="hero-body">
+        <div class="container has-text-centered">
+            <%= herobody -%>
+        </div>
+    </div>
+    <div class="hero-foot">
+        <div class="tabs is-boxed is-centered is-hidden-touch">
+            <div class="container">
+                <ul>
+                    <% herofoot_items.forEach(function(heroitem) { %>
+                    <li>
+                        <a href="<%= heroitem.href %>">
+                            <span><%= heroitem.content %></span>
+                        </a>
+                    </li>
+                    <% }) %>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
