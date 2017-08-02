@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <%= include ../layout/head %>
+        <title>404 Chill not found - Arturo's Website</title>
+    </head>
+    <body>
+        <header>
+            <%= include ../layout/header %>
+        </header>
+        <%= include ../layout/hero %>
+        <% block('herocontent', ' \
+        <h1 class="title">404 CHILL NOT FOUND</h1> \
+        <h2 class="subtitle">RIP Daddy Dev fucked up</h2> \
+        <h3><strike>#MakeAmericaGreatAgain</strike></h3>') %>
+        <footer>
+            <%= include ../layout/footer %>
+        </footer>
+    </body>
+</html>
+
+

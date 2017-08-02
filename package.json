@@ -13,6 +13,7 @@
     "ejs-blocks": "^0.1.4",
     "ejs-locals": "^1.0.2",
     "express": "^4.15.3",
-    "expressjs": "^1.0.1"
+    "expressjs": "^1.0.1",
+    "request": "^2.81.0"
   }
 }

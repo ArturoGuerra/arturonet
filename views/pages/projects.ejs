@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <%= include ../layout/head %>
+        <title>Projects - Arturo's Website</title>
+    </head>
+    <body>
+        <header>
+            <%= include ../layout/header %>
+        </header>
+        <%= include ../layout/hero %>
+        <% block('herocontent', ' \
+        <h1 class="title">Projects</h1> \
+        <h2 class="subtitle">Bots bots and more bots</h2> \
+        <h3>#IHAVEYOURTOKEN</h3>') -%>
+        <section class="hero">
+            <div class="hero-body">
+                <div class="container has-text-centered">
+                    <h1 class="title is-2"><strong>My GitHub Projects</h1>
+                </div>
+            </div>
+        </section>
+        <section class="hero is-centered">
+            <div class="container">
+            <table class="table is-fullwidth">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Language</th>
+                        <th class="is-hidden-touch">Forks</th>
+                        <th class="is-hidden-touch">Forked</th>
+                    </th>
+                </thead>
+                <tbody>
+                    <% repos.forEach(function(repo) {  %>
+                    <tr>
+                        <th><a href="<%= repo.html_url %>"><%= repo.name %></a></th>
+                        <th><%= repo.language %></th>
+                        <th class="is-hidden-touch"><%= repo.forks_count %></th>
+                        <th class="is-hidden-touch"><%= repo.fork %></th>
+                    </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+            </div>
+        </section>
+        <footer>
+            <%= include ../layout/footer %>
+        </footer>
+    </body>
+</html>

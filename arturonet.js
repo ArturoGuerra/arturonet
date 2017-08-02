@@ -1,16 +1,16 @@
 const express = require('express');
 const path = require('path');
 const engine = require('ejs-blocks');
+const request = require('request');
+const http = require('http');
 const app = new express();
 
-//app.set('views', path.join(__dirname, '/templates'));
-
-var navbar_items = [{href: '/',, id:'home', content:'Home'},\
-{href:'/social', id:'social', content:'Social'}, \
-{href:'/projets', id:'projets', content:'Projects'}]
-var herofoot_items = [{href:'https://discord.gg/ssl', content:'SSL'}, \
-{href:'https://github.com/ArturoGuerra', content:'GitHub'}, \
-{href:'https://www.dixionary.com', content:'Dixionary'}, \
+var navbar_items = [{href: '/', id:'home', content:'Home'},
+{href:'/social', id:'social', content:'Social'},
+{href:'/projects', id:'projets', content:'Projects'}]
+var herofoot_items = [{href:'https://discord.gg/ssl', content:'SSL'},
+{href:'https://github.com/ArturoGuerra', content:'GitHub'},
+{href:'https://www.dixionary.com', content:'Dixionary'},
 {href:'https://inwite.dixionary.com', content:'Dixionary Serwer'}]
 
 app.set('views', 'views');
@@ -19,12 +19,35 @@ app.engine('ejs', engine);
 app.set('view engine', 'ejs');
 
 app.get('/', function(req, res) {
-    var herobody = "<h1 class='title'>Arturo Guerra</h1> \
-    <h2 class='subtitle'>Home of the Dixionary</h2> \
-    <h3>#Vindows 11</h3>";
-    res.render('index', {herobody: herobody, navbar_items: navbar_items, herofoot_items: herofoot_items});
+    var herobody = {title: "Arturo Guerra", subtitle: "Home of the Dixionary", extra: "#Vindows 11"}
+    args = {hero: herobody, navbar_items: navbar_items, herofoot_items: herofoot_items}
+    res.render('pages/index', args);
 });
 
-app.listen(8080, function () {
-    console.log("Listening on port 8080");
+app.get('/social', function(req, res) {
+    var herobody = {title: "Social Media", subtitle: "DISCORD", extra: "#HEILHITLER"}
+    args = {hero: herobody, navbar_items: navbar_items, herofoot_items: herofoot_items}
+    res.render('pages/social', args);
 });
+
+app.get('/projects', function(req, res) {
+    var options = {url: "https://api.github.com/users/ArturoGuerra/repos", headers: {'User-Agent': 'request'}};
+    var herobody = {title: "Projects", subtitle: "Bots bots and more bots", extra: "#IHAVEYOURTOKEN"}
+    request.get(options, function(error, responce, body) {
+        let repos = JSON.parse(body);
+        args = {hero: herobody, navbar_items: navbar_items, herofoot_items: herofoot_items, repos: repos}
+        res.render('pages/projects', args);
+    });
+});
+
+var server = http.createServer(app);
+server.listen('./arturonet.sock');
+server.on('listening', function() {
+    console.log("Started server")
+});
+
+if (require.main === module) {
+    app.listen(8080, function () {
+        console.log("Listening on port 8080");
+    });
+}
