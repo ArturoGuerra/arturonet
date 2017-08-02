@@ -22,8 +22,8 @@
         </section>
         <section class="hero is-centered">
             <div class="container">
-            <table class="table is-fullwidth">
-                <thead>
+            <table id='gitable' class="table is-fullwidth">
+                <thead id='tablehead'>
                     <tr>
                         <th>Name</th>
                         <th>Language</th>
@@ -31,7 +31,7 @@
                         <th class="is-hidden-touch">Forked</th>
                     </th>
                 </thead>
-                <tbody>
+                <tbody id='tablebody'>
                     <% repos.forEach(function(repo) {  %>
                     <tr>
                         <th><a href="<%= repo.html_url %>"><%= repo.name %></a></th>

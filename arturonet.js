@@ -1,3 +1,4 @@
+#!/usr/bin/env nodejs
 const express = require('express');
 const path = require('path');
 const compression = require('compression');
@@ -5,7 +6,7 @@ const engine = require('ejs-blocks');
 const request = require('request');
 const http = require('http');
 const fs = require('fs');
-const app = new express();
+const app = exports.app = new express();
 
 app.use(compression());
 
@@ -44,22 +45,22 @@ app.get('/projects', function(req, res) {
     });
 });
 
-var server = http.createServer(app);
-server.listen("./arturonet.sock");
-server.on('listening', onListening);
-
-function onListening() {
-    fs.chmodSync('./arturonet.sock', '775');
-    console.log("Started unix socked");
-};
-
-function servershutdown () {
-    server.close();
+function startServer() {
+    // Creates unix socket
+    var server = http.createServer(app);
+    server.listen("./arturonet.sock");
+    server.on('listening', onListening);
+    function onListening() {
+        fs.chmodSync('./arturonet.sock', '775');
+        console.log("Started unix socked");
+    };
+    // Deletes socket file
+    function servershutdown () {
+        server.close();
+    }
+    process.on('SIGINT', servershutdown);
 }
 
-//if (require.main === module) {
-//    app.listen(8080, function () {
- //       console.log("Listening on port 8080");
-  //  });
-//}
-process.on('SIGINT', servershutdown);
+if (require.main === module) {
+    startServer();
+}
