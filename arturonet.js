@@ -3,6 +3,7 @@ const path = require('path');
 const engine = require('ejs-blocks');
 const request = require('request');
 const http = require('http');
+const fs = require('fs');
 const app = new express();
 
 var navbar_items = [{href: '/', id:'home', content:'Home'},
@@ -41,13 +42,21 @@ app.get('/projects', function(req, res) {
 });
 
 var server = http.createServer(app);
-server.listen('./arturonet.sock');
-server.on('listening', function() {
-    console.log("Started server")
-});
+server.listen("./arturonet.sock");
+server.on('listening', onListening);
 
-if (require.main === module) {
-    app.listen(8080, function () {
-        console.log("Listening on port 8080");
-    });
+function onListening() {
+    fs.chmodSync('./arturonet.sock', '775');
+    console.log("Started unix socked");
+};
+
+function servershutdown () {
+    server.close();
 }
+
+//if (require.main === module) {
+//    app.listen(8080, function () {
+ //       console.log("Listening on port 8080");
+  //  });
+//}
+process.on('SIGINT', servershutdown);
