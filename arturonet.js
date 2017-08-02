@@ -8,7 +8,7 @@ const app = new express();
 
 var navbar_items = [{href: '/', id:'home', content:'Home'},
 {href:'/social', id:'social', content:'Social'},
-{href:'/projects', id:'projets', content:'Projects'}]
+{href:'/projects', id:'projects', content:'Projects'}]
 var herofoot_items = [{href:'https://discord.gg/ssl', content:'SSL'},
 {href:'https://github.com/ArturoGuerra', content:'GitHub'},
 {href:'https://www.dixionary.com', content:'Dixionary'},
