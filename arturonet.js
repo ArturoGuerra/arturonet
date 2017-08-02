@@ -1,10 +1,13 @@
 const express = require('express');
 const path = require('path');
+const compression = require('compression');
 const engine = require('ejs-blocks');
 const request = require('request');
 const http = require('http');
 const fs = require('fs');
 const app = new express();
+
+app.use(compression());
 
 var navbar_items = [{href: '/', id:'home', content:'Home'},
 {href:'/social', id:'social', content:'Social'},
