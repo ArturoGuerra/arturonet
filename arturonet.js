@@ -2,7 +2,6 @@
 const express = require('express');
 const path = require('path');
 const compression = require('compression');
-const engine = require('ejs-blocks');
 const request = require('request');
 const http = require('http');
 const fs = require('fs');
@@ -20,7 +19,6 @@ var herofoot_items = [{href:'https://discord.gg/ssl', content:'SSL'},
 
 app.set('views', 'views');
 app.use('/static', express.static('static'));
-app.engine('ejs', engine);
 app.set('view engine', 'ejs');
 
 app.get('/', function(req, res) {
