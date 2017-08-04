@@ -35,15 +35,13 @@ app.get('/social', function(req, res) {
     res.render('pages/social', args);
 });
 
+
 app.get('/projects', function(req, res) {
-    var options = {url: "https://api.github.com/users/ArturoGuerra/repos", headers: {'User-Agent': 'request'}};
     var herobody = {title: "Projects", subtitle: "Bots bots and more bots", extra: "#IHAVEYOURTOKEN"}
-    request.get(options, function(error, responce, body) {
-        let repos = JSON.parse(body);
-        args = {hero: herobody, navbar_items: navbar_items, herofoot_items: herofoot_items, repos: repos}
-        res.render('pages/projects', args);
-    });
+    args = {hero: herobody, navbar_items: navbar_items, herofoot_items: herofoot_items}
+    res.render('pages/projects', args);
 });
+
 
 function startServer() {
     // Creates unix socket
