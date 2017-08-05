@@ -5,7 +5,6 @@ const compression = require('compression');
 const engine = require('ejs-blocks');
 const request = require('request');
 const http = require('http');
-const methodOverride = require('method-override');
 const fs = require('fs');
 const app = exports.app = new express();
 
@@ -22,8 +21,6 @@ var herofoot_items = [{href:'https://discord.gg/ssl', content:'SSL'},
 app.set('views', 'views');
 app.use('/static', express.static('static'));
 app.set('view engine', 'ejs');
-//app.use(methodOverride);
-
 
 
 app.get('/', function(req, res) {

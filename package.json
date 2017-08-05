@@ -21,7 +21,6 @@
     "ejs": "^2.5.7",
     "ejs-blocks": "^0.1.4",
     "express": "^4.15.3",
-    "method-override": "^2.3.9",
     "request": "^2.81.0"
   }
 }
