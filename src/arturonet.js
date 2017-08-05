@@ -27,8 +27,8 @@ app.use(minify());
 app.use(cookiesession);
 
 //Sets render engine, static dir and views dir all the front end stuff
-app.set('views', 'views');
-app.use('/static', express.static('static'));
+app.set('views', `${__dirname}/views`);
+app.use('/static', express.static(`${__dirname}/static`));
 app.set('view engine', 'ejs');
 
 app.use(function(req, res, next) {

@@ -2,7 +2,7 @@
   "name": "arturonet",
   "version": "1.0.0",
   "description": "Arturo Guerra's personal website",
-  "main": "arturonet.js",
+  "main": "./src/arturonet.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
