@@ -22,11 +22,11 @@ function sendProject(name, url, language, forks, forked) {
     var table = document.createElement('tr');
 
     var thname = document.createElement('th');
-    var url = document.createElement("a");
-    url.setAttribute('href', url);
+    var urlvar = document.createElement("a");
+    urlvar.setAttribute('href', url);
     var text = document.createTextNode(name);
-    url.appendChild(text);
-    thname.appendChild(url);
+    urlvar.appendChild(text);
+    thname.appendChild(urlvar);
     table.appendChild(thname);
 
     var thlanguage = document.createElement('th');

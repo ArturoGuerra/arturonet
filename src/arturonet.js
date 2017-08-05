@@ -8,7 +8,7 @@ const fs = require('fs');
 const config = require('./config.js');
 const cookieSession = require('cookie-session');
 const minify = require('express-minify');
-const cache = require('express-redis-cache')({host: '127.0.0.1', port: '6379'});
+const cache = require('express-redis-cache')({expire: 1000});
 const app = exports.app = new express();
 
 
