@@ -8,6 +8,7 @@ const fs = require('fs');
 const config = require('./config.js');
 const cookieSession = require('cookie-session');
 const minify = require('express-minify');
+const cache = require('express-redis-cache')({host: '127.0.0.1', port: '6379'});
 const app = exports.app = new express();
 
 
@@ -40,12 +41,14 @@ app.use(function(req, res, next) {
     next()})
 
 app.get('/', function(req, res) {
+    cache.route();
     var herobody = {title: "Arturo Guerra", subtitle: "Home of the Dixionary", extra: "#Vindows 11"}
     args = {hero: herobody, navbar_items: navbar_items, herofoot_items: herofoot_items}
     res.render('pages/index', args);
 });
 
 app.get('/social', function(req, res) {
+    cache.route();
     var herobody = {title: "Social Media", subtitle: "DISCORD", extra: "#HEILHITLER"}
     args = {hero: herobody, navbar_items: navbar_items, herofoot_items: herofoot_items}
     res.render('pages/social', args);
@@ -53,6 +56,7 @@ app.get('/social', function(req, res) {
 
 
 app.get('/projects', function(req, res) {
+    cache.route();
     var herobody = {title: "Projects", subtitle: "Bots bots and more bots", extra: "#IHAVEYOURTOKEN"}
     args = {hero: herobody, navbar_items: navbar_items, herofoot_items: herofoot_items}
     res.render('pages/projects', args);
