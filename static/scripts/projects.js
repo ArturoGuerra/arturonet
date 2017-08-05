@@ -2,7 +2,6 @@ function fetchProjects() {
     var request = new XMLHttpRequest();
     request.overrideMimeType("application/json");
     request.open("GET", "https://api.github.com/users/ArturoGuerra/repos");
-    console.log("pass 1"); 
     request.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             let responce = JSON.parse(request.responseText);

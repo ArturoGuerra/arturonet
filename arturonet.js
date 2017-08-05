@@ -2,8 +2,10 @@
 const express = require('express');
 const path = require('path');
 const compression = require('compression');
+const engine = require('ejs-blocks');
 const request = require('request');
 const http = require('http');
+const methodOverride = require('method-override');
 const fs = require('fs');
 const app = exports.app = new express();
 
@@ -20,6 +22,9 @@ var herofoot_items = [{href:'https://discord.gg/ssl', content:'SSL'},
 app.set('views', 'views');
 app.use('/static', express.static('static'));
 app.set('view engine', 'ejs');
+//app.use(methodOverride);
+
+
 
 app.get('/', function(req, res) {
     var herobody = {title: "Arturo Guerra", subtitle: "Home of the Dixionary", extra: "#Vindows 11"}
@@ -39,8 +44,9 @@ app.get('/projects', function(req, res) {
     args = {hero: herobody, navbar_items: navbar_items, herofoot_items: herofoot_items}
     res.render('pages/projects', args);
 });
-
-
+app.use(function(req, res) {
+    var args = {navbar_items: navbar_items, herofoot_items: herofoot_items, hero: {title: "404 Chill not found", subtitle: "Daddy dew fucked up", extra: "#SJV"}}
+    res.status(404).render('error/custom_404', args)});
 function startServer() {
     // Creates unix socket
     var server = http.createServer(app);
