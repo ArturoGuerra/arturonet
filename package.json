@@ -22,6 +22,7 @@
     "ejs": "^2.5.7",
     "express": "^4.15.3",
     "express-minify": "^0.2.0",
+    "express-redis-cache": "^1.0.0",
     "prompt": "^1.0.0",
     "request": "^2.81.0"
   }
