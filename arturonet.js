@@ -5,9 +5,11 @@ const compression = require('compression');
 const request = require('request');
 const http = require('http');
 const fs = require('fs');
+const config = require('./config.js');
+const cookieSession = require('cookie-session');
+const minify = require('express-minify');
 const app = exports.app = new express();
 
-app.use(compression());
 
 var navbar_items = [{href: '/', id:'home', content:'Home'},
 {href:'/social', id:'social', content:'Social'},
@@ -17,10 +19,25 @@ var herofoot_items = [{href:'https://discord.gg/ssl', content:'SSL'},
 {href:'https://www.dixionary.com', content:'Dixionary'},
 {href:'https://inwite.dixionary.com', content:'Dixionary Serwer'}]
 
+//Sets compression, minify(Reduce file size by optimzing code), and sets cookies/session
+var default_args = {navbar_items: navbar_items, herofoot_items: herofoot_items}
+const cookiesession = cookieSession({name: "websession", keys: [config.secret1, config.secret2], maxAge: 24 * 60 * 60 * 1000});
+app.use(compression());
+app.use(minify());
+app.use(cookiesession);
+
+//Sets render engine, static dir and views dir all the front end stuff
 app.set('views', 'views');
 app.use('/static', express.static('static'));
 app.set('view engine', 'ejs');
 
+app.use(function(req, res, next) {
+    req.session.redirect = req.path || '/';
+    if (!req.session.views) {
+        req.session.views = {}}
+    req.session.views[req.path] = (req.session.views[req.path] || 0) + 1;
+    console.log(`${req.session.views[req.path]} ${req.path}`);
+    next()})
 
 app.get('/', function(req, res) {
     var herobody = {title: "Arturo Guerra", subtitle: "Home of the Dixionary", extra: "#Vindows 11"}
