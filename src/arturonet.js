@@ -5,13 +5,13 @@ const compression = require('compression');
 const request = require('request');
 const http = require('http');
 const fs = require('fs');
-const config = require('./config.js');
+const config = require('./config/config.js');
 const cookieSession = require('cookie-session');
 const minify = require('express-minify');
 const cache = require('express-redis-cache')({expire: 1000});
 const app = exports.app = new express();
 
-
+console.log(`${config.secret1} ${config.secret2}`);
 var navbar_items = [{href: '/', id:'home', content:'Home'},
 {href:'/social', id:'social', content:'Social'},
 {href:'/projects', id:'projects', content:'Projects'}]
