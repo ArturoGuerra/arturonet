@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <%- include ../layout/head %>
+        <%- include ../partials/head %>
         <link rel='stylesheet'  href='/static/css/animate.css'></link>
         <title>Projects - Arturo's Website</title>
     </head>
     <body>
-        <header>
-            <%- include ../layout/header %>
-        </header>
-        <%- include ../layout/hero %>
+        <%- include ../partials/header %>
+        <%- include ../partials/hero/start %>
+        <h1 class="title">Projects</h1>
+        <h2 class="subtitle">Bots bots and more bots</h2>
+        <h3>#HEILTILER</h3>
+        <%- include ../partials/hero/end %>
         <section class="hero">
             <div class="hero-body">
                 <div class="container has-text-centered">
@@ -38,8 +40,6 @@
             </div>
         </section>
         <script src="/static/scripts/projects.js"></script>
-        <footer>
-            <%- include ../layout/footer %>
-        </footer>
+        <%- include ../partials/footer %>
     </body>
 </html>

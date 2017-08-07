@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <% include ../layout/head %>
+    <% include ../partials/head %>
     <title>Home - Arturo's Website</title>
     <head>
     <body>
-        <header>
-           <%- include ../layout/header %>
-        </header>
-        <%- include ../layout/hero %>
+        <%- include ../partials/header %>
+        <%- include ../partials/hero/start %>
+        <h1 class="title">Arturo Guerra</h1>
+        <h2 class="subtitle">Home of the Dixionary</h2>
+        <h3>#Vindows 11</h3>
+        <%- include ../partials/hero/end %>
         <div class="section">
             <div class="container">
                 <nav class="level">
@@ -97,8 +99,6 @@
                 </div>
             </div>
         </section>
-        <footer>
-            <%- include ../layout/footer %>
-        </footer>
+        <%- include ../partials/footer %>
     </body>
 </html>

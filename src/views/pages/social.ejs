@@ -1,14 +1,16 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <%- include ../layout/head %>
+        <%- include ../partials/head %>
         <title>Social - Arturo's Website</title>
     </head>
     <body>
-        <header>
-            <%- include ../layout/header %>
-        </header>
-        <%- include ../layout/hero %>
+        <%- include ../partials/header %>
+        <%- include ../partials/hero/start %>
+        <h1 class="title">Social Media</h1>
+        <h2 class="subtitle">DISCORD</h2>
+        <h3>#MAKEAMERICAGREATAGAIN</h3>
+        <%- include ../partials/hero/end %>
         <section class="section">
                 <div class="hero-body">
                     <div class="container is-fluid has-text-centered">
@@ -35,9 +37,7 @@
                     </div>
                 </div>
         </section>
-        <footer>
-            <%- include ../layout/footer %>
-        </footer>
+        <%- include ../partials/footer %>
     </body>
 </html>
 
