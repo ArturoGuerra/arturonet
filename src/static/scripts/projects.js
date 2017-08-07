@@ -1,22 +1,29 @@
 function fetchProjects() {
     var request = new XMLHttpRequest();
+    var indexs = 0;
     request.overrideMimeType("application/json");
     request.open("GET", "https://api.github.com/users/ArturoGuerra/repos");
     request.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             let responce = JSON.parse(request.responseText);
             console.log(responce);
-            responce.forEach(repo => {
+            responce.forEach((repo, index, array) => {
                 var name = repo.name;
                 var url = repo.html_url;
                 var language = repo.language;
                 var forks = repo.forks_count;
                 var forked = repo.fork;
-                sendProject(name, url, language, forks, forked)});
+                indexs = indexs + sendProject(name, url, language, forks, forked);
+                if (indexs == array.length) {
+                    document.getElementById('spin').setAttribute("style", "display:none;");
+                    document.getElementById('projectcontainer').removeAttribute("style");
+                }
+            });
         }
     }
     request.send();
 }
+
 function sendProject(name, url, language, forks, forked) {
     var project = document.getElementById('projectstable');
     var table = document.createElement('tr');
@@ -47,12 +54,7 @@ function sendProject(name, url, language, forks, forked) {
     table.appendChild(thforked);
 
     project.appendChild(table);
+    return 1;
 }
 
-
-
-
-
 fetchProjects();
-document.getElementById('spin').setAttribute("style", "display:none;");
-document.getElementById('projectcontainer').removeAttribute("style");
