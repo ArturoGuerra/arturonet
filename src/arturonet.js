@@ -38,25 +38,38 @@ app.use((req, res, next) => {
     next();
 });
 
-app.get('/', (req, res) => {
+app.get('/', (req, res, next) => {
     cache.route();
     res.render('pages/index', req.args);
 });
 
-app.get('/social', (req, res) => {
+app.get('/social', (req, res, next) => {
     cache.route();
     res.render('pages/social', req.args);
 });
 
-app.get('/projects', (req, res) => {
+app.get('/projects', (req, res, next) => {
     cache.route();
     res.render('pages/projects', req.args);
 });
 
-app.use((req, res) => {
-    res.status(404).render('errors/custom_404', req.args);
+//Error Handling
+app.use((req, res, next) => {
+    res.status(404).render('errors/404', req.args);
 });
 
+app.use((err, req, res, next) => {
+    if (!err.status) {
+        err.status = 500;
+    }
+    console.error(`${err.status} ${err.message} ${err.stack}`)
+    req.args.err = err;
+    if (err.status == 500) {
+        res.status(500).render("errors/500", req.args);
+    } else {
+        res.status(err.status).render('errors/error', req.args);
+    }
+});
 
 function defaultArgs(req, res) {
     args = {};
