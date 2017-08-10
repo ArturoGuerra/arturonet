@@ -29,14 +29,10 @@ app.use((req, res, next) => {
     };
     req.session.views[req.path] = (req.session.views[req.path] || 0) + 1;
     console.log(`${req.session.views[req.path]} ${req.path}`);
+    req.args = defaultArgs(req, res);
     next();
 })
 
-
-app.use((req, res, next) => {
-    req.args = defaultArgs(req, res);
-    next();
-});
 
 app.get('/', (req, res, next) => {
     cache.route();
@@ -73,7 +69,7 @@ app.use((err, req, res, next) => {
 
 function defaultArgs(req, res) {
     args = {};
-    args.navbar_items = [
+    var nav = [
     {href: '/', id:'home', content:'Home'},
     {href:'/social', id:'social', content:'Social'},
     {href:'/projects', id:'projects', content:'Projects'}
@@ -84,6 +80,7 @@ function defaultArgs(req, res) {
     {href:'https://www.dixionary.com', content:'Dixionary'},
     {href:'https://inwite.dixionary.com', content:'Dixionary Serwer'}
     ];
+    args.navbar_items = nav;
     return args;
 }
 
