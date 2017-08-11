@@ -1,5 +1,5 @@
 *.sock
-ssl_certs
 *.log
+sslcerts
 config.json
 node_modules
