@@ -1,7 +1,7 @@
 try {
     const config = module.exports = require('./config.json');
 } catch (error) {
-    const sample = require('./config/sample.json');
+    const sample = require('./sample.json');
     const fs = require('fs');
     const prompt = require('prompt');
     var config = {};
@@ -12,7 +12,7 @@ try {
         for (var key in result) {
             config[key] = result[key];
         }
-        fs.writeFileSync('./config.json', JSON.stringify(config), 'utf-8');
+        fs.writeFileSync('./config/config.json', JSON.stringify(config), 'utf-8');
     });
     module.exports = config;
 }
