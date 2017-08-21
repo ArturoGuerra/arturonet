@@ -5,6 +5,6 @@
 
 
 .dark-blue {
-background: -webkit-linear-gradient(25deg, rgba(50,85,220, 0.9), rgba(50,90,220, 0.9) 50%, rgba(20,140,230, 0.9) 90%); /*Safari 5.1-6*/
-background: linear-gradient(25deg, rgba(50,85,220, 0.9), rgba(50,90,220, 0.9) 50%, rgba(20,140,230, 0.9) 90%); /*Standard*/
+background: -webkit-linear-gradient(25deg, rgba(15,60,120, 1) 0%, rgba(0,134,255, 1) 100%); /*Safari 5.1-6*/
+background: linear-gradient(25deg, rgba(15,60,120, 1) 0%, rgba(0,134,255, 1) 100%); /*Standard*/
 }
