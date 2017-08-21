@@ -1,0 +1,10 @@
+.dark-blue-1 {
+    background-image: -webkit-linear-gradient(-95.19442890773487deg, rgba(64,150,238,1) 0, rgb(50, 115, 220) 100%);
+    background-image: linear-gradient(185.19442890773487deg, rgba(64,150,238,1) 0, rgb(50, 115, 220) 100%);
+}
+
+
+.dark-blue {
+background: -webkit-linear-gradient(45deg,rgba(50,95,220, 0.8) 0,rgb(50,120,220) 100%); /*Safari 5.1-6*/
+background: linear-gradient(45deg, rgba(50,95,220, 0.8) 0, rgb(50,120,220) 100%); /*Standard*/
+}
