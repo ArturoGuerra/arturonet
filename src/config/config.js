@@ -1,3 +1,5 @@
+const path = require("path");
+
 try {
     const config = module.exports = require('./config.json');
 } catch (error) {
@@ -12,7 +14,7 @@ try {
         for (var key in result) {
             config[key] = result[key];
         }
-        fs.writeFileSync('./config/config.json', JSON.stringify(config), 'utf-8');
+        fs.writeFileSync(path.join(__dirname, 'config.json'), JSON.stringify(config), 'utf-8');
     });
     module.exports = config;
 }

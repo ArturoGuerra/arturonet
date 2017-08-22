@@ -86,6 +86,9 @@ function defaultArgs(req, res) {
 
 function startServer() {
     // Creates unix socket
+    fs.unlink(path.join(__dirname, "arturonet.sock"), (err) => {
+        console.log("Sock files doesn't exist");
+    });
     var server = http.createServer(app);
     server.listen("./arturonet.sock");
     server.on('listening', onListening);
