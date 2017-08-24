@@ -9,6 +9,7 @@ const config = require('./config/config.js');
 const cookieSession = require('cookie-session');
 const minify = require('express-minify');
 const cache = require('express-redis-cache')({expire: 1000});
+const favicon = require("express-favicon");
 const app = new express();
 
 //Sets compression, minify(Reduce file size by optimzing code), and sets cookies/session
@@ -21,7 +22,7 @@ app.use(cookiesession);
 app.set('views', path.join(__dirname, "views"));
 app.use('/static', express.static(path.join(__dirname, "static")));
 app.set('view engine', 'ejs');
-
+app.use(favicon(path.join(__dirname, "static", "assets", "webicon.png")));
 app.use((req, res, next) => {
     req.session.redirect = req.path || '/';
     if (!req.session.views) {
