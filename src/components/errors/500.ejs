@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <%- include ../partials/head %>
+        <title>500 Madarchods - Arturo's Website</title>
+    </head>
+    <body>
+        <%- include ../partials/header %>
+        <%- include ../partials/errorhero/danger_start %>
+        <h1 class="title">500 Madarchod Error</h1>
+        <h2 class="subtitle"><%= err.message %></h2>
+        <h2 class="sibtitle"><%= err.stack %></h3>
+        <%- include ../partials/errorhero/end %>
+        <%- include ../partials/footer %>
+    </body>
+</html>
+
+

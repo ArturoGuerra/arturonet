@@ -1,0 +1,16 @@
+<html>
+    <head>
+        <%- include ../partials/head %>
+        <title><%= err.status %> Madarchods - Arturo's Website</title>
+    </head
+    <body>
+        <%- include ../partials/header %>
+        <%- include ../partials/errorhero/start %>
+        <h1 class="title"><%= err.status %></h1>
+        <h2 class="subtitle"><%= err.message %></h2>
+        <%- include ../partials/errorhero/end %>
+        <%- include ../partials/footer %>
+    </body>
+</html>
+
+
