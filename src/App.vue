@@ -1,24 +1,19 @@
 <template>
   <div id="app">
-    <NavMenu></NavMenu>
-    <router-view></router-view>
-    <footer></footer>
+      <NavMenu></NavMenu>
+      <router-view></router-view>
+      <Footer></Footer>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  metaInfo: {
+    titleTemplate: '%s - ArturoNet',
+    noscript: [
+      { innerHTML: 'This website requires JavaScript Madarchod' }
+    ]
+  }
 }
 </script>
-
-<style>
-#app3 {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>

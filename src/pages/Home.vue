@@ -99,10 +99,14 @@
                 </div>
             </div>
         </div>
-        <footer></footer>
     </div>
 </template>
 
 <script>
-export default {name: 'Index'}
+export default {
+  name: 'Home',
+  metaInfo: {
+    title: 'Home'
+  }
+}
 </script>

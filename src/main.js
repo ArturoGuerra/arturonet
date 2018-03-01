@@ -14,9 +14,6 @@ import '@/assets/css/bodystyling.css'
 import '@/assets/media/webicon.png'
 import '@/assets/media/myface.jpg'
 
-import '@/assets/js/projects.js'
-import '@/assets/js/burger.js'
-
 Vue.component('NavMenu', NavMenu)
 Vue.component('Footer', Footer)
 Vue.component('HeroFoot', HeroFoot)

@@ -3,7 +3,7 @@
          <section class="hero is-dark is-medium dark-blue">
             <div class="hero-body">
                 <div class="container has-text-centered">
-                    <h1 class="title"></h1>
+                    <h1 class="title">Projects</h1>
                     <h2 class="subtitle">Bots bots and more bots</h2>
                     <h3>#HEILTILER</h3>
                 </div>
@@ -18,11 +18,7 @@
             </div>
         </section>
         <section class="hero has-text-centered">
-            <div id='spin' class="container">
-               <div style="margin: auto;" class="spinner"></div>
-               <br>
-            </div>
-            <div style="display:none;" id="projectcontainer" class="container has-text-centered">
+            <div class="container has-text-centered">
                 <table class="table is-fullwidth">
                     <thead>
                         <tr>
@@ -32,14 +28,49 @@
                             <th class="is-hidden-touch">Forked</th>
                         </tr>
                     </thead>
-                    <tbody id="projectstable">
+                    <tbody v-id="posts && posts.length">
+                        <tr v-for="p in projects" :key="p.url">
+                            <th>
+                                <a :href="p.url">
+                                    {{ p.name }}
+                                </a>
+                            </th>
+                            <th>{{ p.language }}</th>
+                            <th class='is-hidden-touch'>{{ p.forks }}</th>
+                            <th class='is-hidden-touch'>{{ p.forked }}</th>
+                        </tr>
                     </tbody>
                 </table>
             </div>
         </section>
-        <script src="/static/js/projects.js"></script>
     </div>
 </template>
 <script>
-export default {name: 'Projects'}
+import axios from 'axios'
+
+export default {
+  name: 'Projects',
+  metaInfo: {
+    title: 'Projects'
+  },
+  data () {
+    return {
+      projects: []
+    }
+  },
+  mounted () {
+    axios({method: 'GET', url: 'https://api.github.com/users/ArturoGuerra/repos'}).then(response => {
+      var r = response.data
+      for (let y = 0; y < r.length; y++) {
+        this.projects.push({
+          name: r[y].name,
+          url: r[y].html_url,
+          language: r[y].language,
+          forks: r[y].forks_count,
+          forked: r[y].fork
+        })
+      }
+    }).catch(console.error)
+  }
+}
 </script>

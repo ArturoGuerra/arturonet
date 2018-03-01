@@ -39,5 +39,10 @@
     </div>
 </template>
 <script>
-export default {name: 'Social'}
+export default {
+  name: 'Social',
+  metaInfo: {
+    title: 'Social'
+  }
+}
 </script>

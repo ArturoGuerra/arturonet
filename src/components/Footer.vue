@@ -1,7 +1,6 @@
 <template>
 <footer class="footer">
-    <div id="app-2" class="container">
-        <h1>{{ message }}</h1>
+    <div class="container">
         <div class="content has-text-centered">
             <p>
             <strong><a href="/">ArturoNet.com</a><strong> powered by Hitler and ISIS. JK NOT TRUE</strong>. Made by <a href="https://www.dixionary.com">TheOfficialDixionary</a>
@@ -11,7 +10,33 @@
                 <i class="fa fa-github"></i>
             </a>
             </p>
+            <p>
+            <strong>Your IP is {{ ip }}</strong>
+            </p>
         </div>
     </div>
 </footer>
 </template>
+
+<script>
+import axios from 'axios'
+
+export default {
+  name: 'Footer',
+  data () {
+    return {
+      ip: ''
+    }
+  },
+  mounted () {
+    axios({
+      method: 'GET',
+      url: 'https://httpbin.org/ip'
+    }).then(result => {
+      this.ip = result.data.origin
+    }, error => {
+      console.log(error)
+    })
+  }
+}
+</script>

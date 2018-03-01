@@ -19,13 +19,16 @@ export default {
   name: 'HeroStart',
   data () {
     return {
-      heroitem: [
-        {href: 'https://discord.gg/ssl', content: 'SSL'},
-        {href: 'https://github.com/ArturoGuerra', content: 'GitHub'},
-        {href: 'https://www.dixionary.com', content: 'Dixionary'},
-        {href: 'https://inwite.dixionary.com', content: 'Dixionary Serwer'}
-      ]
+      heroitem: []
     }
+  },
+  mounted () {
+    this.heroitem.push(
+      {href: 'https://discord.gg/ssl', content: 'SSL'},
+      {href: 'https://github.com/ArturoGuerra', content: 'GitHub'},
+      {href: 'https://www.dixionary.com', content: 'Dixionary'},
+      {href: 'https://inwite.dixionary.com', content: 'Dixionary Serwer'}
+    )
   }
 }
 </script>
