@@ -13,7 +13,7 @@
         </div>
         <div class="navbar-menu" id='navmenu'>
             <div class="navbar-end" id='navhandler'>
-                <router-link v-for="item in navitems" :key="item.href" :to="item.href" class="navbar-item is-tab"  @click.native="fixMobile" exact>
+                <router-link v-for="item in navitems" :id='item.id' :key="item.id" :to="item.href" class="navbar-item is-tab"  @click.native="fixMobile" exact>
                     <span>{{ item.name }}</span>
                 </router-link>
              </div>
@@ -26,9 +26,9 @@ export default {
   data () {
     return {
       navitems: [
-        {href: '/', name: 'Home'},
-        {href: '/social', name: 'Social'},
-        {href: '/projects', name: 'Projects'}
+        {id: 'home', href: '/', name: 'Home'},
+        {id: 'social', href: '/social', name: 'Social'},
+        {id: 'projects', href: '/projects', name: 'Projects'}
       ]
     }
   },
