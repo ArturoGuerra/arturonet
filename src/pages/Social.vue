@@ -27,11 +27,6 @@
                                 <br>
                                 <iframe src="https://discordapp.com/widget?id=194533269180514305&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
                             </div>
-                            <div class="column">
-                                <div><a href="https://twitter.com/Ar2roGuerra"><h1 class="title"><strong>Tvitter</strong></h1></a></div>
-                                <br>
-                                <a class="twitter-timeline" data-width="350" data-height="500" data-theme="dark" href="https://twitter.com/Ar2roGuerra">Tweets by Ar2roGuerra</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-                            </div>
                         </div>
                     </div>
                 </div>

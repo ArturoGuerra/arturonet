@@ -3,7 +3,7 @@
     <div class="container">
         <div class="content has-text-centered">
             <p>
-            <strong><a href="/">ArturoNet.com</a><strong> powered by Hitler and ISIS. JK NOT TRUE</strong>. Made by <a href="https://www.dixionary.com">TheOfficialDixionary</a>
+            <strong><a href="/">ArturoNet.com</a>powered by Hitler and ISIS. JK NOT TRUE. Made by <a href="https://www.dixionary.com">TheOfficialDixionary</a></strong>
             </p>
             <p>
             <a class="icon" href="https://github.com/ArturoGuerra/arturonet">
