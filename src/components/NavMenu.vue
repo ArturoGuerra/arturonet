@@ -2,7 +2,7 @@
     <nav class="navbar has-shadow">
         <div class="navbar-brand">
             <router-link to="/" class="navbar-item" @click.native='fixMobile'>
-                <img src="/static/img/webicon.png" style="border-radius: 60%; display: block; height: auto; width: auto;">
+                <img src="./../assets/img/webicon.png" style="border-radius: 60%; display: block; height: auto; width: auto;">
                 <strong>&nbsp; Arturo Guerra</strong>
             </router-link>
             <div class="navbar-burger burger" id="navtoggle" v-on:click='toggleNav'>

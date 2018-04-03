@@ -33,7 +33,7 @@
         <div class='hero hero-body'>
             <div class="container notification has-text-centered">
                 <p class="title">
-                    <img src="/static/img/myface.jpg" width="50" style="border-radius: 16%; vertical-align:middle;"> About Me
+                    <img src="./../assets/img/myface.jpg" width="50" style="border-radius: 16%; vertical-align:middle;"> About Me
                 </p>
                 <hr>
                 <p class="content">
