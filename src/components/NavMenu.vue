@@ -1,7 +1,7 @@
 <template>
     <nav class="navbar has-shadow">
         <div class="navbar-brand">
-            <router-link to="/" class="navbar-item" @click.native='fixMobile'>
+            <router-link to="/" class="navbar-item">
                 <img src="./../assets/img/webicon.png" style="border-radius: 60%; display: block; height: auto; width: auto;">
                 <strong>&nbsp; Arturo Guerra</strong>
             </router-link>
@@ -11,9 +11,16 @@
               <span></span>
             </div>
         </div>
-        <div class="navbar-menu" id='navmenu'>
-            <div class="navbar-end" id='navhandler'>
-                <router-link v-for="item in navitems" :id='item.id' :key="item.id" :to="item.href" class="navbar-item is-tab"  @click.native="fixMobile" exact>
+        <div class="navbar-menu">
+            <div class="navbar-end">
+                <router-link v-for="item in navitems" :id='item.id' :key="item.id" :to="item.href" class="navbar-item is-tab" exact>
+                    <span>{{ item.name }}</span>
+                </router-link>
+             </div>
+        </div>
+        <div class="navbar-menu is-hidden-desktop" id='navmenu'>
+            <div class="navbar-end">
+                <router-link v-for="item in navitems" :id='item.id' :key="item.id" :to="item.href" class="navbar-item" exact>
                     <span>{{ item.name }}</span>
                 </router-link>
              </div>
@@ -42,16 +49,6 @@ export default {
           f.className = 'navbar-item'
         })
       }
-    },
-    fixMobile () {
-      this.$nextTick(() => {
-        if (document.getElementById('navmenu').className.split(' ').length === 2) {
-          var navitems = document.getElementsByClassName('navbar-item')
-          Array.prototype.filter.call(navitems, (f) => {
-            f.className = 'navbar-item'
-          })
-        }
-      })
     }
   }
 }
