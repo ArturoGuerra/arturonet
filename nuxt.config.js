@@ -8,6 +8,7 @@ module.exports = {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { name: 'theme-color', content: '#0C66A1' },
+      { name: 'google-site-verification', content: '2QfKSG5ZPM__yZMnpIm5IJY1x52uhrgyVfbKCbOh0Xk' },
       { hid: 'description', name: 'description', content: "Arturo's personal website" },
       { property: 'og:title', hid: 'og:title', content: 'arturonet.com' },
       { property: 'og:description', hid: 'og:description', content: "Arturo's website" },
@@ -38,6 +39,7 @@ module.exports = {
       { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' },
       { rel: 'icon', type: 'image/png', sizes: '96x96', href: '/favicon-96x96.png' },
       { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' },
+      { rel: 'shortcut icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
   manifest: {
