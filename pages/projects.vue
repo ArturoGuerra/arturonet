@@ -50,7 +50,13 @@ import axios from 'axios'
 export default {
   name: 'Projects',
   head: {
-    title: 'Projects'
+    title: 'Projects',
+    meta: [
+      { property: 'og:title', hid: 'og:title', content: 'Projects - ArturoNet' },
+      { property: 'og:description', hid: 'og:description', content: "Arturo's website" },
+      { hid: 'twitter:title', name: 'twitter:title', content: 'Projects - ArturoNet' },
+      { hid: 'twitter:description', name: 'twitter:description', content: "Arturo's website" }
+    ]
   },
   data () {
     return {

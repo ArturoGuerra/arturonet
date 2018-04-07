@@ -10,19 +10,19 @@ module.exports = {
       { name: 'theme-color', content: '#0C66A1' },
       { name: 'google-site-verification', content: '2QfKSG5ZPM__yZMnpIm5IJY1x52uhrgyVfbKCbOh0Xk' },
       { hid: 'description', name: 'description', content: "Arturo's personal website" },
-      { property: 'og:title', hid: 'og:title', content: 'arturonet.com' },
+      { property: 'og:title', hid: 'og:title', content: 'ArturoNet' },
       { property: 'og:description', hid: 'og:description', content: "Arturo's website" },
       { property: 'og:type', hid: 'og:type', content: 'website' },
       { property: 'og:image', hid: 'og:image', content: 'https://www.arturonet.com/favicon.ico' },
       { hid: 'twitter:url', name: 'twitter:url', content: 'https://www.arturonet.com' },
-      { hid: 'twitter:title', name: 'twitter:title', content: 'arturonet.com' },
+      { hid: 'twitter:title', name: 'twitter:title', content: 'ArturoNet' },
       { hid: 'twitter:description', name: 'twitter:description', content: "Arturo's website" },
       { hid: 'twitter:type', name: 'twitter:type', content: 'website' },
       { hid: 'twitter:image', name: 'twitter:image', content: 'https://www.arturonet.com/favicon.ico' },
       { hid: 'twitter:url', name: 'twitter:url', content: 'https://www.arturonet.com' },
       { hid: 'twitter:card', name: 'twitter:card', content: 'summary' },
       { hid: 'twitter:creator', name: 'twitter:creator', content: '@Ar2roGuerra' },
-      { hid: 'apple-mobile-web-app-title', name: 'apple-mobile-web-app-title', content: 'arturonet.com' }
+      { hid: 'apple-mobile-web-app-title', name: 'apple-mobile-web-app-title', content: 'ArturoNet' }
 
     ],
     link: [

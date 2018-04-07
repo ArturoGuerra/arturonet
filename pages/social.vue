@@ -37,7 +37,14 @@
 export default {
   name: 'Social',
   head: {
-    title: 'Social'
+    title: 'Social',
+    meta: [
+      { property: 'og:title', hid: 'og:title', content: 'Social - ArturoNet' },
+      { property: 'og:description', hid: 'og:description', content: "Arturo's website" },
+      { hid: 'twitter:title', name: 'twitter:title', content: 'Social - ArturoNet' },
+      { hid: 'twitter:description', name: 'twitter:description', content: "Arturo's website" }
+    ]
+
   }
 }
 </script>

@@ -104,7 +104,13 @@
 export default {
   name: 'Home',
   head: {
-    title: 'Home'
+    title: 'Home',
+    meta: [
+      { property: 'og:title', hid: 'og:title', content: 'Home - ArturoNet' },
+      { property: 'og:description', hid: 'og:description', content: "Arturo's website" },
+      { hid: 'twitter:title', name: 'twitter:title', content: 'Home - ArturoNet' },
+      { hid: 'twitter:description', name: 'twitter:description', content: "Arturo's website" }
+    ]
   }
 }
 </script>
