@@ -90,7 +90,7 @@
                         <div class="tile">
                             <div class="tile is-parent is-vertical has-text-centered">
                                 <div class="tile is-child is-hidden-touch">
-                                    <iframe src="https://discordapp.com/widget?id=194533269180514305&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
+                                  <a class="twitter-timeline" data-width="350" data-height="500" data-dnt="true" data-theme="dark" href="https://twitter.com/Ar2roGuerra?ref_src=twsrc%5Etfw">Tweets by Ar2roGuerra</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                                 </div>
                             </div>
                         </div>

@@ -23,6 +23,11 @@
                           <iframe src="https://discordapp.com/widget?id=203164299458379776&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
                       </div>
                       <div class="column is-hidden-touch">
+                          <div><a href="https://twitter.com/Ar2roGuerra"><h1 class="title"><strong>Twitter</strong></h1></a></div>
+                          <br>
+                          <a class="twitter-timeline" data-width="350" data-height="500" data-dnt="true" data-theme="dark" href="https://twitter.com/Ar2roGuerra?ref_src=twsrc%5Etfw">Tweets by Ar2roGuerra</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                      </div>
+                      <div class="column is-hidden-touch">
                           <div><a href="https://discord.gg/ssl"><h1 class="title"><strong>SSL Community</strong></h1></a></div>
                           <br>
                           <iframe src="https://discordapp.com/widget?id=194533269180514305&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
