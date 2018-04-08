@@ -109,5 +109,10 @@ module.exports = {
   ],
   modules: [
     ['@nuxtjs/pwa'],
+    '@nuxtjs/axios'
   ],
+  axios: {
+    baseURL: 'https://www.arturonet.com',
+    browserBaseURL: '/api'
+  }
 }

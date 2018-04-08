@@ -35,7 +35,8 @@ export default {
       navitems: [
         {id: 'home', href: '/', name: 'Home'},
         {id: 'social', href: '/social', name: 'Social'},
-        {id: 'projects', href: '/projects', name: 'Projects'}
+        {id: 'projects', href: '/projects', name: 'Projects'},
+        {id: 'contact', href: '/contact', name: 'Contact'}
       ]
     }
   },

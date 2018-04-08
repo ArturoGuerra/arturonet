@@ -12,10 +12,14 @@
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
   },
   "dependencies": {
+    "@nuxtjs/axios": "^5.3.1",
     "@nuxtjs/pwa": "^2.0.8",
+    "aws-sdk": "^2.222.1",
     "axios": "^0.16.2",
+    "body-parser": "^1.18.2",
     "cross-env": "^5.0.1",
     "express": "^4.15.3",
+    "express-rate-limit": "^2.11.0",
     "nuxt": "^1.0.0-rc3",
     "source-map-support": "^0.4.15"
   },
