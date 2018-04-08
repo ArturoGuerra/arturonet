@@ -14,13 +14,13 @@
       <div class='field'>
         <label class='label'>Subject</label>
         <div class='control'>
-          <input v-model='subject' class='input' type='text' placeholder='Email Subject'>
+          <input v-model='subject' :class='[validsubject]' class='input' type='text' placeholder='Email Subject'>
         </div>
       </div>
       <div class='field'>
         <label class='label'>Message</label>
         <div class='control'>
-          <textarea v-model='message' class='textarea' placeholder='Email Content'></textarea>
+          <textarea v-model='message' :class='[validmessage]' class='textarea' placeholder='Email Content'></textarea>
         </div>
       </div>
       <div class="field">
@@ -39,7 +39,9 @@ export default {
       message: null,
       subject: null,
       result: null,
-      color: null
+      color: null,
+      validsubject: null,
+      validmessage: null
     }
   },
   head: {
@@ -56,14 +58,37 @@ export default {
           }
         )
         this.result = result.data
+        this.validsubject = result.status
+        this.validmessage = result.status
         this.color = result.status
       } catch (error) {
         console.log(error)
       }
     },
     async send () {
-      if (!this.message) return
-      if (!this.subject) return
+      let pass = true
+      if (!this.message) {
+        this.validmessage = 'is-warning'
+        pass = false
+      } else {
+        this.validmessage = 'is-success'
+      }
+
+      if (!this.subject) {
+        this.validsubject = 'is-warning'
+        pass = false
+      } else {
+        this.validsubject = 'is-success'
+      }
+
+      if (!pass) {
+        this.color = 'is-warning'
+        this.result = 'Missing fields'
+        return
+      }
+
+      this.validmessage = 'is-success'
+      this.validsubject = 'is-success'
       await this.sendEmail()
     }
   }
