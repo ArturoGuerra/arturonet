@@ -6,7 +6,7 @@ import api from './api'
 
 const app = express()
 const host = process.env.HOST || '0.0.0.0'
-const port = process.env.PORT || 8000
+const port = process.env.PORT || 3000
 
 app.set('port', port)
 
