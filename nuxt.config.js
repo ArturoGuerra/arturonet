@@ -81,7 +81,7 @@ module.exports = {
   ** Add axios globally
   */
   build: {
-    vendor: ['axios'],
+    vendor: ['axios', 'wowjs'],
     /*
     ** Run ESLINT on save
     */
@@ -105,7 +105,8 @@ module.exports = {
     height: '3px'
   },
   plugins: [
-    '~/plugins/global.js'
+    '~/plugins/global.js',
+    { src: '~/plugins/wow.js', ssr: false }
   ],
   modules: [
     ['@nuxtjs/pwa'],
