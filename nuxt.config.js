@@ -75,8 +75,7 @@ module.exports = {
     '~/assets/css/animate.css',
     '~/assets/css/bodystyling.css',
     '~/assets/css/hero.css',
-    '~/assets/css/gradients.css',
-    '
+    '~/assets/css/gradients.css'
   ],
   /*
   ** Add axios globally
