@@ -1,0 +1,34 @@
+.social-grid {
+    display: grid;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    grid-column-gap: 5px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "dixionary twitter ssl";
+}
+
+.social-dixionary {
+    grid-area: dixionary;
+}
+
+.social-twitter {
+    grid-area: twitter;
+}
+
+.social-ssl {
+    grid-area: ssl;
+}
+
+@media only screen and (max-width: 1200px) {
+    .social-grid {
+        grid-row-gap: 5px;
+        grid-template-columns: auto;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas:
+            "dixionary"
+            "ssl"
+            "twitter";
+    }
+}

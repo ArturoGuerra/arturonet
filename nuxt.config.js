@@ -75,6 +75,7 @@ module.exports = {
     '~/assets/css/animate.css',
     '~/assets/css/bodystyling.css',
     '~/assets/css/hero.css',
+    '~/assets/css/social.css',
     '~/assets/css/gradients.css'
   ],
   /*
