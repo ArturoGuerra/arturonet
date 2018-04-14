@@ -104,7 +104,7 @@
 export default {
   name: 'Home',
   mounted () {
-    try { this.$nuxt.$wow.sync() } catch (e) { console.error('SSR Page') }
+    if (process.browser) { this.$nuxt.$wow.sync() }
   },
   head: {
     title: 'Home',

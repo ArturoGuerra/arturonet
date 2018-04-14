@@ -3,6 +3,7 @@
     padding-top: 20px;
     padding-bottom: 20px;
     grid-column-gap: 5px;
+    justify-content: space-evenly;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
     grid-template-areas:
@@ -11,17 +12,29 @@
 
 .social-dixionary {
     grid-area: dixionary;
+    margin: 0 auto;
+    height: 500px;
+    width: 350px;
 }
 
 .social-twitter {
     grid-area: twitter;
+    margin: 0 auto;
 }
 
 .social-ssl {
     grid-area: ssl;
+    margin: 0 auto;
+    height: 500px;
+    width: 350px;
 }
 
-@media only screen and (max-width: 1200px) {
+.social-size {
+    height: 500px;
+    width: 350px;
+}
+
+@media (max-width: 1200px) {
     .social-grid {
         grid-row-gap: 5px;
         grid-template-columns: auto;
