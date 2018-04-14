@@ -34,6 +34,7 @@
     width: 350px;
 }
 
+
 @media (max-width: 1200px) {
     .social-grid {
         grid-row-gap: 5px;
