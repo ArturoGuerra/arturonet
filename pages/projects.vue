@@ -2,7 +2,7 @@
     <div>
          <section class="hero is-dark is-medium dark-blue">
             <div class="hero-body">
-                <div class="container has-text-centered">
+                <div class="container has-text-centered wow lightSpeedIn">
                     <h1 class="title">Projects</h1>
                     <h2 class="subtitle">Bots bots and more bots</h2>
                     <h3>#HEILTILER</h3>
@@ -64,6 +64,7 @@ export default {
     }
   },
   mounted () {
+    if (process.browser) { this.$nuxt.$wow.sync() }
     axios({method: 'GET', url: 'https://api.github.com/users/ArturoGuerra/repos'}).then(response => {
       var r = response.data
       for (let y = 0; y < r.length; y++) {

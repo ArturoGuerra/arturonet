@@ -2,7 +2,7 @@
   <div>
     <section class="hero is-dark is-medium dark-blue">
       <div class="hero-body">
-        <div class="container has-text-centered">
+        <div class="container has-text-centered wow lightSpeedIn">
           <h1 class="title">Social Media</h1>
           <h2 class="subtitle">DISCORD</h2>
           <h3>#MAKEAMERICAGREATAGAIN</h3>
@@ -10,7 +10,7 @@
       </div>
       <HeroFoot/>
     </section>
-    <section class='section'>
+    <section class='section wow zoomIn'>
       <div class='field'>
         <label class='label'>Subject</label>
         <div class='control'>
@@ -91,6 +91,9 @@ export default {
       this.validsubject = 'is-success'
       await this.sendEmail()
     }
+  },
+  mounted () {
+    if (process.browser) { this.$nuxt.$wow.sync() }
   }
 }
 </script>
