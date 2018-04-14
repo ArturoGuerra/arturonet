@@ -10,4 +10,27 @@ body::-webkit-scrollbar-thumb {
     background-color: #bfbfbf;
 }
 
-.navbar { position: fixed !important; top: 0; left: 0; right: 0; z-index: 1}
+.navbar {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    background-color: #24292e;
+}
+
+
+.navbar-item.is-tab {
+    color: hsl(0, 0%, 96%);
+}
+
+.navbar-item.is-tab:hover, .navbar-item.is-tab.is-active {
+    color: white;
+    border-bottom-color: white;
+}
+
+a.navbar-item.is-active, a.navbar-item:hover, a.navbar-item {
+    background-color: #24292e;
+    color: white;
+    border-bottom-color: white;
+}
