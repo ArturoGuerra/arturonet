@@ -19,9 +19,9 @@ body::-webkit-scrollbar-thumb {
     background-color: #24292e;
 }
 
-
+/* #0C66A1 */
 .navbar-item.is-tab {
-    color: hsl(0, 0%, 96%);
+    color: whitesmoke;
 }
 
 .navbar-item.is-tab:hover, .navbar-item.is-tab.is-active {
@@ -33,4 +33,18 @@ a.navbar-item.is-active, a.navbar-item:hover, a.navbar-item {
     background-color: #24292e;
     color: white;
     border-bottom-color: white;
+}
+
+.navbar-burger span, .navbar-burger.is-active span {
+    background-color: whitesmoke;
+}
+
+.navbar-burger:hover {
+    background-color: #24292e;
+}
+
+@media screen and (max-width: 1087px) {
+    .navbar-menu {
+        background-color: #24292e;
+    }
 }
