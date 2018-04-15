@@ -3,11 +3,11 @@ const AWS = require('aws-sdk')
 const RateLimit = require('express-rate-limit')
 const config = require('./config.json')
 
-AWS.config.update({ region: config.region })
+AWS.config.update({ region: process.env.REGION })
 
 const SES = new AWS.SES()
 
-var limiter = new RateLimit({
+const limiter = new RateLimit({
   windowMs: 15*60*1000, // 15 minutes
   max: 5, // limit each IP to 100 requests per windowMs
   delayMs: 0 // disable delaying - full speed until the max limit is reached
