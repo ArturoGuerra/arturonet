@@ -19,7 +19,7 @@
       <div class='field'>
         <label class='label'>Email</label>
         <div class='control'>
-          <input v-model='email' :class='[validemail]' class='input' type='email' placeholder='email'>
+          <input v-model='email' :class='[validemail]' class='input' type='email' placeholder='email' required>
         </div>
       </div>
       <div class='field'>
@@ -95,6 +95,9 @@ export default {
         pass = false
       } else if (this.email.indexOf('@') > -1) {
         this.validemail = 'is-success'
+      } else {
+        this.validemail = 'is-warning'
+        pass = false
       }
 
       if (!pass) {
