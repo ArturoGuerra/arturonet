@@ -3,24 +3,29 @@
     <section class="hero is-dark is-medium dark-blue">
       <div class="hero-body">
         <div class="container has-text-centered wow lightSpeedIn">
-          <h1 class="title">Social Media</h1>
-          <h2 class="subtitle">DISCORD</h2>
-          <h3>#MAKEAMERICAGREATAGAIN</h3>
+          <h1 class="title">Contact Me</h1>
+          <h3>Mark is a lizard</h3>
         </div>
       </div>
       <HeroFoot/>
     </section>
     <section class='section wow zoomIn'>
       <div class='field'>
-        <label class='label'>Subject</label>
+        <label class='label'>Name</label>
         <div class='control'>
-          <input v-model='subject' :class='[validsubject]' class='input' type='text' placeholder='Email Subject'>
+          <input v-model='name' :class='[validname]' class='input' type='text' placeholder='name'>
+        </div>
+      </div>
+      <div class='field'>
+        <label class='label'>Email</label>
+        <div class='control'>
+          <input v-model='email' :class='[validemail]' class='input' type='email' placeholder='email'>
         </div>
       </div>
       <div class='field'>
         <label class='label'>Message</label>
         <div class='control'>
-          <textarea v-model='message' :class='[validmessage]' class='textarea' placeholder='Email Content'></textarea>
+          <textarea v-model='message' :class='[validmessage]' class='textarea' placeholder='email content'></textarea>
         </div>
       </div>
       <div class="field">
@@ -37,7 +42,8 @@ export default {
   data () {
     return {
       message: null,
-      subject: null,
+      name: null,
+      email: null,
       result: null,
       color: null,
       validsubject: null,
@@ -54,11 +60,13 @@ export default {
           '/post',
           {
             message: this.message,
-            subject: this.subject
+            email: this.email,
+            name: this.name
           }
         )
         this.result = result.data
-        this.validsubject = result.status
+        this.validname = result.status
+        this.validemail = result.status
         this.validmessage = result.status
         this.color = result.status
       } catch (error) {
@@ -67,6 +75,7 @@ export default {
     },
     async send () {
       let pass = true
+
       if (!this.message) {
         this.validmessage = 'is-warning'
         pass = false
@@ -74,11 +83,18 @@ export default {
         this.validmessage = 'is-success'
       }
 
-      if (!this.subject) {
-        this.validsubject = 'is-warning'
+      if (!this.name) {
+        this.validname = 'is-warning'
         pass = false
       } else {
-        this.validsubject = 'is-success'
+        this.validname = 'is-success'
+      }
+
+      if (!this.email) {
+        this.validemail = 'is-warning'
+        pass = false
+      } else if (this.email.indexOf('@') > -1) {
+        this.validemail = 'is-success'
       }
 
       if (!pass) {
@@ -88,7 +104,8 @@ export default {
       }
 
       this.validmessage = 'is-success'
-      this.validsubject = 'is-success'
+      this.validemail = 'is-success'
+      this.validname = 'is-success'
       await this.sendEmail()
     }
   },

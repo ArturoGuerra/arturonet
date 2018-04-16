@@ -1,9 +1,11 @@
 const { Router } = require('express')
 const AWS = require('aws-sdk')
 const RateLimit = require('express-rate-limit')
-const config = require('./config.json')
 
 AWS.config.update({ region: process.env.REGION })
+
+const source_email = process.env.SOURCE_EMAIL || null
+const recipients = get_recipients() || null
 
 const SES = new AWS.SES()
 
@@ -18,11 +20,11 @@ const router = Router()
 router.use(limiter)
 router.post('/post', (req, res, next) => {
   let message = req.body.message
-  let subject = req.body.subject
+  let subject = req.body.name + ' - ' + req.body.email
   const sendPromise = SES.sendEmail(
     {
       Destination: {
-        ToAddresses: config.dest
+        ToAddresses: recipients
       },
       Message: {
         Body: {
@@ -36,7 +38,7 @@ router.post('/post', (req, res, next) => {
           Data: subject
         }
       },
-      Source: config.source
+      Source: source_email
     }
   ).promise();
   sendPromise.then(data => {
@@ -47,5 +49,13 @@ router.post('/post', (req, res, next) => {
     res.json({ status: 'is-danger', data: "Error sending email" })
   })
 })
+
+function get_recipients () {
+  if (process.env.RECIPIENT_EMAILS) {
+    return process.env.RECIPIENT_EMAILS.split(',')
+  } else {
+    return null
+  }
+}
 
 export default router
