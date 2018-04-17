@@ -23,6 +23,7 @@ body {
 .hero {
     margin: auto;
     min-width: 600px;
+    color: white;
     width: 600px;
     min-height: 400px;
     height: 400px;
@@ -152,4 +153,13 @@ body {
 
 .grid-subtitle.is-6 {
     font-size: 1rem;
+}
+
+
+.git-black {
+    color: #24292e;
+}
+
+.bg-git-black {
+    background-color: #24292e;
 }

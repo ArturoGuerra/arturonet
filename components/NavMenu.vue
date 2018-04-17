@@ -1,5 +1,5 @@
 <template>
-    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-git-black">
       <nuxt-link class='navbar-brand' to='/'>Arturo Guerra</nuxt-link>
       <!-- NavBar mobile toggle -->
       <button id='navbar-toggler' class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" @click='toggleNav'>

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="jombotron dark-blue white">
+        <div class="dark-blue white">
           <no-ssr>
             <vue-particles color="#dedede">
             </vue-particles>
