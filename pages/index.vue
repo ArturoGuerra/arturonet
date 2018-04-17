@@ -1,6 +1,6 @@
 <template>
     <div>
-        <section class="hero is-dark is-medium dark-blue">
+        <div class="jombotron dark-blue">
             <div class="hero-body">
                <div class="container has-text-centered wow lightSpeedIn">
                     <h1 class="title">Arturo Guerra</h1>
@@ -8,7 +8,6 @@
                     <h3>#Vindows 11</h3>
                </div>
             </div>
-            <HeroFoot/>
         </section>
         <div class="section">
             <div class="container">

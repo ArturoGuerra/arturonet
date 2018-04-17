@@ -71,7 +71,7 @@ module.exports = {
   ** Global CSS
   */
   css: [
-    '~/assets/css/bulma.css',
+    '~/assets/css/bootstrap.min.css',
     '~/assets/css/animate.css',
     '~/assets/css/bodystyling.css',
     '~/assets/css/hero.css',
@@ -98,8 +98,8 @@ module.exports = {
     }
   },
   router: {
-    linkActiveClass: 'is-active',
-    linkExactActiveClass: 'is-active'
+    linkActiveClass: 'active',
+    linkExactActiveClass: 'active'
   },
   loading: {
     color: '#0C66A1',

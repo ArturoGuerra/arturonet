@@ -7,7 +7,6 @@
           <h3>Mark is a lizard</h3>
         </div>
       </div>
-      <HeroFoot/>
     </section>
     <section class='section wow zoomIn'>
       <div class='field'>
