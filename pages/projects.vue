@@ -1,47 +1,47 @@
 <template>
     <div>
-       <section class="hero is-dark is-medium dark-blue">
-          <div class="hero-body">
-              <div class="container has-text-centered wow lightSpeedIn">
-                  <h1 class="title">Projects</h1>
-                  <h2 class="subtitle">Bots bots and more bots</h2>
-                  <h3>#HEILTILER</h3>
-              </div>
+       <div class="white dark-blue">
+          <no-ssr>
+            <vue-particles
+              color="#dedede"
+              :particlesNumber='250'
+              :moveSpeed='5'
+              >
+            </vue-particles>
+          </no-ssr>
+          <div class="hero hero-center wow lightSpeedIn">
+              <h1 class="hero-title">Projects</h1>
+              <h2 class="hero-subtitle">Bots bots and more bots</h2>
+              <h3>#HEILTILER</h3>
           </div>
-      </section>
-      <section class="hero">
-          <div class="hero-body">
-              <div class="container has-text-centered">
-                  <h1 class="title is-2"><strong>My GitHub Projects</strong></h1>
-              </div>
-          </div>
-      </section>
-      <section class="hero has-text-centered">
-          <div class="container has-text-centered">
-              <table class="table is-fullwidth">
-                  <thead>
-                      <tr>
-                          <th>Name</th>
-                          <th>Language</th>
-                          <th class="is-hidden-touch">Forks</th>
-                          <th class="is-hidden-touch">Forked</th>
-                      </tr>
-                  </thead>
-                  <tbody v-id="posts && posts.length">
-                      <tr v-for="p in projects" :key="p.url">
-                          <th>
-                              <a :href="p.url">
-                                  {{ p.name }}
-                              </a>
-                          </th>
-                          <th>{{ p.language }}</th>
-                          <th class='is-hidden-touch'>{{ p.forks }}</th>
-                          <th class='is-hidden-touch'>{{ p.forked }}</th>
-                      </tr>
-                  </tbody>
-              </table>
-          </div>
-      </section>
+      </div>
+      <div class='container small-container'>
+        <h1>My GitHub Projects</h1>
+      </div>
+      <div class='container'>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope='col'>Name</th>
+                    <th scope='col'>Language</th>
+                    <th scope='col' class="touch-item-hidden">Forks</th>
+                    <th scope='col' class="touch-item-hidden">Forked</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="p in projects" :key="p.url">
+                    <td>
+                        <a :href="p.url">
+                            {{ p.name }}
+                        </a>
+                    </td>
+                    <td>{{ p.language }}</td>
+                    <td class='touch-item-hidden'>{{ p.forks }}</td>
+                    <td class='touch-item-hidden'>{{ p.forked }}</td>
+                </tr>
+            </tbody>
+        </table>
+      </div>
     </div>
 </template>
 <script>

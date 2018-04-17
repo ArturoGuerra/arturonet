@@ -73,7 +73,7 @@ module.exports = {
   css: [
     '~/assets/css/bootstrap.min.css',
     '~/assets/css/animate.css',
-    '~/assets/css/bodystyling.css',
+    '~/assets/css/main.css',
     '~/assets/css/hero.css',
     '~/assets/css/social.css',
     '~/assets/css/gradients.css',

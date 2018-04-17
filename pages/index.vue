@@ -2,7 +2,11 @@
     <div>
         <div class="dark-blue white">
           <no-ssr>
-            <vue-particles color="#dedede">
+            <vue-particles
+              color="#dedede"
+              :particlesNumber='250'
+              :moveSpeed='5'
+              >
             </vue-particles>
           </no-ssr>
           <div class="hero hero-center wow lightSpeedIn">
@@ -24,6 +28,7 @@
             </div>
           </div>
         </div>
+        <br/>
         <div class="container container-padding">
             <p class="hero-subtitle flex-text-align">
                 <img src="./../assets/img/myface.jpg" width="50" class='flex-img-style'> About Me
@@ -40,6 +45,7 @@
                 other projects go to my <strong><a href="https://github.com/ArturoGuerra">GitHub</a></strong> or click on the projects tab at the top of the website.
             </p>
         </div>
+        <br/>
         <div class='main-grid-container blue-1'>
           <div class="grid-container">
             <div class="grid-twitter">
