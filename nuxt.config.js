@@ -76,7 +76,8 @@ module.exports = {
     '~/assets/css/bodystyling.css',
     '~/assets/css/hero.css',
     '~/assets/css/social.css',
-    '~/assets/css/gradients.css'
+    '~/assets/css/gradients.css',
+    'colors.css/css/colors.min.css'
   ],
   /*
   ** Add axios globally
@@ -106,7 +107,7 @@ module.exports = {
     height: '3px'
   },
   plugins: [
-    '~/plugins/global.js',
+  { src: '~/plugins/particles.js', ssr: false },
     { src: '~/plugins/wow.js', ssr: false }
   ],
   modules: [
