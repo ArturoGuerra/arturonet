@@ -43,10 +43,10 @@ router.post('/post', (req, res, next) => {
   ).promise();
   sendPromise.then(data => {
     console.log(data)
-    res.json({ status: 'text-success', data: "Email sent successfully" })
+    res.json({ status: 'is-success', data: "Email sent successfully" })
   }).catch(err => {
     console.log(err)
-    res.json({ status: 'text-danger', data: "Error sending email" })
+    res.json({ status: 'is-danger', data: "Error sending email" })
   })
 })
 

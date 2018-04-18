@@ -83,38 +83,38 @@ export default {
       let pass = true
 
       if (!this.message) {
-        this.validmessage = 'text-danger'
+        this.validmessage = 'is-danger'
         pass = false
       } else {
-        this.validmessage = 'text-success'
+        this.validmessage = 'is-success'
       }
 
       if (!this.name) {
-        this.validname = 'text-danger'
+        this.validname = 'is-danger'
         pass = false
       } else {
-        this.validname = 'text-success'
+        this.validname = 'is-success'
       }
 
       if (!this.email) {
-        this.validemail = 'text-danger'
+        this.validemail = 'is-danger'
         pass = false
       } else if (this.email.indexOf('@') > -1) {
-        this.validemail = 'text-success'
+        this.validemail = 'is-success'
       } else {
-        this.validemail = 'text-danger'
+        this.validemail = 'is-danger'
         pass = false
       }
 
       if (!pass) {
-        this.color = 'text-danger'
+        this.color = 'is-danger'
         this.result = 'Missing fields'
         return
       }
 
-      this.validmessage = 'text-success'
-      this.validemail = 'text-success'
-      this.validname = 'text-success'
+      this.validmessage = 'is-success'
+      this.validemail = 'is-success'
+      this.validname = 'is-success'
       await this.sendEmail()
     }
   },

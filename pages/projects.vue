@@ -18,7 +18,7 @@
       <div class='container small-container'>
         <h1 class='title'>My GitHub Projects</h1>
       </div>
-      <section class="hero has-text-centered">
+      <section class="hero has-text-centered" style='padding-bottom: 50px;'>
         <div class="container has-text-centered">
           <table class="table is-fullwidth">
             <thead>
