@@ -83,6 +83,7 @@ module.exports = {
   ** Add axios globally
   */
   build: {
+    extractCSS: true,
     vendor: ['axios', 'wowjs'],
     /*
     ** Run ESLINT on save
