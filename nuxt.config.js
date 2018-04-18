@@ -71,13 +71,13 @@ module.exports = {
   ** Global CSS
   */
   css: [
-    '~/assets/css/bootstrap.min.css',
-    '~/assets/css/animate.css',
+    'bulma/css/bulma.min.css',
+    'colors.css/css/colors.min.css',
     '~/assets/css/main.css',
-    '~/assets/css/hero.css',
-    '~/assets/css/social.css',
+    '~/assets/css/navbar.css',
+    '~/assets/css/scroll.css',
     '~/assets/css/gradients.css',
-    'colors.css/css/colors.min.css'
+    '~/assets/css/animate.css'
   ],
   /*
   ** Add axios globally
@@ -99,8 +99,8 @@ module.exports = {
     }
   },
   router: {
-    linkActiveClass: 'active',
-    linkExactActiveClass: 'active'
+    linkActiveClass: 'is-active',
+    linkExactActiveClass: 'is-active'
   },
   loading: {
     color: '#0C66A1',

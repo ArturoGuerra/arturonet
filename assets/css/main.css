@@ -1,26 +1,10 @@
-body::-webkit-scrollbar {
-    width: 9px;
-}
-
-body::-webkit-scrollbar-track {
-	background-color: whitesmoke;
-}
-
-body::-webkit-scrollbar-thumb {
-    background-color: #bfbfbf;
-}
-
-body {
-    font-family: BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Helvetica,Arial,sans-serif;
-}
-
 #particles-js {
     position: absolute;
     width: 100%;
     height: 500px;
 }
 
-.hero {
+.chero {
     margin: auto;
     color: white;
     height: 500px;
@@ -29,10 +13,6 @@ body {
     font-family: Segoe UI;
     flex-direction: column;
     user-select: none;
-}
-
-.hero.is-large {
-    height: 100vh;
 }
 
 .hero-title {
