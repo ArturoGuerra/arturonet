@@ -235,3 +235,11 @@
     width: 1344px;
     max-width: 1244px;
 }
+
+
+.round-img {
+    border-radius: 60%;
+    display: block;
+    height: auto;
+    width: auto;
+}

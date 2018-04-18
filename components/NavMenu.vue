@@ -2,7 +2,7 @@
     <nav class="navbar has-shadow">
         <div class="navbar-brand">
             <nuxt-link to="/" class="navbar-item">
-                <img src="./../assets/img/webicon.png" style="border-radius: 60%; display: block; height: auto; width: auto;">
+                <img src="./../assets/img/myface.jpg" class='round-img'>
                 <strong style='color: white;'>&nbsp; Arturo Guerra</strong>
             </nuxt-link>
             <div class="navbar-burger burger" id="navtoggle" v-on:click='toggleNav'>
