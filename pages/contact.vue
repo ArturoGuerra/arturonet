@@ -1,34 +1,42 @@
 <template>
   <div>
     <div class='dark-blue white'>
-        <no-ssr>
-          <vue-particles
-              color="#dedede"
-              :particlesNumber='250'
-              :moveSpeed='5'
-              >
-          </vue-particles>
-        </no-ssr>
-        <div class="hero hero-center wow lightSpeedIn">
-          <h1 class="hero-title">Contact Me</h1>
-          <h3 class='hero-subtitle'>Mark is a lizard</h3>
-        </div>
+      <no-ssr>
+        <vue-particles
+            color="#dedede"
+            :particlesNumber='250'
+            :moveSpeed='5'
+            >
+        </vue-particles>
+      </no-ssr>
+      <div class="chero hero-center wow lightSpeedIn">
+        <h1 class="hero-title">Contact Me</h1>
+        <h3 class='hero-subtitle'>Mark is a lizard</h3>
+      </div>
     </div>
-    <section class='email-form wow zoomIn'>
-      <div class='form-group'>
-        <label class='form-label' for='InputName'>Name</label>
-        <input id='InputName' v-model='name' class='form-control' type='text' placeholder='name'>
+    <section class='section wow zoomIn'>
+      <div class='field'>
+        <label class='label'>Name</label>
+        <div class='control'>
+          <input v-model='name' :class='[validname]' class='input' type='text' placeholder='name'>
+        </div>
       </div>
-      <div class='form-group'>
-        <label class='form-label' for='InputEmail'>Email</label>
-        <input id='InputEmail' v-model='email' class='form-control' type='email' placeholder='email' required>
+      <div class='field'>
+        <label class='label'>Email</label>
+        <div class='control'>
+          <input v-model='email' :class='[validemail]' class='input' type='email' placeholder='email' required>
+        </div>
       </div>
-      <div class='form-group'>
-        <label class='form-label' for='InputMessage'>Message</label>
-        <textarea id='InputMessage' v-model='message' rows='5' class='form-control' placeholder='email content'></textarea>
+      <div class='field'>
+        <label class='label'>Message</label>
+        <div class='control'>
+          <textarea v-model='message' :class='[validmessage]' class='textarea' placeholder='email content'></textarea>
+        </div>
       </div>
-      <button @click='send' class="btn btn-primary">Submit</button>
-      <p style='padding-top: 30px' :class="[color]">{{ result }}</p>
+      <div class="field">
+        <a @click='send' class="button is-info">Submit</a>
+      </div>
+      <p class='help' :class="[color]">{{ result }}</p>
     </section>
   </div>
 </template>

@@ -9,39 +9,41 @@
               >
             </vue-particles>
           </no-ssr>
-          <div class="hero hero-center wow lightSpeedIn">
+          <div class="chero hero-center wow lightSpeedIn">
               <h1 class="hero-title">Projects</h1>
               <h2 class="hero-subtitle">Bots bots and more bots</h2>
               <h3>#HEILTILER</h3>
           </div>
       </div>
       <div class='container small-container'>
-        <h1>My GitHub Projects</h1>
+        <h1 class='title'>My GitHub Projects</h1>
       </div>
-      <div class='container'>
-        <table class="table table-striped">
+      <section class="hero has-text-centered">
+        <div class="container has-text-centered">
+          <table class="table is-fullwidth">
             <thead>
-                <tr>
-                    <th scope='col'>Name</th>
-                    <th scope='col'>Language</th>
-                    <th scope='col' class="touch-item-hidden">Forks</th>
-                    <th scope='col' class="touch-item-hidden">Forked</th>
-                </tr>
+              <tr>
+                <th>Name</th>
+                <th>Language</th>
+                <th class="is-hidden-touch">Forks</th>
+                <th class="is-hidden-touch">Forked</th>
+              </tr>
             </thead>
             <tbody>
-                <tr v-for="p in projects" :key="p.url">
-                    <td>
-                        <a :href="p.url">
-                            {{ p.name }}
-                        </a>
-                    </td>
-                    <td>{{ p.language }}</td>
-                    <td class='touch-item-hidden'>{{ p.forks }}</td>
-                    <td class='touch-item-hidden'>{{ p.forked }}</td>
-                </tr>
+              <tr v-for="p in projects" :key="p.url">
+                <th>
+                  <a :href="p.url">
+                    {{ p.name }}
+                  </a>
+                </th>
+                <th>{{ p.language }}</th>
+                <th class='is-hidden-touch'>{{ p.forks }}</th>
+                <th class='is-hidden-touch'>{{ p.forked }}</th>
+              </tr>
             </tbody>
-        </table>
-      </div>
+          </table>
+        </div>
+       </section>
     </div>
 </template>
 <script>

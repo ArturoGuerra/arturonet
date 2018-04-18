@@ -1,18 +1,18 @@
 <template>
     <div>
-        <div class="dark-blue white">
-          <div class="hero hero-center wow lightSpeedIn">
-              <no-ssr>
-                <vue-particles
-                  color="#dedede"
-                  :particlesNumber='250'
-                  :moveSpeed='5'
-                  >
-                </vue-particles>
-              </no-ssr>
-              <h1 class="hero-title">Arturo Guerra</h1>
-              <h3 class="hero-subtitle">#Vindows 11</h3>
-           </div>
+        <div class='dark-blue white'>
+            <no-ssr>
+              <vue-particles
+                color="#dedede"
+                :particlesNumber='250'
+                :moveSpeed='5'
+                >
+              </vue-particles>
+            </no-ssr>
+          <div class="chero hero-center wow lightSpeedIn">
+            <h1 class="hero-title">Arturo Guerra</h1>
+            <h3 class="hero-subtitle">#Vindows 11</h3>
+          </div>
         </div>
         <div class="flex-container flex-container-center flex-container-shadow">
           <div class="flex-item">

@@ -63,8 +63,7 @@
 .container-padding {
     background-color: whitesmoke;
     border-radius: 5px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding: 10px 20px;
 }
 
 .flex-container-shadow {
@@ -111,7 +110,7 @@
     #particles-js {
         height: 300px;
     }
-    .hero {
+    .chero {
         height: 300px;
     }
 }
