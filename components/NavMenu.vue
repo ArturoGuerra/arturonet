@@ -12,14 +12,14 @@
             </div>
         </div>
         <div class="navbar-menu">
-            <div class="navbar-end">
+            <div class="navbar-start">
                 <nuxt-link v-for="item in navitems" :id='item.id' :key="item.id" :to="item.href" class="navbar-item is-tab" exact>
                     <span>{{ item.name }}</span>
                 </nuxt-link>
              </div>
         </div>
         <div class="navbar-menu is-hidden-desktop" id='navmenu'>
-            <div class="navbar-end">
+            <div class="navbar-start">
                 <nuxt-link v-for="item in navitems" :id='item.id' :key="item.id" :to="item.href" class="navbar-item" exact>
                     <span>{{ item.name }}</span>
                 </nuxt-link>

@@ -1,21 +1,12 @@
 <template>
-<footer class="footer">
-    <div class="container">
-        <div class="content has-text-centered">
-            <p>
-            <strong><a href="/">ArturoNet.com </a>powered by Hitler and ISIS. JK NOT TRUE. Made by <a href="https://www.dixionary.com">TheOfficialDixionary</a></strong>
-            </p>
-            <p>
-            <a class="icon" href="https://github.com/ArturoGuerra/arturonet">
-                <i class="fa fa-github"></i>
-            </a>
-            </p>
-            <p>
-            <strong>Your IP is {{ ip }}</strong>
-            </p>
-        </div>
-    </div>
-</footer>
+  <footer class="footer">
+    <p class='footer-item item-hidden'>
+    <span><a href="/">ArturoNet.com </a>Written with VueJS, Bootstrap and way to much custom CSS</span>
+    </p>
+    <p class='footer-item'>
+      <span>Your IP is {{ ip }}</span>
+    </p>
+  </footer>
 </template>
 
 <script>

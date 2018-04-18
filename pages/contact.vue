@@ -1,14 +1,19 @@
 <template>
   <div>
-    <section class="hero is-dark is-medium dark-blue">
-      <div class="hero-body">
-        <div class="container has-text-centered wow lightSpeedIn">
-          <h1 class="title">Contact Me</h1>
-          <h3>Mark is a lizard</h3>
-        </div>
+    <div class='dark-blue white'>
+      <no-ssr>
+        <vue-particles
+            color="#dedede"
+            :particlesNumber='250'
+            :moveSpeed='5'
+            >
+        </vue-particles>
+      </no-ssr>
+      <div class="chero hero-center wow lightSpeedIn">
+        <h1 class="hero-title">Contact Me</h1>
+        <h3 class='hero-subtitle'>Mark is a lizard</h3>
       </div>
-      <HeroFoot/>
-    </section>
+    </div>
     <section class='section wow zoomIn'>
       <div class='field'>
         <label class='label'>Name</label>
@@ -46,7 +51,8 @@ export default {
       email: null,
       result: null,
       color: null,
-      validsubject: null,
+      validname: null,
+      validemail: null,
       validmessage: null
     }
   },
@@ -77,38 +83,38 @@ export default {
       let pass = true
 
       if (!this.message) {
-        this.validmessage = 'is-warning'
+        this.validmessage = 'text-danger'
         pass = false
       } else {
-        this.validmessage = 'is-success'
+        this.validmessage = 'text-success'
       }
 
       if (!this.name) {
-        this.validname = 'is-warning'
+        this.validname = 'text-danger'
         pass = false
       } else {
-        this.validname = 'is-success'
+        this.validname = 'text-success'
       }
 
       if (!this.email) {
-        this.validemail = 'is-warning'
+        this.validemail = 'text-danger'
         pass = false
       } else if (this.email.indexOf('@') > -1) {
-        this.validemail = 'is-success'
+        this.validemail = 'text-success'
       } else {
-        this.validemail = 'is-warning'
+        this.validemail = 'text-danger'
         pass = false
       }
 
       if (!pass) {
-        this.color = 'is-warning'
+        this.color = 'text-danger'
         this.result = 'Missing fields'
         return
       }
 
-      this.validmessage = 'is-success'
-      this.validemail = 'is-success'
-      this.validname = 'is-success'
+      this.validmessage = 'text-success'
+      this.validemail = 'text-success'
+      this.validname = 'text-success'
       await this.sendEmail()
     }
   },

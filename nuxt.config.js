@@ -71,12 +71,13 @@ module.exports = {
   ** Global CSS
   */
   css: [
-    '~/assets/css/bulma.css',
-    '~/assets/css/animate.css',
-    '~/assets/css/bodystyling.css',
-    '~/assets/css/hero.css',
-    '~/assets/css/social.css',
-    '~/assets/css/gradients.css'
+    'bulma/css/bulma.min.css',
+    'colors.css/css/colors.min.css',
+    '~/assets/css/main.css',
+    '~/assets/css/navbar.css',
+    '~/assets/css/scroll.css',
+    '~/assets/css/gradients.css',
+    '~/assets/css/animate.css'
   ],
   /*
   ** Add axios globally
@@ -106,7 +107,7 @@ module.exports = {
     height: '3px'
   },
   plugins: [
-    '~/plugins/global.js',
+  { src: '~/plugins/particles.js', ssr: false },
     { src: '~/plugins/wow.js', ssr: false }
   ],
   modules: [

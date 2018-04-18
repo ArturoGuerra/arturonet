@@ -1,0 +1,226 @@
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 500px;
+}
+
+.chero {
+    margin: auto;
+    color: white;
+    height: 500px;
+    padding: 20px;
+    display: flex;
+    font-family: Segoe UI;
+    flex-direction: column;
+    user-select: none;
+}
+
+.hero-title {
+    display: block;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.125;
+}
+
+.hero-subtitle {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+.flex-container {
+    padding: 20px;
+    margin: auto;
+    min-width: 300px;
+}
+
+.flex-item {
+    display: block;
+    padding: 10px;
+    text-align: center;
+    min-width: 400px;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-center, .flex-container-center {
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-img-style {
+    border-radius: 16%;
+    vertical-align:middle;
+    padding-bottom: 2px;
+    text-align: center;
+}
+
+.flex-text-align {
+    text-align: center;
+}
+
+.container-padding {
+    background-color: whitesmoke;
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+
+.flex-container-shadow {
+    box-shadow: 0px 2px whitesmoke;
+}
+
+
+.main-grid-container {
+    width: 100%;
+}
+
+.grid-container {
+    display: grid;
+    padding: 50px;
+    margin: auto;
+    grid-template-columns: auto;
+    grid-template-rows: 1fr 1fr auto;
+    grid-template-areas:
+       'twitter'
+       'github'
+       'twitter-em';
+}
+
+
+@media screen and (min-width: 789px) {
+    .flex-container {
+        display: flex;
+    }
+}
+
+@media screen and (min-width: 1176px) {
+    .grid-container {
+        width: 1176px;
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-column-gap: 10px;
+        grid-template-areas:
+            "twitter twitter-em"
+            "github twitter-em";
+    }
+}
+
+@media screen and (max-width: 900px) {
+    #particles-js {
+        height: 300px;
+    }
+    .chero {
+        height: 300px;
+    }
+}
+
+.grid-twitter {
+    grid-area: twitter;
+    margin: auto;
+}
+
+.grid-github {
+    grid-area: github;
+    margin: auto;
+}
+
+.grid-twitter-em {
+    grid-area: twitter-em;
+    margin: auto;
+}
+
+
+.blue-1 {
+    background-image: linear-gradient(141deg,#04a6d7,#209cee 71%,#3287f5);
+}
+
+
+.grid-title {
+    color: white;
+    font-weight: 600;
+    line-height: 1.125;
+}
+
+.grid-title.is-4 {
+    font-size: 1.5rem;
+}
+
+.grid-subtitle {
+    color: white;
+    font-weight: 400;
+    line-height: 1.25;
+    word-break: break-word;
+}
+
+.grid-subtitle.is-6 {
+    font-size: 1rem;
+}
+
+
+.git-black {
+    color: #24292e;
+}
+
+.bg-git-black {
+    background-color: #24292e;
+}
+
+.email-form {
+    padding: 50px;
+}
+
+.form-label {
+    color: #363636;
+    display: block;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.footer {
+    display: flex;
+    width: 100%;
+    height: 150px;
+    background-color: whitesmoke;
+    padding: 10px 60px;
+    font-family: Segoe UI;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-item {
+    display: block;
+    padding: 5px 0;
+    font-family: BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-weight: 700;
+}
+
+
+@media screen and (max-width: 805px) {
+    .footer { height: 100px; }
+    .footer-item { font-size: 12px; padding: 0 0;}
+    .item-hidden { display: none!important; }
+}
+
+@media screen and (max-width: 1087px) {
+    .touch-item-hidden {
+        display: none!important;
+    }
+}
+
+.small-container {
+    display: flex;
+    width: 100%;
+    height: 140px;
+    padding: 10px calc(100% - 90%);
+    text-align: center;
+    box-shadow: 0px 2px whitesmoke;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container {
+    width: 1344px;
+    max-width: 1244px;
+}
