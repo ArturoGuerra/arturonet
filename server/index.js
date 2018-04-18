@@ -53,3 +53,5 @@ function StartServer () {
 }
 
 StartServer()
+
+export { app }
