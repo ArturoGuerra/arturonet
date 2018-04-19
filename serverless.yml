@@ -1,0 +1,24 @@
+service: arturonet
+
+provider:
+  name: aws
+  stage: production
+  runtime: nodejs8.10
+
+
+functions:
+  main:
+    handler: handler.render
+    events:
+      - http: ANY /
+      - http: ANY /{proxy+}
+
+plugins:
+    - serverless-domain-manager
+
+custom:
+    customDomain:
+        domainName: arturonet.me
+        stage: production
+        certificateName: arturonet.me
+        createRoute53Record: true

@@ -1,0 +1,14 @@
+service: arturonet
+
+provider:
+  name: aws
+  stage: production
+  runtime: nodejs8.10
+
+
+functions:
+  main:
+    handler: handler.render
+    events:
+      - http: ANY /
+      - http: ANY /{proxy+}

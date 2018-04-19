@@ -31,7 +31,7 @@
         <br/>
         <div class="container container-padding">
             <p class="hero-subtitle flex-text-align">
-                <img src="./../assets/img/myface.jpg" width="50" class='flex-img-style'> About Me
+                <img src="https://s3.amazonaws.com/arturonet-static/myface.jpg" width="50" class='flex-img-style'> About Me
             </p>
             <hr>
             <p>
