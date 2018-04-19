@@ -118,5 +118,8 @@ module.exports = {
   axios: {
     baseURL: 'https://www.arturonet.com',
     browserBaseURL: '/api'
+  },
+  render: {
+    http2: true
   }
 }
