@@ -68,9 +68,6 @@
 <script>
 export default {
   name: 'Home',
-  mounted () {
-    if (process.browser) { this.$nuxt.$wow.sync() }
-  },
   head: {
     title: 'Home',
     meta: [

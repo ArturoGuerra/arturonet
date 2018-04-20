@@ -110,9 +110,6 @@ export default {
       this.validname = 'is-success'
       await this.sendEmail()
     }
-  },
-  mounted () {
-    if (process.browser) { this.$nuxt.$wow.sync() }
   }
 }
 </script>

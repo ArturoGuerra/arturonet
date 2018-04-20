@@ -14,6 +14,9 @@ export default {
   components: {
     NavMenu,
     Footer
+  },
+  mounted () {
+    if (process.browser) { this.$nuxt.$wow.sync() }
   }
 }
 </script>
