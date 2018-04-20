@@ -1,14 +1,7 @@
 <template>
     <div>
-       <div class="white dark-blue">
-          <no-ssr>
-            <vue-particles
-              color="#dedede"
-              :particlesNumber='150'
-              :moveSpeed='5'
-              >
-            </vue-particles>
-          </no-ssr>
+       <div class="chero-container white dark-blue">
+         <particles></particles>
           <div class="chero hero-center wow lightSpeedIn">
               <h1 class="hero-title">Projects</h1>
               <h2 class="hero-subtitle">Bots bots and more bots</h2>
