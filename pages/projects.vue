@@ -58,6 +58,7 @@ export default {
     }
   },
   mounted () {
+    if (process.browser) { this.$nuxt.$wow.sync() }
     axios({method: 'GET', url: 'https://api.github.com/users/ArturoGuerra/repos'}).then(response => {
       var r = response.data
       for (let y = 0; y < r.length; y++) {

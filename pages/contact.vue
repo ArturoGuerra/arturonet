@@ -52,6 +52,9 @@ export default {
   head: {
     title: 'Contact'
   },
+  mounted () {
+    if (process.browser) { this.$nuxt.$wow.sync() }
+  },
   methods: {
     async sendEmail () {
       try {

@@ -76,6 +76,9 @@ export default {
       { hid: 'twitter:title', name: 'twitter:title', content: 'Home - ArturoNet' },
       { hid: 'twitter:description', name: 'twitter:description', content: "Arturo's website" }
     ]
+  },
+  mounted () {
+    if (process.browser) { this.$nuxt.$wow.sync() }
   }
 }
 </script>
