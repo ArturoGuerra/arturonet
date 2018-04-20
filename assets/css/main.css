@@ -1,27 +1,28 @@
 #particles-js {
     position: absolute;
-    width: inherit;
-    height: inherit;
-/*    width: 100%;
-    height: 500px; */
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
 }
 
-
-.chero-container {
-    height: 500px;
-    width: 100%;
-}
-
-.chero {
-    margin: auto;
-    color: white;
-  /*  height: 500px; */
-    height: inherit;
-    width: inherit;
-    padding: 20px;
+.custom-hero {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     user-select: none;
+    margin: auto;
+    color: white;
+    height: 500px;
+    width: 100%;
+    padding: 20px;
+    position: relative;
+}
+
+
+.custom-hero-body {
+    text-align: center;
+    padding: 10px;
 }
 
 .hero-title {
@@ -115,10 +116,7 @@
 
 
 @media screen and (max-width: 900px) {
-   /* #particles-js {
-        height: 300px;
-    }*/
-    .chero-container {
+    .custom-hero {
         height: 300px;
     }
 }
