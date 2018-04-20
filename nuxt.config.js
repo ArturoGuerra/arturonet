@@ -108,7 +108,7 @@ module.exports = {
     height: '3px'
   },
   plugins: [
-  { src: '~/plugins/particles.js', ssr: false },
+    { src: '~/plugins/particles.js', ssr: false },
     { src: '~/plugins/wow.js', ssr: false }
   ],
   modules: [
