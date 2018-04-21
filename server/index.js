@@ -1,6 +1,7 @@
 import express from 'express'
 import { Nuxt, Builder } from 'nuxt'
 import bodyParser from 'body-parser'
+import morgan from 'morgan'
 import http from 'http'
 import fs from 'fs'
 
@@ -16,7 +17,8 @@ app.set('port', port)
 app.set('host', host)
 app.set('socket', socket)
 
-app.use(bodyParser.json());
+app.use(morgan('tiny'))
+app.use(bodyParser.json())
 
 // Import API Routes
 app.use('/api', api)
