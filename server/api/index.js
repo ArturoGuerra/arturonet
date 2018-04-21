@@ -2,10 +2,11 @@ const { Router } = require('express')
 const AWS = require('aws-sdk')
 const RateLimit = require('express-rate-limit')
 
-AWS.config.update({ region: process.env.REGION })
-
-const source_email = process.env.SOURCE_EMAIL || null
+const region = process.env.REGION || null
 const recipients = get_recipients() || null
+const source_email = process.env.SOURCE_EMAIL || null
+
+AWS.config.update({ region: region })
 
 const SES = new AWS.SES()
 
