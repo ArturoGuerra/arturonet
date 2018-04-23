@@ -77,6 +77,7 @@ module.exports = {
     '~/assets/css/navbar.css',
     '~/assets/css/scroll.css',
     '~/assets/css/gradients.css',
+    '~/assets/css/images.css',
     '~/assets/css/animate.css'
   ],
   /*
