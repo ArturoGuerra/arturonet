@@ -11,7 +11,7 @@
       <div class='container small-container'>
         <h1 class='title'>My GitHub Projects</h1>
       </div>
-      <section class="hero has-text-centered" style='padding-bottom: 50px;'>
+      <section v-if='show' class="hero has-text-centered super-hero-padding">
         <div class="container has-text-centered">
           <table class="table is-fullwidth table-mod">
             <thead>
@@ -54,7 +54,8 @@ export default {
   },
   data () {
     return {
-      projects: []
+      projects: [],
+      show: false
     }
   },
   mounted () {
@@ -69,6 +70,7 @@ export default {
           forks: r[y].forks_count,
           forked: r[y].fork
         })
+        this.show = true
       }
     }).catch(console.error)
   }
