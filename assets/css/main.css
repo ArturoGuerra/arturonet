@@ -114,10 +114,16 @@
     }
 }
 
+.custom-hero-small {
+    height: 350px;
+}
 
 @media screen and (max-width: 900px) {
     .custom-hero {
         height: 300px;
+    }
+    .custom-hero-small {
+        height: 250px;
     }
 }
 

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class='custom-hero dark-blue white'>
+    <div class='custom-hero dark-blue white custom-hero-small'>
       <particles></particles>
       <div class='custom-hero-body wow lightSpeedIn'>
         <h1 class='hero-title'>Image Uploader</h1>
