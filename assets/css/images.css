@@ -87,3 +87,17 @@
         width: 200px
     }
 }
+
+.table-img {
+  max-width: 40px;
+  max-height: 50px;
+}
+
+.form-container-1 {
+  padding-top: 40px;
+  padding-bottom: 10px;
+}
+
+.table-mod {
+  margin: auto;
+}

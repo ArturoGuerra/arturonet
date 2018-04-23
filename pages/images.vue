@@ -17,6 +17,26 @@
       <div class='gallery-container' v-if='valid'> <!-- Uploaded images -->
         <img class='gallery-item' v-for='file in files' :src='file.src' :key='file.upload.name'>
       </div>
+      <div class='form-container-1' v-if='validresp'>
+        <table class='table table-mod'>
+          <thead>
+            <tr>
+              <th>Image</th>
+              <th>Url</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for='result in results'>
+              <td>
+                <img class='table-img' :src='result.bucket + result.key'>
+              </td>
+              <td>
+                <a  :href="result.url + '/' + result.key" target='_blank'>{{ result.url + '/' + result.key }}</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </template>
@@ -37,6 +57,8 @@ export default {
     return {
       files: [],
       valid: false,
+      results: [],
+      validresp: false,
       message: 'Click me to upload'
     }
   },
@@ -66,6 +88,8 @@ export default {
       return type
     },
     async onFileChange (e) {
+      this.results = []
+      this.validresp = false
       if (this.files.length >= 12) {
         this.message = 'Reached max number of items'
         return null
@@ -95,7 +119,8 @@ export default {
       this.message = 'Uploading..'
       try {
         let resp = await this.$nuxt.$axios.$post('https://img.dixionary.com/post', form)
-        console.log(resp)
+        this.results = resp
+        this.validresp = true
       } catch (e) {
         console.error(e)
       }
