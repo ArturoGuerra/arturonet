@@ -55,7 +55,8 @@
   display: flex;
   width: 400px;
   padding-top: 30px;
-  flex-direction: column;
+/*  flex-direction: column; */
+  flex-wrap: wrap;
   padding-bottom: 30px;
   margin: auto;
   justify-content: center;
@@ -63,9 +64,26 @@
 }
 
 .gallery-item {
-  max-width: 250px;
-  max-height: 150px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  max-width: 60px;
+  max-height: 50px;
+  padding-top: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 5px;
   border-radius: 5px;
+}
+
+@media screen and (max-width: 485px) {
+    .base-image-container {
+        width: 200px;
+    }
+    .img-input {
+        padding: 2rem 0.3rem;
+    }
+    .img-upload {
+        padding: 0.5rem 0.5rem;
+    }
+    .gallery-container {
+        width: 200px
+    }
 }

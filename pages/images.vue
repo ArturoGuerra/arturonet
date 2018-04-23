@@ -66,16 +66,25 @@ export default {
       return type
     },
     async onFileChange (e) {
+      if (this.files.length >= 12) {
+        this.message = 'Reached max number of items'
+        return null
+      }
       let files = e.target.files || e.dataTransfer.files
-      for (let i = 0; i < 13; i++) {
-        if (this.checkFileType(files[0])) {
+      for (let i = 0; i < files.length; i++) {
+        if (this.checkFileType(files[i])) {
+          if (this.files.length >= 12) { break }
           this.files.push({ upload: files[i], src: URL.createObjectURL(files[i]) })
         } else {
           console.log('Invalid file: ' + files[i])
         }
       }
       this.valid = true
-      this.message = this.files.length + ' file(s) ready to upload, Click me to upload more'
+      if (this.files.length >= 12) {
+        this.message = 'Reached max number of items'
+      } else {
+        this.message = this.files.length + ' file(s) ready to upload, Click me to upload more'
+      }
     },
     async upload () {
       if (this.files.length === 0) return null
