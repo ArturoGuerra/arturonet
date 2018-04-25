@@ -1,13 +1,13 @@
 <template>
   <div>
-    <div class="custom-hero dark-blue white">
+    <div class="custom-hero dark-blue white custom-hero-small">
       <particles></particles>
       <div class='custom-hero-body wow lightSpeedIn'>
         <h1 class="hero-title">Contact Me</h1>
         <h3 class='hero-subtitle'>Mark is a lizard</h3>
       </div>
     </div>
-    <section class='section wow zoomIn'>
+    <section class='section section-mod wow zoomIn'>
       <div class='field'>
         <label class='label'>Name</label>
         <div class='control'>
