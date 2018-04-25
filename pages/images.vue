@@ -44,6 +44,7 @@
 <script>
 export default {
   name: 'ImageUploader',
+  middleware: 'authenticated',
   head: {
     title: 'Image Uploader',
     meta: [

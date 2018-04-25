@@ -85,7 +85,7 @@ module.exports = {
   */
   build: {
     extractCSS: true,
-    vendor: ['axios', 'wowjs'],
+    vendor: ['axios', 'wowjs', 'auth0-js'],
     /*
     ** Run ESLINT on save
     */
@@ -102,7 +102,8 @@ module.exports = {
   },
   router: {
     linkActiveClass: 'is-active',
-    linkExactActiveClass: 'is-active'
+    linkExactActiveClass: 'is-active',
+    middleware: 'check-auth'
   },
   loading: {
     color: '#0C66A1',
@@ -122,5 +123,9 @@ module.exports = {
   },
   render: {
     http2: true
+  },
+  env: {
+    AUTH0_CLIENT_ID: 'qbSWvV0j7hVugKGnEVy-Po6sQoeJvy5v',
+    AUTH0_CLIENT_DOMAIN: 'ar2ro.auth0.com'
   }
 }
