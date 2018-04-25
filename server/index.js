@@ -7,7 +7,7 @@ import fs from 'fs'
 
 import api from './api'
 
-const app = express()
+const app = new express()
 const httpServer = http.createServer(app)
 const host = process.env.HOST || '0.0.0.0'
 const port = process.env.PORT || 3000
