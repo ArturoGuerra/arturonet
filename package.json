@@ -14,7 +14,7 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.3.1",
     "@nuxtjs/pwa": "^2.0.8",
-    "auth0-lock": "^11.5.2",
+    "auth0-lock": "^11.6.0",
     "aws-sdk": "^2.222.1",
     "axios": "^0.16.2",
     "body-parser": "^1.18.2",
