@@ -4,8 +4,7 @@
           <particles></particles>
           <div class='custom-hero-body wow lightSpeedIn'>
             <h1 class="hero-title">Projects</h1>
-            <h2 class="hero-subtitle">Bots bots and more bots</h2>
-            <h3>#HEILTILER</h3>
+            <h3>&lt;<vue-typer :pre-type-delay='1500' :repeat='0' text='drunk code is best code'/>&gt;</h3>
           </div>
       </div>
       <div class='container small-container'>

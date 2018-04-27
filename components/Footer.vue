@@ -1,7 +1,7 @@
 <template>
   <footer class="footer">
     <p class='footer-item item-hidden'>
-    <span><a href="/">ArturoNet.com </a>Written with VueJS, Bootstrap and way to much custom CSS</span>
+    <span><a href="/">ArturoNet.com </a>Written with VueJS, Bulma and way to much custom CSS</span>
     </p>
     <p class='footer-item'>
       <span>Your IP is {{ ip }}</span>

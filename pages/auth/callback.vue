@@ -7,6 +7,7 @@
 <style>
 .check-container {
   width: 100%;
+  height: 100vh;
   padding: 160px;
   padding-bottom: 300px;
 }

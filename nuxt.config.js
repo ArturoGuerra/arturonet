@@ -78,6 +78,7 @@ module.exports = {
     '~/assets/css/scroll.css',
     '~/assets/css/gradients.css',
     '~/assets/css/images.css',
+    '~/assets/css/vuetyper.css',
     '~/assets/css/animate.css'
   ],
   /*
@@ -111,6 +112,7 @@ module.exports = {
   },
   plugins: [
     { src: '~/plugins/particles.js', ssr: false },
+    { src: '~/plugins/vue-typer.js', ssr: false },
     { src: '~/plugins/wow.js', ssr: false }
   ],
   modules: [

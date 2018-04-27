@@ -3,8 +3,7 @@
         <div class="custom-hero dark-blue white">
           <particles></particles>
           <div class='custom-hero-body wow lightSpeedIn'>
-            <h1 class="hero-title">Arturo Guerra</h1>
-            <h3 class="hero-subtitle">#Vindows 11</h3>
+            <h1 class="hero-title"><vue-typer :pre-type-delay='1500' :repeat='0' text='Arturo Guerra'></vue-typer></h1>
           </div>
         </div>
         <div class="flex-container flex-container-center flex-container-shadow">

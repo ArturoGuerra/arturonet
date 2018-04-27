@@ -4,7 +4,7 @@
       <particles></particles>
       <div class='custom-hero-body wow lightSpeedIn'>
         <h1 class="hero-title">Contact Me</h1>
-        <h3 class='hero-subtitle'>Mark is a lizard</h3>
+        <h3 class='hero-subtitle'><vue-typer :pre-type-delay='1500' :repeat='0' text='Mark is a lizard'/></h3>
       </div>
     </div>
     <section class='section section-mod wow zoomIn'>
