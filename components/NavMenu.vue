@@ -11,23 +11,25 @@
               <span></span>
             </div>
         </div>
-        <div class="navbar-menu">
+        <div class="navbar-menu" id='navmenu'>
             <div class="navbar-start">
                 <nuxt-link v-for="item in navitems" :id='item.id' :key="item.id" :to="item.href" class="navbar-item is-tab" exact>
                     <span>{{ item.name }}</span>
                 </nuxt-link>
              </div>
-        </div>
-        <div class="navbar-menu is-hidden-desktop" id='navmenu'>
-            <div class="navbar-start">
-                <nuxt-link v-for="item in navitems" :id='item.id' :key="item.id" :to="item.href" class="navbar-item" exact>
-                    <span>{{ item.name }}</span>
-                </nuxt-link>
+             <div class='navbar-end' v-if='isAuthenticated'>
+                <span class='navbar-item is-tab'>{{ loggedUser.nickname ? loggedUser.nickname : loggedUser.name }}</span>
+                <nuxt-link class='navbar-item is-tab' to='/auth/logout'>Logout</nuxt-link>
+                <nuxt-link class='navbar-item is-tab' v-if='!isAuthenticated' to='/auth/login'>Login</nuxt-link>
+             </div>
+             <div class='navbar-end' v-else>
+                <nuxt-link class='navbar-item is-tab' to='/auth/login'>Login</nuxt-link>
              </div>
         </div>
     </nav>
 </template>
 <script>
+import { mapGetters } from 'vuex'
 export default {
   name: 'NavMenu',
   data () {
@@ -44,13 +46,8 @@ export default {
     toggleNav () {
       document.getElementById('navtoggle').classList.toggle('is-active')
       document.getElementById('navmenu').classList.toggle('is-active')
-      if (document.getElementById('navmenu').className.split(' ').length === 2) {
-        var navitems = document.getElementsByClassName('navbar-item')
-        Array.prototype.filter.call(navitems, (f) => {
-          f.className = 'navbar-item'
-        })
-      }
     }
-  }
+  },
+  computed: mapGetters(['isAuthenticated', 'loggedUser'])
 }
 </script>

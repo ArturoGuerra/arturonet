@@ -102,7 +102,8 @@ module.exports = {
   },
   router: {
     linkActiveClass: 'is-active',
-    linkExactActiveClass: 'is-active'
+    linkExactActiveClass: 'is-active',
+    middleware: 'check-auth'
   },
   loading: {
     color: '#0C66A1',
@@ -114,7 +115,8 @@ module.exports = {
   ],
   modules: [
     ['@nuxtjs/pwa'],
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/dotenv'
   ],
   axios: {
     baseURL: 'https://www.arturonet.com',

@@ -35,4 +35,7 @@ a.navbar-item.is-active, a.navbar-item:hover, a.navbar-item {
     .navbar-menu {
         background-color: #24292e;
     }
+    .navbar-item.is-tab.is-active, .navbar-item.is-tab:hover {
+        border-bottom-color: #24292e;
+    }
 }
