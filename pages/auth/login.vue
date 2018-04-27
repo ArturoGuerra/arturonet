@@ -11,7 +11,7 @@
   position: relative;
   height: 100vh;
   padding: 160px;
-  background-color: #010d01;
+  background-color: #060606;
   z-index: 0;
 }
 .auth0-lock.auth0-lock {
