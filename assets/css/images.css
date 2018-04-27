@@ -97,8 +97,11 @@
 }
 
 .form-container-1 {
+  display: flex;
   padding-top: 40px;
   padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .table-mod {

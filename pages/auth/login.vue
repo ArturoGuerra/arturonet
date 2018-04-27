@@ -7,6 +7,8 @@
 
 <style>
 .auth-container {
+  display: flex;
+  justify-content: center;
   margin: auto;
   position: relative;
   height: 100vh;

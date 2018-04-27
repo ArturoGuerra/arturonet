@@ -245,6 +245,7 @@
 }
 
 .form-container {
+    margin: auto;
     width: 1344px;
     max-width: 1244px;
 }
@@ -260,6 +261,7 @@
 .table-mod {
     box-shadow: 0 2px 3px rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.1);
     border-radius: 5px;
+    overflow: hidden;
 }
 
 .super-hero-padding {
@@ -270,3 +272,11 @@
 .section-mod {
     padding: 3rem 3.5rem;
 }
+
+@media screen and (max-width: 485px) {
+    .table-mod {
+        display: block;
+        width: 300px;
+    }
+}
+
