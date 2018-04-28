@@ -12,6 +12,10 @@
     color: whitesmoke;
 }
 
+.navbar.has-shadow {
+    box-shadow: 0 2px 3px hsla(0,0%,4%,.1);
+}
+
 .navbar-item.is-tab:hover, .navbar-item.is-tab.is-active {
     color: white;
     border-bottom-color: white;
