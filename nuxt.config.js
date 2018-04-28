@@ -76,6 +76,7 @@ module.exports = {
     '~/assets/css/main.css',
     '~/assets/css/navbar.css',
     '~/assets/css/scroll.css',
+    '~/assets/css/auth.css',
     '~/assets/css/gradients.css',
     '~/assets/css/images.css',
     '~/assets/css/vuetyper.css',
