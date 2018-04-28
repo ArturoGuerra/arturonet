@@ -46,3 +46,38 @@ a.navbar-item.is-active, a.navbar-item:hover, a.navbar-item {
         min-height: 0;
     }
 }
+
+
+.navbar-item.has-dropdown,
+.navbar-item.has-dropdown.is-hoverable:hover,
+.navbar-item.has-dropdown:hover,
+.navbar-link,
+.navbar-item.has-dropdown:hover .navbar-link,
+.navbar-item.has-dropdown:hover {
+    background-color: #24292e;
+    color: whitesmoke;
+}
+
+.navbar-dropdown {
+    background-color: #24292e;
+    color: whitesmoke;
+}
+
+.navbar-dropdown a.navbar-item.is-active,
+.navbar-dropdown a.navbar-item:hover,
+.navbar-dropdown a.navbar-item {
+    background-color: #24292e;
+    color: whitesmoke;
+}
+
+a.navbar-item,
+a.navbar-item:hover {
+    background-color: #24292e;
+    color: whitesmoke;
+}
+
+a.navbar-item.is-active {
+    background-color: #24292e;
+    color:whitesmoke;
+}
+

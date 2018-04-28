@@ -76,8 +76,8 @@ module.exports = {
     '~/assets/css/main.css',
     '~/assets/css/navbar.css',
     '~/assets/css/scroll.css',
-    '~/assets/css/auth.css',
     '~/assets/css/gradients.css',
+    '~/assets/css/auth.css',
     '~/assets/css/images.css',
     '~/assets/css/vuetyper.css',
     '~/assets/css/animate.css'
@@ -87,7 +87,7 @@ module.exports = {
   */
   build: {
     extractCSS: true,
-    vendor: ['axios', 'wowjs'],
+    vendor: ['axios', 'wowjs', 'auth0-lock', 'vue-typer', 'jwt-decode', 'js-cookie'],
     /*
     ** Run ESLINT on save
     */

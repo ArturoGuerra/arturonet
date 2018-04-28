@@ -8,6 +8,11 @@ const getQueryParams = () => {
   })
   return params
 }
+export const isAdmin = (user) => {
+  if (!user) return false
+  const roles = user['https://api.arturonet.com/roles']
+  return roles.indexOf('admin') > -1
+}
 
 export const getUserFromLocalStorage = () => {
   if (process.server) return undefined
@@ -21,6 +26,20 @@ export const getUserFromCookie = (req) => {
   if (!jwtCookie) return
   const jwt = jwtCookie.split('=')[1]
   return jwtDecode(jwt)
+}
+
+export const getTokenFromLocalStorage = () => {
+  if (process.server) return undefined
+  const token = localStorage.id_token // eslint-disable-line camelcase
+  return token || undefined
+}
+
+export const getTokenFromCookie = (req) => {
+  if (!req.headers.cookie) return
+  const jwtCookie = req.headers.cookie.split(';').find(c => c.trim().startsWith('jwt='))
+  if (!jwtCookie) return
+  const jwt = jwtCookie.split('=')[1]
+  return jwt
 }
 
 export const setSession = () => {

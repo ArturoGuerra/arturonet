@@ -12,33 +12,47 @@
             </div>
         </div>
         <div class="navbar-menu" id='navmenu'>
-            <div class="navbar-start">
-                <nuxt-link v-for="item in navitems" :id='item.id' :key="item.id" :to="item.href" class="navbar-item is-tab" exact>
-                    <span>{{ item.name }}</span>
+          <div class="navbar-start">
+            <nuxt-link v-for="item in navitems" :id='item.id' :key="item.id" :to="item.href" class="navbar-item is-tab" exact>
+              <span>{{ item.name }}</span>
+            </nuxt-link>
+          </div>
+          <div class='navbar-end' v-if='isAuthenticated'>
+            <div class='navbar-item has-dropdown is-hoverable'>
+              <span class='navbar-link'>{{ loggedUser.nickname ? loggedUser.nickname : loggedUser.name }}</span>
+              <div class='navbar-dropdown is-boxed'>
+                <nuxt-link v-if='admin' v-for='item in adminnav' :id='item.id' :key='item.id' :to='item.href' class='navbar-item' exact>
+                  <span>{{ item.name }}</span>
                 </nuxt-link>
-             </div>
-             <div class='navbar-end' v-if='isAuthenticated'>
-                <span class='navbar-item is-tab is-hidden-touch'>{{ loggedUser.nickname ? loggedUser.nickname : loggedUser.name }}</span>
-                <nuxt-link class='navbar-item is-tab' to='/auth/logout'>Logout</nuxt-link>
-                <nuxt-link class='navbar-item is-tab' v-if='!isAuthenticated' to='/auth/login'>Login</nuxt-link>
-             </div>
-             <div class='navbar-end' v-else>
-                <nuxt-link class='navbar-item is-tab' to='/auth/login'>Login</nuxt-link>
-             </div>
+                <nuxt-link v-for='item in usernav' :id='item.id' :key='item.id' :to='item.href' class='navbar-item' exact>
+                  <span>{{ item.name }}</span>
+                </nuxt-link>
+              </div>
+            </div>
+          </div>
+           <div class='navbar-end' v-else>
+              <nuxt-link class='navbar-item is-tab' to='/auth/login'>Login</nuxt-link>
+           </div>
         </div>
     </nav>
 </template>
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapState } from 'vuex'
 export default {
   name: 'NavMenu',
   data () {
     return {
       navitems: [
-        {id: 'home', href: '/', name: 'Home'},
-        {id: 'projects', href: '/projects', name: 'Projects'},
-        {id: 'images', href: '/images', name: 'Images'},
-        {id: 'contact', href: '/contact', name: 'Contact'}
+        { id: 'home', href: '/', name: 'Home' },
+        { id: 'projects', href: '/projects', name: 'Projects' },
+        { id: 'contact', href: '/contact', name: 'Contact' }
+      ],
+      adminnav: [
+        { id: 'wakeonlan', href: '/wakeonlan', name: 'WakeOnlan' }
+      ],
+      usernav: [
+        { id: 'images', href: '/images', name: 'Images' },
+        { id: 'logout', href: '/auth/logout', name: 'Logout' }
       ]
     }
   },
@@ -48,6 +62,9 @@ export default {
       document.getElementById('navmenu').classList.toggle('is-active')
     }
   },
-  computed: mapGetters(['isAuthenticated', 'loggedUser'])
+  computed: {
+    ...mapGetters(['isAuthenticated', 'loggedUser']),
+    ...mapState(['admin'])
+  }
 }
 </script>
