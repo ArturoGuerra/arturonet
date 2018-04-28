@@ -18,7 +18,7 @@
                 </nuxt-link>
              </div>
              <div class='navbar-end' v-if='isAuthenticated'>
-                <span class='navbar-item is-tab'>{{ loggedUser.nickname ? loggedUser.nickname : loggedUser.name }}</span>
+                <span class='navbar-item is-tab is-hidden-touch'>{{ loggedUser.nickname ? loggedUser.nickname : loggedUser.name }}</span>
                 <nuxt-link class='navbar-item is-tab' to='/auth/logout'>Logout</nuxt-link>
                 <nuxt-link class='navbar-item is-tab' v-if='!isAuthenticated' to='/auth/login'>Login</nuxt-link>
              </div>
