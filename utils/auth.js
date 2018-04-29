@@ -10,7 +10,7 @@ const getQueryParams = () => {
 }
 export const isAdmin = (user) => {
   if (!user) return false
-  const roles = user['https://api.arturonet.com/roles']
+  const roles = user[process.env.AUTH0_NAMESPACE + '/roles']
   return roles.indexOf('admin') > -1
 }
 
