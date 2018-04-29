@@ -79,6 +79,7 @@ module.exports = {
     '~/assets/css/gradients.css',
     '~/assets/css/auth.css',
     '~/assets/css/images.css',
+    '~/assets/css/plexstatus.css',
     '~/assets/css/vuetyper.css',
     '~/assets/css/animate.css'
   ],

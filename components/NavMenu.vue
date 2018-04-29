@@ -48,6 +48,7 @@ export default {
         { id: 'contact', href: '/contact', name: 'Contact' }
       ],
       adminnav: [
+        { id: 'plexstatus', href: '/plexstatus', name: 'PlexMonitor' },
         { id: 'wakeonlan', href: '/wakeonlan', name: 'WakeOnlan' }
       ],
       usernav: [
