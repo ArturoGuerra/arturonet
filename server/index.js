@@ -17,12 +17,6 @@ app.set('port', port)
 app.set('host', host)
 app.set('socket', socket)
 
-app.use(morgan('tiny'))
-app.use(bodyParser.json())
-
-// Import API Routes
-app.use('/api', api)
-
 // Import and Set Nuxt.js options
 let config = require('../nuxt.config.js')
 config.dev = !(process.env.NODE_ENV === 'production')
@@ -35,6 +29,16 @@ if (config.dev) {
   const builder = new Builder(nuxt)
   builder.build()
 }
+
+if (!config.dev) {
+  app.set('trust proxy', function(){ return true })
+}
+
+app.use(morgan('short'))
+app.use(bodyParser.json())
+
+// Import API Routes
+app.use('/api', api)
 
 // Give nuxt middleware to express
 app.use(nuxt.render)
