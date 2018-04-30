@@ -49,11 +49,11 @@ export default {
       method: 'get',
       url: 'https://plexmonitor.arturonet.com',
       headers: {
-        'Authorization': 'Bearer ' + this.$nuxt.$store.state.token
+        'Authorization': 'Bearer ' + this.$nuxt.$store.state.atoken
       }
     }).then(response => {
-      this.running = response.running
-      this.errors = response.error
+      this.running = response.data.running
+      this.errors = response.data.error
       this.ready = true
     }).catch(console.error)
   }

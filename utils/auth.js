@@ -22,7 +22,7 @@ export const getUserFromLocalStorage = () => {
 
 export const getUserFromCookie = (req) => {
   if (!req.headers.cookie) return
-  const jwtCookie = req.headers.cookie.split(';').find(c => c.trim().startsWith('jwt='))
+  const jwtCookie = req.headers.cookie.split(';').find(c => c.trim().startsWith('token='))
   if (!jwtCookie) return
   const jwt = jwtCookie.split('=')[1]
   return jwtDecode(jwt)
@@ -36,7 +36,21 @@ export const getTokenFromLocalStorage = () => {
 
 export const getTokenFromCookie = (req) => {
   if (!req.headers.cookie) return
-  const jwtCookie = req.headers.cookie.split(';').find(c => c.trim().startsWith('jwt='))
+  const jwtCookie = req.headers.cookie.split(';').find(c => c.trim().startsWith('token='))
+  if (!jwtCookie) return
+  const jwt = jwtCookie.split('=')[1]
+  return jwt
+}
+
+export const getAccessTokenFromLocalStorage = () => {
+  if (process.server) return undefined
+  const token = localStorage.access_token // eslint-disable-line camelcase
+  return token || undefined
+}
+
+export const getAccessTokenFromCookie = (req) => {
+  if (!req.headers.cookie) return
+  const jwtCookie = req.headers.cookie.split(';').find(c => c.trim().startsWith('access_token='))
   if (!jwtCookie) return
   const jwt = jwtCookie.split('=')[1]
   return jwt
@@ -54,7 +68,8 @@ export const setSession = () => {
   localStorage.setItem('secret', state)
   localStorage.setItem('access_token', access_token)
   localStorage.setItem('expires_at', expiresAt)
-  Cookie.set('jwt', id_token)
+  Cookie.set('token', id_token)
+  Cookie.set('access_token', access_token)
 }
 
 export const deleteSession = () => {
@@ -65,7 +80,8 @@ export const deleteSession = () => {
   localStorage.removeItem('access_token')
   localStorage.removeItem('expires_at')
   localStorage.setItem('logout', Date.now())
-  Cookie.remove('jwt')
+  Cookie.remove('token')
+  Cookie.remove('access_token')
 }
 
 export const setSecret = (secret) => localStorage.setItem('secret', secret)

@@ -69,7 +69,7 @@ export default {
         let result = await this.$nuxt.$axios({
           method: 'POST',
           url: 'https://wol.arturonet.com/post',
-          headers: { 'authorization': 'Bearer ' + this.$nuxt.$store.state.token },
+          headers: { 'authorization': 'Bearer ' + this.$nuxt.$store.state.atoken },
           data: {
             mac: this.mac
           }

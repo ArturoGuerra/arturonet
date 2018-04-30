@@ -17,6 +17,7 @@ const getOptions = (container) => {
     rememeberLastLogin: false,
     auth: {
       responseType: 'id_token token',
+      audience: process.env.AUTH0_AUDIENCE,
       redirectUrl: `${getBaseUrl()}/auth/callback`,
       params: {
         scope: 'openid profile email',
