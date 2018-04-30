@@ -45,7 +45,13 @@ export default {
   },
   mounted () {
     if (process.browser) { this.$nuxt.$wow.sync() }
-    this.$nuxt.$axios.$get('https://plexmonitor.arturonet.com').then(response => {
+    this.$nuxt.$axios({
+      method: 'get',
+      url: 'https://plexmonitor.arturonet.com',
+      headers: {
+        'Authorization': 'Bearer ' + this.$nuxt.$store.state.token
+      }
+    }).then(response => {
       this.running = response.running
       this.errors = response.error
       this.ready = true
