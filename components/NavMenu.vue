@@ -17,9 +17,9 @@
           <span>{{ item.name }}</span>
         </nuxt-link>
       </div>
-      <div class='navbar-end' v-if='$store.getters.isAuthenticated'>
+      <div class='navbar-end' v-if='isAuthenticated'>
         <div class='navbar-item has-dropdown is-hoverable'>
-          <span class='navbar-link'>{{ $store.state.user.nickname ? $store.state.user.nickname : $store.state.user.name }}</span>
+          <span class='navbar-link'>{{ user.nickname ? user.nickname : user.name }}</span>
           <div class='navbar-dropdown is-boxed'>
             <nuxt-link v-if='admin' v-for='item in adminnav' :id='item.id' :key='item.id' :to='item.href' class='navbar-item' exact>
               <span>{{ item.name }}</span>
@@ -30,7 +30,7 @@
           </div>
         </div>
       </div>
-      <div class='navbar-end' v-else>
+      <div class='navbar-end' v-if='!isAuthenticated'>
         <nuxt-link class='navbar-item is-tab' to='/auth/login'>Login</nuxt-link>
       </div>
     </div>

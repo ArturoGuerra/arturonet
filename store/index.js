@@ -8,17 +8,11 @@ export const state = () => ({
 })
 
 export const mutations = {
-  SET_USER (state, user) {
-    state.user = user || null
-  },
-  SET_TOKEN (state, token) {
-    state.token = token || null
-  },
-  SET_ACCESS_TOKEN (state, token) {
-    state.atoken = token || null
-  },
-  SET_ADMIN (state, value) {
-    state.admin = value || null
+  SET_AUTH (state, { token, atoken, user, admin }) {
+    if (token) state.token = token
+    if (atoken) state.atoken = atoken
+    if (user) state.user = user
+    if (admin) state.admin = admin
   }
 }
 
@@ -29,17 +23,14 @@ export const getters = {
 }
 
 export const actions = {
-  nuxtServerInit ({ commit }, { store, req }) {
+  async nuxtServerInit ({ commit }, { store, req }) {
     const token = getTokenFromCookie(req)
-    const loggedUser = getUserFromCookie(req)
-    const access_token = getAccessTokenFromCookie(req) // eslint-disable-line camelcase
-    commit('SET_TOKEN', token)
-    commit('SET_USER', loggedUser)
-    commit('SET_ACCESS_TOKEN', access_token)
-    if (isAdmin(loggedUser)) {
-      commit('SET_ADMIN', true)
-    } else {
-      commit('SET_ADMIN', false)
+    const user = getUserFromCookie(req)
+    const atoken = getAccessTokenFromCookie(req)
+    let admin = false
+    if (isAdmin(user)) {
+      admin = true
     }
+    return commit('SET_AUTH', { token, atoken, user, admin })
   }
 }

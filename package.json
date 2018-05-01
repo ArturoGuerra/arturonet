@@ -1,5 +1,5 @@
 {
-  "name": "nuxt",
+  "name": "arturonet",
   "version": "1.0.0",
   "description": "Nuxt.js project",
   "author": "Arturo Guerra <arturoguerra360@gmail.com>",
@@ -16,7 +16,7 @@
     "@nuxtjs/dotenv": "^1.1.1",
     "@nuxtjs/pwa": "^2.0.8",
     "auth0-lock": "^11.6.0",
-    "aws-sdk": "^2.229.1",
+    "aws-sdk": "^2.230.1",
     "axios": "^0.16.2",
     "body-parser": "^1.18.2",
     "bulma": "^0.7.1",
@@ -29,9 +29,10 @@
     "js-cookie": "^2.2.0",
     "jwt-decode": "^2.2.0",
     "morgan": "^1.9.0",
-    "nuxt": "^1.0.0-rc3",
+    "nuxt": "^1.4.0",
     "source-map-support": "^0.4.15",
     "vue-typer": "^1.2.0",
+    "vuex": "^3.0.1",
     "wowjs": "^1.1.3"
   },
   "devDependencies": {
