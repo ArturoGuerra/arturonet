@@ -1,3 +1,5 @@
+import { isAdmin, getUserFromCookie, getAccessTokenFromCookie, getTokenFromCookie } from '~/utils/auth'
+
 export const state = () => ({
   user: null,
   token: null,
@@ -23,11 +25,21 @@ export const mutations = {
 export const getters = {
   isAuthenticated (state) {
     return !!state.user
-  },
-  loggedUser (state) {
-    return state.user
-  },
-  admin (state) {
-    return state.admin
+  }
+}
+
+export const actions = {
+  nuxtServerInit ({ commit }, { store, req }) {
+    const token = getTokenFromCookie(req)
+    const loggedUser = getUserFromCookie(req)
+    const access_token = getAccessTokenFromCookie(req) // eslint-disable-line camelcase
+    commit('SET_TOKEN', token)
+    commit('SET_USER', loggedUser)
+    commit('SET_ACCESS_TOKEN', access_token)
+    if (isAdmin(loggedUser)) {
+      commit('SET_ADMIN', true)
+    } else {
+      commit('SET_ADMIN', false)
+    }
   }
 }

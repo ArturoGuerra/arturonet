@@ -1,6 +1,7 @@
-import express from 'express'
-import { Nuxt, Builder } from 'nuxt'
+import cookieParser from 'cookie-parser'
 import bodyParser from 'body-parser'
+import { Nuxt, Builder } from 'nuxt'
+import express from 'express'
 import morgan from 'morgan'
 import http from 'http'
 import fs from 'fs'
@@ -31,11 +32,12 @@ if (config.dev) {
 }
 
 if (!config.dev) {
-  app.set('trust proxy', function(){ return true })
+  app.set('trust proxy', true)
 }
 
-app.use(morgan('short'))
+app.use(cookieParser())
 app.use(bodyParser.json())
+app.use(morgan('short'))
 
 // Import API Routes
 app.use('/api', api)
