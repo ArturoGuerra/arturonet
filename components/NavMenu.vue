@@ -38,6 +38,7 @@
 </template>
 <script>
 import { mapGetters, mapState } from 'vuex'
+
 export default {
   name: 'NavMenu',
   data () {
@@ -67,5 +68,6 @@ export default {
     ...mapGetters(['isAuthenticated', 'loggedUser']),
     ...mapState(['admin'])
   }
+
 }
 </script>
