@@ -1,5 +1,6 @@
 <template>
     <div>
+      <NavMenu/>
       <div class="custom-hero white dark-blue">
           <particles></particles>
           <div class='custom-hero-body wow lightSpeedIn'>
@@ -39,9 +40,8 @@
     </div>
 </template>
 <script>
-import axios from 'axios'
 export default {
-  name: 'Projects',
+  name: 'projects',
   head: {
     title: 'Projects',
     meta: [
@@ -59,8 +59,8 @@ export default {
   },
   mounted () {
     if (process.browser) { this.$nuxt.$wow.sync() }
-    axios({method: 'GET', url: 'https://api.github.com/users/ArturoGuerra/repos'}).then(response => {
-      var r = response.data
+    this.$nuxt.$axios.$get('https://api.github.com/users/ArturoGuerra/repos').then(response => {
+      var r = response
       for (let y = 0; y < r.length; y++) {
         this.projects.push({
           name: r[y].name,

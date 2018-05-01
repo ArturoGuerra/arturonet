@@ -3,7 +3,7 @@
     <div class='custom-hero dark-blue white custom-hero-small'>
       <particles></particles>
       <div class='custom-hero-body wow lightSpeedIn'>
-        <h1 class='hero-title'><vue-typer :pre-type-delay='1500' :repeat='0' text='WakeOnlan'/></h1>
+        <h1 class='hero-title'><vue-typer :pre-type-delay='1500' :repeat='0' text='WakeOnLan'/></h1>
       </div>
     </div>
     <div class='hero hero-body'>
@@ -32,9 +32,9 @@ export default {
   head: {
     title: 'WakeOnlan',
     meta: [
-      { property: 'og:title', hid: 'og:title', content: 'WakeOnlan - ArturoNet' },
+      { property: 'og:title', hid: 'og:title', content: 'WakeOnLan - ArturoNet' },
       { property: 'og:description', hid: 'og:description', content: "Arturo's website" },
-      { hid: 'twitter:title', name: 'twitter:title', content: 'WakeOnlan - ArturoNet' },
+      { hid: 'twitter:title', name: 'twitter:title', content: 'WakeOnLan - ArturoNet' },
       { hid: 'twitter:description', name: 'twitter:description', content: "Arturo's website" }
     ]
   },

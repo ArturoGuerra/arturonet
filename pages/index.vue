@@ -1,5 +1,6 @@
 <template>
     <div>
+        <NavMenu/>
         <div class="custom-hero dark-blue white">
           <particles></particles>
           <div class='custom-hero-body wow lightSpeedIn'>

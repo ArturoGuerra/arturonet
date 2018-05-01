@@ -36,7 +36,7 @@
 
 <script>
 export default {
-  name: 'Contact',
+  name: 'contact',
   data () {
     return {
       message: null,
@@ -50,7 +50,13 @@ export default {
     }
   },
   head: {
-    title: 'Contact'
+    title: 'Contact',
+    meta: [
+      { property: 'og:title', hid: 'og:title', content: 'Contact - ArturoNet' },
+      { property: 'og:description', hid: 'og:description', content: "Arturo's website" },
+      { hid: 'twitter:title', name: 'twitter:title', content: 'Contact - ArturoNet' },
+      { hid: 'twitter:description', name: 'twitter:description', content: "Arturo's website" }
+    ]
   },
   mounted () {
     if (process.browser) { this.$nuxt.$wow.sync() }
