@@ -3,7 +3,7 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-        background-color: whitesmoke;
+    background-color: whitesmoke;
 }
 
 body::-webkit-scrollbar-thumb {
