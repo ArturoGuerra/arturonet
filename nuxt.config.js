@@ -81,6 +81,7 @@ module.exports = {
     '~/assets/css/images.css',
     '~/assets/css/plexstatus.css',
     '~/assets/css/vuetyper.css',
+    '~/assets/css/animations.css',
     '~/assets/css/animate.css'
   ],
   /*

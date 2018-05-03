@@ -35,9 +35,19 @@
             </tbody>
           </table>
         </div>
-       </section>
-    </div>
+      </section>
+      <div v-else class='container has-text-centered sk-padding'>
+        <div class='sk-wave'>
+          <div class='sk-rect sk-rect1'/>
+          <div class='sk-rect sk-rect2'/>
+          <div class='sk-rect sk-rect3'/>
+          <div class='sk-rect sk-rect4'/>
+          <div class='sk-rect sk-rect5'/>
+        </div>
+      </div>
+  </div>
 </template>
+
 <script>
 export default {
   name: 'projects',
@@ -68,7 +78,9 @@ export default {
           forks: r[y].forks_count,
           forked: r[y].fork
         })
-        this.show = true
+        setTimeout(() => {
+          this.show = true
+        }, 2000)
       }
     }).catch(console.error)
   }

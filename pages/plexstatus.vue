@@ -19,6 +19,15 @@
           </tbody>
         </table>
       </div>
+      <div v-else class='container has-text-centered sk-padding'>
+        <div class='sk-wave'>
+          <div class='sk-rect sk-rect1'/>
+          <div class='sk-rect sk-rect2'/>
+          <div class='sk-rect sk-rect3'/>
+          <div class='sk-rect sk-rect4'/>
+          <div class='sk-rect sk-rect5'/>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -54,7 +63,9 @@ export default {
     }).then(response => {
       this.running = response.data.running
       this.errors = response.data.error
-      this.ready = true
+      setTimeout(() => {
+        this.ready = true
+       }, 100)
     }).catch(console.error)
   }
 }
