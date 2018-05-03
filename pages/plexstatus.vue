@@ -65,7 +65,7 @@ export default {
       this.errors = response.data.error
       setTimeout(() => {
         this.ready = true
-       }, 100)
+      }, 100)
     }).catch(console.error)
   }
 }
