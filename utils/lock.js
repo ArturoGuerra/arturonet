@@ -3,6 +3,7 @@ import uuid from 'uuid'
 
 const getLock = (options) => {
   const { Auth0Lock } = require('auth0-lock')
+  console.log(process.env)
   return new Auth0Lock(process.env.AUTH0_CLIENT_ID, process.env.AUTH0_CLIENT_DOMAIN, options)
 }
 

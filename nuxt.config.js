@@ -1,8 +1,12 @@
-require('dotenv').config()
-
 module.exports = {
   /*
   ** Headers of the page
+  */
+  /* env
+    AUTH0_CLIENT_ID
+    AUTH0_CLIENT_DOMAIN
+    AUTH0_AUDIENCE
+    AUTH0_NAMESPACE
   */
   head: {
     titleTemplate: '%s - ArturoNet',
@@ -121,8 +125,9 @@ module.exports = {
     { src: '~/plugins/wow.js', ssr: false }
   ],
   modules: [
-    ['@nuxtjs/pwa'],
-    '@nuxtjs/axios'
+    '@nuxtjs/pwa',
+    '@nuxtjs/axios',
+    '@nuxtjs/dotenv'
   ],
   axios: {
     baseURL: 'https://www.arturonet.com',
@@ -130,11 +135,5 @@ module.exports = {
   },
   render: {
     http2: true
-  },
-  env: {
-    AUTH0_CLIENT_ID: process.env.AUTH0_CLIENT_ID,
-    AUTH0_CLIENT_DOMAIN: process.env.AUTH0_CLIENT_DOMAIN,
-    AUTH0_NAMESPACE: process.env.AUTH0_NAMESPACE,
-    AUTH0_AUDIENCE: process.env.AUTH0_AUDIENCE
   }
 }
