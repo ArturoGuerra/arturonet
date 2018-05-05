@@ -5,8 +5,9 @@ import express from 'express'
 import morgan from 'morgan'
 import http from 'http'
 import fs from 'fs'
-
 import api from './api'
+
+require('dotenv').config()
 
 const app = new express()
 const httpServer = http.createServer(app)

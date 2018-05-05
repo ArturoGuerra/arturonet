@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 module.exports = {
   /*
   ** Headers of the page
@@ -120,8 +122,7 @@ module.exports = {
   ],
   modules: [
     ['@nuxtjs/pwa'],
-    '@nuxtjs/axios',
-    '@nuxtjs/dotenv'
+    '@nuxtjs/axios'
   ],
   axios: {
     baseURL: 'https://www.arturonet.com',
@@ -129,5 +130,11 @@ module.exports = {
   },
   render: {
     http2: true
+  },
+  env: {
+    AUTH0_CLIENT_ID: process.env.AUTH0_CLIENT_ID,
+    AUTH0_CLIENT_DOMAIN: process.env.AUTH0_CLIENT_DOMAIN,
+    AUTH0_NAMESPACE: process.env.AUTH0_NAMESPACE,
+    AUTH0_AUDIENCE: process.env.AUTH0_AUDIENCE
   }
 }
