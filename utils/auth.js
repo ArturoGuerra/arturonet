@@ -51,6 +51,12 @@ export const getAccessTokenFromCookie = (req) => {
   return jwt
 }
 
+export const isValid = () => {
+  if (process.server) return true
+  let expiresAt = JSON.parse(localStorage.getItem('expires_at'))
+  return new Date().getTime() < expiresAt
+}
+
 export const setSession = () => {
   if (process.server) return
   const { id_token, state, access_token } = getQueryParams() // eslint-disable-line camelcase
