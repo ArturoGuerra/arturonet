@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 module.exports = {
   /*
   ** Headers of the page
@@ -7,6 +9,7 @@ module.exports = {
     AUTH0_CLIENT_DOMAIN
     AUTH0_AUDIENCE
     AUTH0_NAMESPACE
+    GOOGLE_ANALYTICS_ID
   */
   head: {
     titleTemplate: '%s - ArturoNet',
@@ -127,7 +130,10 @@ module.exports = {
   modules: [
     '@nuxtjs/pwa',
     '@nuxtjs/axios',
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
+    ['@nuxtjs/google-analytics', {
+      id: process.env.GOOGLE_ANALYTICS_ID
+    }]
   ],
   axios: {
     baseURL: 'https://www.arturonet.com',
