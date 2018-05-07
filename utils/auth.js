@@ -54,19 +54,22 @@ export const getAccessTokenFromCookie = (req) => {
 export const isValid = () => {
   if (process.server) return true
   let expiresAt = JSON.parse(localStorage.getItem('expires_at'))
-  let currentTime = new Date().getTime() / 1000
+  let currentTime = new Date().getTime()
   return currentTime < expiresAt
 }
 
 export const setSession = () => {
   if (process.server) return
-  const { id_token, state, access_token } = getQueryParams() // eslint-disable-line camelcase
+  const { id_token, state, access_token, expires_in } = getQueryParams() // eslint-disable-line camelcase
   let decoded = jwtDecode(id_token)
+  let expiresAt = JSON.stringify(
+    expires_in * 1000 + new Date().getTime() // eslint-disable-line camelcase
+  )
   localStorage.setItem('id_token', id_token)
   localStorage.setItem('user', JSON.stringify(decoded))
   localStorage.setItem('secret', state)
   localStorage.setItem('access_token', access_token)
-  localStorage.setItem('expires_at', decoded.exp)
+  localStorage.setItem('expires_at', expiresAt)
   Cookie.set('id_token', id_token)
   Cookie.set('access_token', access_token)
 }
