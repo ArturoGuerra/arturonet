@@ -52,8 +52,15 @@ export const getAccessTokenFromCookie = (req) => {
 }
 
 export const isValid = () => {
-  if (process.server) return true
+  if (process.server) return
   let expiresAt = JSON.parse(localStorage.getItem('expires_at'))
+  let currentTime = new Date().getTime()
+  return currentTime < expiresAt
+}
+
+export const isValidServer = (req) => {
+  if (!req.cookies) return
+  let expiresAt = req.cookies.expires_in // eslint-disable-line camelcase
   let currentTime = new Date().getTime()
   return currentTime < expiresAt
 }
@@ -72,6 +79,7 @@ export const setSession = () => {
   localStorage.setItem('expires_at', expiresAt)
   Cookie.set('id_token', id_token)
   Cookie.set('access_token', access_token)
+  Cookie.set('expires_at', expiresAt)
 }
 
 export const deleteSession = () => {
@@ -84,6 +92,7 @@ export const deleteSession = () => {
   localStorage.setItem('logout', Date.now())
   Cookie.remove('id_token')
   Cookie.remove('access_token')
+  Cookie.remove('expires_at')
 }
 
 export const setSecret = (secret) => localStorage.setItem('secret', secret)
