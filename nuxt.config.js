@@ -48,7 +48,8 @@ module.exports = {
       { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' },
       { rel: 'icon', type: 'image/png', sizes: '96x96', href: '/favicon-96x96.png' },
       { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' },
-      { rel: 'shortcut icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'shortcut icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.0.12/css/all.css', integrity: 'sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9', crossorigin: 'anonymous' }
     ]
   },
   manifest: {
@@ -80,16 +81,12 @@ module.exports = {
   ** Global CSS
   */
   css: [
-    'bulma/css/bulma.min.css',
     'colors.css/css/colors.min.css',
+    '~/assets/scss/arturonet.scss',
     '~/assets/css/main.css',
-    '~/assets/css/navbar.css',
-    '~/assets/css/scroll.css',
     '~/assets/css/gradients.css',
-    '~/assets/css/auth.css',
     '~/assets/css/images.css',
     '~/assets/css/plexstatus.css',
-    '~/assets/css/vuetyper.css',
     '~/assets/css/animations.css',
     '~/assets/css/animate.css'
   ],
@@ -114,8 +111,8 @@ module.exports = {
     }
   },
   router: {
-    linkActiveClass: 'is-active',
-    linkExactActiveClass: 'is-active',
+    linkActiveClass: 'active',
+    linkExactActiveClass: 'active',
     middleware: 'check-auth'
   },
   loading: {

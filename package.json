@@ -17,13 +17,12 @@
     "@nuxtjs/google-analytics": "^2.0.2",
     "@nuxtjs/pwa": "^2.0.8",
     "auth0-lock": "^11.6.1",
-    "aws-sdk": "^2.231.1",
+    "aws-sdk": "^2.237.1",
     "axios": "^0.16.2",
     "body-parser": "^1.18.2",
-    "bulma": "^0.7.1",
     "colors.css": "^3.0.0",
     "cookie-parser": "^1.4.3",
-    "cross-env": "^5.0.1",
+    "cross-env": "^5.1.5",
     "dotenv": "^5.0.1",
     "express": "^4.15.3",
     "express-rate-limit": "^2.11.0",
@@ -48,6 +47,8 @@
     "eslint-plugin-node": "^5.1.1",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.1.0",
+    "node-sass": "^4.9.0",
+    "sass-loader": "^7.0.1",
     "vue-particles": "^1.0.9"
   }
 }

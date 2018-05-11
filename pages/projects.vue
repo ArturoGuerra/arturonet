@@ -1,17 +1,10 @@
 <template>
     <div>
-      <div class="custom-hero white dark-blue">
-          <particles></particles>
+      <div class='hero full-height'>
           <div class='custom-hero-body wow lightSpeedIn'>
             <h1 class="hero-title">Projects</h1>
             <h3>&lt;<vue-typer :pre-type-delay='1500' :repeat='0' text='drunk code is best code'/>/&gt;</h3>
           </div>
-      </div>
-      <div class='container small-container'>
-        <h1 class='title'>My GitHub Projects</h1>
-      </div>
-      <section v-if='show' class="hero has-text-centered super-hero-padding">
-        <div class="container has-text-centered">
           <table class="table is-fullwidth table-mod">
             <thead>
               <tr>
@@ -34,16 +27,15 @@
               </tr>
             </tbody>
           </table>
-        </div>
-      </section>
-      <div v-else class='container has-text-centered sk-padding'>
-        <div class='sk-wave'>
-          <div class='sk-rect sk-rect1'/>
-          <div class='sk-rect sk-rect2'/>
-          <div class='sk-rect sk-rect3'/>
-          <div class='sk-rect sk-rect4'/>
-          <div class='sk-rect sk-rect5'/>
-        </div>
+          <div class='container has-text-centered sk-padding'>
+            <div class='sk-wave'>
+              <div class='sk-rect sk-rect1'/>
+              <div class='sk-rect sk-rect2'/>
+              <div class='sk-rect sk-rect3'/>
+              <div class='sk-rect sk-rect4'/>
+              <div class='sk-rect sk-rect5'/>
+            </div>
+          </div>
       </div>
   </div>
 </template>

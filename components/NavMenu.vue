@@ -1,37 +1,38 @@
 <template>
-  <nav class="navbar has-shadow">
-    <div class="navbar-brand">
-        <nuxt-link to="/" class="navbar-item">
-          <img src="./../assets/img/myface.jpg" class='round-img'>
-          <strong style='color: white;'>&nbsp; Arturo Guerra</strong>
-        </nuxt-link>
-        <div class="navbar-burger burger" id="navtoggle" v-on:click='toggleNav'>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-    </div>
-    <div class="navbar-menu" id='navmenu'>
-      <div class="navbar-start">
-        <nuxt-link v-for="item in navitems" :id='item.id' :key="item.id" :to="item.href" class="navbar-item is-tab" exact>
-          <span>{{ item.name }}</span>
-        </nuxt-link>
+  <nav class="navbar">
+    <div class='l-container nav'>
+      <div class="nav-brand">
+          <nuxt-link to="/" class="nav-item">
+            <img src="./../assets/img/myface.jpg" class='img-navbar'>
+          </nuxt-link>
+          <div class="nav-burger" id="navtoggle" v-on:click='toggleNav'>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
       </div>
-      <div class='navbar-end' v-if='isAuthenticated'>
-        <div class='navbar-item has-dropdown is-hoverable'>
-          <span class='navbar-link'>{{ user.nickname ? user.nickname : user.name }}</span>
-          <div class='navbar-dropdown is-boxed'>
-            <nuxt-link v-if='admin' v-for='item in adminnav' :id='item.id' :key='item.id' :to='item.href' class='navbar-item' exact>
-              <span>{{ item.name }}</span>
-            </nuxt-link>
-            <nuxt-link v-for='item in usernav' :id='item.id' :key='item.id' :to='item.href' class='navbar-item' exact>
-              <span>{{ item.name }}</span>
-            </nuxt-link>
+      <div class="nav-menu" id='navmenu'>
+        <div class="nav-start">
+          <nuxt-link v-for="item in navitems" :id='item.id' :key="item.id" :to="item.href" class="nav-item" exact>
+            <span>{{ item.name }}</span>
+          </nuxt-link>
+        </div>
+        <div class='nav-end' v-if='isAuthenticated'>
+          <div class='nav-item hover'>
+            <span class='nav-link'>{{ user.nickname ? user.nickname : user.name }}</span>
+            <div class='nav-dropdown'>
+              <nuxt-link v-if='admin' v-for='item in adminnav' :id='item.id' :key='item.id' :to='item.href' class='nav-item' exact>
+                <span>{{ item.name }}</span>
+              </nuxt-link>
+              <nuxt-link v-for='item in usernav' :id='item.id' :key='item.id' :to='item.href' class='nav-item' exact>
+                <span>{{ item.name }}</span>
+              </nuxt-link>
+            </div>
           </div>
         </div>
-      </div>
-      <div class='navbar-end' v-if='!isAuthenticated'>
-        <nuxt-link class='navbar-item is-tab' to='/auth/login'>Login</nuxt-link>
+        <div class='nav-end' v-if='!isAuthenticated'>
+          <nuxt-link class='nav-item' to='/auth/login'>Login</nuxt-link>
+        </div>
       </div>
     </div>
   </nav>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class='main'>
     <NavMenu/>
     <nuxt/>
     <Footer/>

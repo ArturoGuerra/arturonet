@@ -19,7 +19,6 @@
     position: relative;
 }
 
-
 .custom-hero-body {
     text-align: center;
     padding: 10px;
@@ -129,12 +128,12 @@
 
 .grid-twitter {
     grid-area: twitter;
-    margin: auto;
+    margin: auto 0;
 }
 
 .grid-github {
     grid-area: github;
-    margin: auto;
+    margin: auto 0;
 }
 
 .grid-twitter-em {
@@ -142,10 +141,8 @@
     margin: auto;
 }
 
-
 @media screen and (min-width: 1176px) {
     .grid-container {
-        width: 1176px;
         grid-template-columns: 2fr 1fr;
         grid-template-rows: 1fr 1fr;
         grid-column-gap: 10px;
@@ -155,19 +152,19 @@
             "github twitter-em";
     }
 }
+
 .blue-1 {
     background-image: linear-gradient(141deg,#04a6d7,#209cee 71%,#3287f5);
 }
 
 
 .grid-title {
-    color: white;
     font-weight: 600;
     line-height: 1.125;
 }
 
 .grid-title.is-4 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 }
 
 .grid-subtitle {
@@ -201,38 +198,6 @@
     font-weight: 700;
 }
 
-.footer {
-    display: flex;
-    width: 100%;
-    height: 150px;
-    background-color: whitesmoke;
-    padding: 10px 60px;
-    font-family: Segoe UI;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.footer-item {
-    display: block;
-    padding: 5px 0;
-    font-family: BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Helvetica,Arial,sans-serif;
-    font-weight: 700;
-}
-
-
-@media screen and (max-width: 805px) {
-    .footer { height: 100px; }
-    .footer-item { font-size: 12px; padding: 0 0;}
-    .item-hidden { display: none!important; }
-}
-
-@media screen and (max-width: 1087px) {
-    .touch-item-hidden {
-        display: none!important;
-    }
-}
-
 .small-container {
     display: flex;
     width: 100%;
@@ -248,14 +213,6 @@
     margin: auto;
     width: 1344px;
     max-width: 1244px;
-}
-
-
-.round-img {
-    border-radius: 60%;
-    display: block;
-    height: auto;
-    width: auto;
 }
 
 .table-mod {
@@ -279,4 +236,3 @@
         width: 300px;
     }
 }
-

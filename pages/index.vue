@@ -1,47 +1,75 @@
 <template>
     <div>
-      <div class="custom-hero dark-blue white">
+      <div class='hero full-height'>
         <particles></particles>
-        <div class='custom-hero-body wow lightSpeedIn'>
-          <h1 class="hero-title"><vue-typer :pre-type-delay='1500' :repeat='0' text='Arturo Guerra'></vue-typer></h1>
-        </div>
-      </div>
-      <div class="flex-container flex-container-center flex-container-shadow">
-        <div class="flex-item">
-          <div>
-            <p class="hero-subtitle">Programing</p>
-            <p class="hero-title">Go to my <a href="https://github.com/ArturoGuerra">GitHub</a></p>
+        <div class='body l-container'>
+          <div class='child center'>
+            <div class='h-left'>
+              <img src='../assets/img/myface.jpg' class='hero-img'>
+              <span class='hero-title font-2'>Arturo Guerra</span>
+            </div>
+            <span class='bar'></span>
+            <div class='h-right'>
+              <div class='terminal'>
+                <div class='head'>
+                  <div class='buttons'>
+                    <div class='button red'></div>
+                    <div class='button yellow'></div>
+                    <div class='button green'></div>
+                  </div>
+                  <div class='terminal-title'>
+                    <i class='fas fa-folder'></i>
+                    /home/arturo
+                  </div>
+                </div>
+                <div class='body'>
+                  <div class='child text'>
+                    <vue-typer :pre-type-delay='1500' :repeat='0' :text='terminal'></vue-typer>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class='child small'>
+            <a href='#about'><div class='arrow'></div></a>
           </div>
         </div>
-        <div class="flex-item">
-          <div>
-            <p class="hero-subtitle">Discord</p>
-            <p class="hero-title">You can find me <a href="https://discord.gg/ssl">Here</a></p>
+        <div class='foot l-container'>
+          <div class='child'>
+            Items
+          </div>
+          <div class='child'>
+            Items
+          </div>
+          <div class='child'>
+            Items
+          </div>
+          <div class='child'>
+            Items
           </div>
         </div>
       </div>
-      <br/>
-      <div class="container container-padding">
-        <p class="hero-subtitle flex-text-align">
-          <img src="./../assets/img/myface.jpg" width="50" class='flex-img-style'> About Me
-        </p>
-        <hr>
-        <p>
-            My name is Arturo Guerra, I'm 18 and planning to study Computer Science in the near future. I love messing with computers which has developed my love and interest for fixing hardware and programing.
-            I'm currently one of the main developers of <strong><a href="auttaja.us">Auttaja</a></strong> a very nice <strong><a href='https://discordapp.com'>Discord</a></strong> bot that currenly serves around
-            400 servers. I also enjoy fixing computer hardware ie. Phones and Computer, and I did that as a job when I was living in canada.
-        </p>
-        <p>
-            I have about year and a half of experience programing in python and consider myself fairly experienced on it. I also have knowledge in JavaScript and some C, But of cource TXT is my main programing
-            language and consider myself a professional notepad coder looool. That last part was totaly serious. I'm currenly gettings into web development and thats why I made this website. If you want to see my
-            other projects go to my <strong><a href="https://github.com/ArturoGuerra">GitHub</a></strong> or click on the projects tab at the top of the website.
-        </p>
-      </div>
-      <br/>
-      <div class='main-grid-container blue-1'>
-        <div class="grid-container">
+      <div class="hero full-height">
+        <a name='about'></a>
+        <div class='l-container'>
+          <p class="title flex-text-align vertical-padding-50 blue-2">
+            <img src="./../assets/img/myface.jpg" width="50" class='flex-img-style'> About Me
+          </p>
+          <p>
+              My name is Arturo Guerra, I'm 18 and planning to study Computer Science in the near future. I love messing with computers which has developed my love and interest for fixing hardware and programing.
+              I'm currently one of the main developers of <strong><a href="auttaja.us">Auttaja</a></strong> a very nice <strong><a href='https://discordapp.com'>Discord</a></strong> bot that currenly serves around
+              400 servers. I also enjoy fixing computer hardware ie. Phones and Computer, and I did that as a job when I was living in canada.
+          </p>
+          <p>
+              I have about year and a half of experience programing in python and consider myself fairly experienced on it. I also have knowledge in JavaScript and some C, But of cource TXT is my main programing
+              language and consider myself a professional notepad coder looool. That last part was totaly serious. I'm currenly gettings into web development and thats why I made this website. If you want to see my
+              other projects go to my <strong><a href="https://github.com/ArturoGuerra">GitHub</a></strong> or click on the projects tab at the top of the website.
+          </p>
+        </div>
+        <hr class='hr-1'/>
+        <div class="grid-container grid-container-padding">
           <div class="grid-twitter">
-            <p class="grid-title is-4">
+            <p class="grid-title is-4 blue-2">
             Follow me on twitter
             its a great(Shit) social media platform.
             </p>
@@ -50,7 +78,7 @@
             </p>
           </div>
           <div class="grid-github">
-            <p class="grid-title is-4">
+            <p class="grid-title is-4 blue-2">
             Look at my github projects you might find something you like.
             </p>
             <p class="grid-subtitle is-6">
@@ -78,6 +106,15 @@ export default {
   },
   mounted () {
     if (process.browser) { this.$nuxt.$wow.sync() }
+  },
+  data () {
+    return {
+      terminal: [
+        'sudo rm -rf gilbert',
+        ':(){ :|: & };:',
+        'sudo rm -rf / --no-preserve-root'
+      ]
+    }
   }
 }
 </script>
