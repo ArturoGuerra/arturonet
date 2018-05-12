@@ -1,25 +1,28 @@
 <template>
   <div>
-    <div class='custom-hero dark-blue white custom-hero-small'>
-      <particles></particles>
-      <div class='custom-hero-body wow lightSpeedIn'>
-        <h1 class='hero-title'><vue-typer :pre-type-delay='1500' :repeat='0' text='WakeOnLan'/></h1>
-      </div>
-    </div>
-    <div class='hero hero-body'>
-      <div class='container'>
-          <div class="field">
-           <label for='mac'>Mac Address</label>
-           <div class="control">
-              <input class="input" id='mac' type="text" name="mac" placeholder="00:11:22:33:44:55" v-model='mac' :class='[validmac]'/>
-           </div>
-          </div>
-          <div class='field is-grouped'>
-            <div class='control'>
-              <button class='button is-link' @click='send'>Submit</button>
+    <div class='hero full-height'>
+      <div class='body'>
+        <div class='l-container'>
+          <div class='flex flex-column flex-a-center flex-j-center'>
+            <div>
+              <h1 class='hero-title center blue'>WakeOnLan</h1>
+            </div>
+            <div class='flex-grow'>
+              <div class="field">
+               <label for='mac'>Mac Address</label>
+               <div class="control">
+                  <input class="input" id='mac' type="text" name="mac" placeholder="00:11:22:33:44:55" v-model='mac' :class='[validmac]'/>
+               </div>
+              </div>
+              <div class='field'>
+                <div class='control'>
+                  <button class='button is-info' @click='send'>Submit</button>
+                </div>
+              </div>
+              <p class='help' :class='[result.status]'>{{ result.text }}</p>
             </div>
           </div>
-          <p class='help' :class='[result.status]'>{{ result.text }}</p>
+        </div>
       </div>
     </div>
   </div>

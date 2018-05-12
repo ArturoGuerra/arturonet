@@ -48,8 +48,7 @@ module.exports = {
       { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' },
       { rel: 'icon', type: 'image/png', sizes: '96x96', href: '/favicon-96x96.png' },
       { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' },
-      { rel: 'shortcut icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.0.12/css/all.css', integrity: 'sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9', crossorigin: 'anonymous' }
+      { rel: 'shortcut icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
   manifest: {
@@ -81,8 +80,8 @@ module.exports = {
   ** Global CSS
   */
   css: [
-    'colors.css/css/colors.min.css',
     '~/assets/scss/arturonet.scss',
+    'colors.css/css/colors.min.css',
     '~/assets/css/main.css',
     '~/assets/css/gradients.css',
     '~/assets/css/images.css',

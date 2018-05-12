@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class='custom-hero dark-blue white custom-hero-small'>
+    <div class='custom-hero  custom-hero-small'>
       <particles></particles>
       <div class='custom-hero-body wow lightSpeedIn'>
         <h1 class='hero-title'><vue-typer :pre-type-delay='1500' :repeat='0' text='Image Uploader'/></h1>

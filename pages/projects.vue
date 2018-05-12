@@ -1,41 +1,45 @@
 <template>
     <div>
       <div class='hero full-height'>
-          <div class='custom-hero-body wow lightSpeedIn'>
-            <h1 class="hero-title">Projects</h1>
-            <h3>&lt;<vue-typer :pre-type-delay='1500' :repeat='0' text='drunk code is best code'/>/&gt;</h3>
+        <div class='flex flex-column flex-a-center flex-j-center'>
+          <div class='hero-header-m'>
+            <h1 class="hero-title center blue">Projects</h1>
+            <h3 class='subtitle center'>&lt;<vue-typer :pre-type-delay='1500' :repeat='0' text='drunk code is best code'/>/&gt;</h3>
           </div>
-          <table class="table is-fullwidth table-mod">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Language</th>
-                <th class="is-hidden-touch">Forks</th>
-                <th class="is-hidden-touch">Forked</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr v-for="p in projects" :key="p.url">
-                <th>
-                  <a :href="p.url">
-                    {{ p.name }}
-                  </a>
-                </th>
-                <th>{{ p.language }}</th>
-                <th class='is-hidden-touch'>{{ p.forks }}</th>
-                <th class='is-hidden-touch'>{{ p.forked }}</th>
-              </tr>
-            </tbody>
-          </table>
-          <div class='container has-text-centered sk-padding'>
-            <div class='sk-wave'>
-              <div class='sk-rect sk-rect1'/>
-              <div class='sk-rect sk-rect2'/>
-              <div class='sk-rect sk-rect3'/>
-              <div class='sk-rect sk-rect4'/>
-              <div class='sk-rect sk-rect5'/>
+          <div class='flex-grow'>
+            <table class="table is-fullwidth table-mod">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Language</th>
+                  <th class="is-hidden-touch">Forks</th>
+                  <th class="is-hidden-touch">Forked</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="p in projects" :key="p.url">
+                  <th>
+                    <a :href="p.url">
+                      {{ p.name }}
+                    </a>
+                  </th>
+                  <th>{{ p.language }}</th>
+                  <th class='is-hidden-touch'>{{ p.forks }}</th>
+                  <th class='is-hidden-touch'>{{ p.forked }}</th>
+                </tr>
+              </tbody>
+            </table>
+            <div class='container has-text-centered sk-padding'>
+              <div class='sk-wave'>
+                <div class='sk-rect sk-rect1'/>
+                <div class='sk-rect sk-rect2'/>
+                <div class='sk-rect sk-rect3'/>
+                <div class='sk-rect sk-rect4'/>
+                <div class='sk-rect sk-rect5'/>
+              </div>
             </div>
           </div>
+        </div>
       </div>
   </div>
 </template>

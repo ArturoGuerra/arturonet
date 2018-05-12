@@ -1,6 +1,6 @@
 <template>
-  <nav class="navbar">
-    <div class='l-container nav'>
+  <nav class="navbar fixed">
+    <div class='l-container'>
       <div class="nav-brand">
           <nuxt-link to="/" class="nav-item">
             <img src="./../assets/img/myface.jpg" class='img-navbar'>
@@ -62,8 +62,8 @@ export default {
   },
   methods: {
     toggleNav () {
-      document.getElementById('navtoggle').classList.toggle('is-active')
-      document.getElementById('navmenu').classList.toggle('is-active')
+      document.getElementById('navtoggle').classList.toggle('active')
+      document.getElementById('navmenu').classList.toggle('active')
     }
   },
   computed: {

@@ -8,6 +8,14 @@ $nav-background: rgba(13, 13, 13, 0.91);
     flex-grow: 1;
     flex-flow: row;
     justify-content: flex-start;
+    &.l-container {
+        width: 100%;
+        max-width: 987px;
+    }
+    &.fixed {
+        position: fixed;
+        max-width: inherit;
+    }
     .nav-item {
         display: flex;
         align-items: center;
@@ -63,6 +71,11 @@ $nav-background: rgba(13, 13, 13, 0.91);
             .nav-burger {
                 display: block;
             }
+        }
+    }
+    @media screen and (min-width: 1056px) {
+        .l-container {
+            display: flex;
         }
     }
     .nav-menu {
@@ -124,7 +137,6 @@ $nav-background: rgba(13, 13, 13, 0.91);
               transform-origin: center;
             }
             .nav-dropdown {
-                background-color: $nav-background;
                 display: none;
                 flex-flow: column;
                 justify-content: flex-start;
@@ -134,7 +146,6 @@ $nav-background: rgba(13, 13, 13, 0.91);
                 padding-bottom: 5px;
                 border-radius: 0 0 5px 5px;
                 position: absolute;
-                box-shadow: 0px 1rem 3rem -1rem rgba(136, 136, 136, 0.12);
                 .nav-item {
                     justify-content: flex-start;
                     height: 15px;
@@ -148,6 +159,12 @@ $nav-background: rgba(13, 13, 13, 0.91);
                     color: $whitesmoke;
                 }
             }
+              @media screen and (min-width: 1056px) {
+                .nav-dropdown {
+                  background-color: $nav-background;
+                  box-shadow: 0px 1rem 3rem -1rem rgba(136, 136, 136, 0.12);
+                }
+              }
         }
         .nav-item.hover:hover {
             color: $white;
@@ -209,26 +226,15 @@ $nav-background: rgba(13, 13, 13, 0.91);
         .nav-menu.active {
             display: flex;
         }
+        .nav-menu:focus {
+            display: flex;
+        }
+
     }
 }
 
 @media screen and (max-width: 1056px) {
     .navbar {
         flex-flow: column;
-    }
-
-}
-.navbar.l-container {
-    width: 100%;
-    max-width: 987px;
-}
-.navbar {
-    position: fixed;
-    max-width: inherit;
-}
-
-@media screen and (min-width: 1056px) {
-    .l-container.nav {
-        display: flex;
     }
 }

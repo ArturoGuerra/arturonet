@@ -77,6 +77,15 @@ a:hover {
 
 .hero-title {
     font-weight: 600;
+    &.center {
+        text-align: center;
+    }
+}
+
+.subtitle {
+    &.center {
+        text-align: center;
+    }
 }
 
 @media screen and (min-width: 769px) {

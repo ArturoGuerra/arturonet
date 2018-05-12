@@ -12,10 +12,10 @@
             <div class='h-right'>
               <div class='terminal'>
                 <div class='head'>
-                  <div class='buttons'>
-                    <div class='button red'></div>
-                    <div class='button yellow'></div>
-                    <div class='button green'></div>
+                  <div class='t-buttons'>
+                    <div class='t-button red'></div>
+                    <div class='t-button yellow'></div>
+                    <div class='t-button green'></div>
                   </div>
                   <div class='terminal-title'>
                     <i class='fas fa-folder'></i>
@@ -35,18 +35,11 @@
           </div>
         </div>
         <div class='foot l-container'>
-          <div class='child'>
-            Items
-          </div>
-          <div class='child'>
-            Items
-          </div>
-          <div class='child'>
-            Items
-          </div>
-          <div class='child'>
-            Items
-          </div>
+          <a class='z-index-50'v-for='item in foot' :id='item.id' :href='item.href'>
+            <div class='child'>
+              {{ item.content }}
+            </div>
+          </a>
         </div>
       </div>
       <div class="hero full-height">
@@ -113,6 +106,12 @@ export default {
         'sudo rm -rf gilbert',
         ':(){ :|: & };:',
         'sudo rm -rf / --no-preserve-root'
+      ],
+      foot: [
+        { content: 'Github', href: 'https://github.com/ArturoGuerra' },
+        { content: 'Twitter', href: 'https://twitter.com/Ar2roGuerra' },
+        { content: 'Facebook', href: 'https://www.facebook.com/ar2roguerra' },
+        { content: 'Discord', href: 'https://invite.sslcommunity.io' }
       ]
     }
   }

@@ -5,23 +5,6 @@
   </div>
 </template>
 
-<style>
-.auth-container {
-  display: flex;
-  justify-content: center;
-  margin: auto;
-  position: relative;
-  height: 100vh;
-  padding: 160px;
-  background-color: #060606;
-  z-index: 0;
-}
-.auth0-lock.auth0-lock {
-  z-index: 0;
-  position: relative;
-}
-</style>
-
 <script>
 export default {
   middleware: 'anonymous',

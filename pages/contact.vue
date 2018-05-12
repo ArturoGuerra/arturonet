@@ -1,36 +1,39 @@
 <template>
-  <div>
-    <div class="custom-hero dark-blue white custom-hero-small">
-      <particles></particles>
-      <div class='custom-hero-body wow lightSpeedIn'>
-        <h1 class="hero-title">Contact Me</h1>
-        <h3 class='hero-subtitle'><vue-typer :pre-type-delay='1500' :repeat='0' text='Mark is a lizard'/></h3>
+  <div class='hero full-height'>
+    <div class='body'>
+      <div class='l-container'>
+        <div class='grid grid-t-shape'>
+          <div class='grid-item grid-contact-head flex flex-column flex-j-center'>
+            <h1 class="hero-title blue">Contact Me</h1>
+            <h3 class='hero-subtitle m-auto'><vue-typer :pre-type-delay='1500' :repeat='0' text='Mark is a lizard'/></h3>
+          </div>
+          <div class='grid-contact-contact'>
+            <div class='field'>
+              <label class='label'>Name</label>
+              <div class='control'>
+                <input v-model='name' :class='[validname]' class='input' type='text' placeholder='name'>
+              </div>
+            </div>
+            <div class='field'>
+              <label class='label'>Email</label>
+              <div class='control'>
+                <input v-model='email' :class='[validemail]' class='input' type='email' placeholder='email' required>
+              </div>
+            </div>
+            <div class='field'>
+              <label class='label'>Message</label>
+              <div class='control'>
+                <textarea v-model='message' :class='[validmessage]' class='textarea' placeholder='email content'></textarea>
+              </div>
+            </div>
+            <div class="field">
+              <a @click='send' class="button is-info">Submit</a>
+            </div>
+            <p class='help' :class="[color]">{{ result }}</p>
+          </div>
+        </div>
       </div>
     </div>
-    <section class='section section-mod wow zoomIn'>
-      <div class='field'>
-        <label class='label'>Name</label>
-        <div class='control'>
-          <input v-model='name' :class='[validname]' class='input' type='text' placeholder='name'>
-        </div>
-      </div>
-      <div class='field'>
-        <label class='label'>Email</label>
-        <div class='control'>
-          <input v-model='email' :class='[validemail]' class='input' type='email' placeholder='email' required>
-        </div>
-      </div>
-      <div class='field'>
-        <label class='label'>Message</label>
-        <div class='control'>
-          <textarea v-model='message' :class='[validmessage]' class='textarea' placeholder='email content'></textarea>
-        </div>
-      </div>
-      <div class="field">
-        <a @click='send' class="button is-info">Submit</a>
-      </div>
-      <p class='help' :class="[color]">{{ result }}</p>
-    </section>
   </div>
 </template>
 

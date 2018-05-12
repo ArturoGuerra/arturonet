@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class='custom-hero dark-blue white custom-hero-small'>
+    <div class='custom-hero custom-hero-small blue'>
       <particles></particles>
       <div class='custom-hero-body wow lightSpeedIn'>
         <h1 class='hero-title'><vue-typer :pre-type-delay='1500' :repeat='0' text='Plex Service Monitor'/></h1>
@@ -8,7 +8,7 @@
     </div>
     <div class='container'>
       <div v-if='ready' class='status-container'>
-        <table class='table is-fullwidth table-mod-2'>
+        <table class='table-mod-2'>
           <tbody>
             <tr v-for='item in running' :key='item.service' class='status-item'>
               <span class='status-start'>{{ item.name }}</span><span class='status-end has-text-success'>Operational</span>
