@@ -29,7 +29,7 @@ $nav-background: rgba(13, 13, 13, 0.91);
       .nav-burger {
           padding: 0.6rem 0.6rem;
           width: 40px;
-          height: 40px;
+          //height: 40px;
           display: none;
           margin-left: auto;
       }
@@ -65,9 +65,6 @@ $nav-background: rgba(13, 13, 13, 0.91);
     }
     @media screen and (max-width: 1056px) {
         .nav-brand {
-            .nav-item {
-                height: 40px;
-            }
             .nav-burger {
                 display: block;
             }
@@ -83,12 +80,14 @@ $nav-background: rgba(13, 13, 13, 0.91);
         flex-grow: 1;
         .nav-start, .nav-end {
             display: flex;
+            .nav-item {
+                min-height: 40px;
+            }
         }
         .nav-end {
             margin-left: auto;
         }
         .nav-item {
-            height: 40px;
             padding: 0.6rem 0.6rem;
         }
         .nav-item:hover {
@@ -127,7 +126,7 @@ $nav-background: rgba(13, 13, 13, 0.91);
               border-top: 0;
               content: " ";
               display: block;
-              margin-top: 0.46rem;
+              margin-top: 0.56rem;
               right: 0.8rem;
               pointer-events: none;
               position: absolute;
@@ -141,41 +140,35 @@ $nav-background: rgba(13, 13, 13, 0.91);
                 flex-flow: column;
                 justify-content: flex-start;
                 top: 100%;
-                left: 0;
-                right: 0;
+                //left: 0;
+                //right: 0;
                 padding-bottom: 5px;
                 border-radius: 0 0 5px 5px;
                 position: absolute;
-                .nav-item {
+                .nav-item, .nav-item:hover {
                     justify-content: flex-start;
-                    height: 15px;
+                    min-height: 25px;
                     font-size: 0.9rem;
-                    padding-left: 20px;
-                }
-                .nav-item {
-                    padding-bottom: 0.6rem;
+                    padding: 6px 10px;
+                    border-bottom-style: hidden;
                 }
                 .nav-item:hover {
                     color: $whitesmoke;
                 }
             }
-              @media screen and (min-width: 1056px) {
+            &:hover {
+                color: $white;
+                padding: 0.6rem;
+                border-bottom-style: hidden;
                 .nav-dropdown {
-                  background-color: $nav-background;
-                  box-shadow: 0px 1rem 3rem -1rem rgba(136, 136, 136, 0.12);
+                    display: flex;
                 }
+            }
+            @media screen and (min-width: 1056px) {
+              .nav-dropdown {
+                background-color: $nav-background;
+                box-shadow: 0px 1rem 3rem -1rem rgba(136, 136, 136, 0.12);
               }
-        }
-        .nav-item.hover:hover {
-            color: $white;
-            border-bottom-style: hidden;
-            border-bottom-width: 0;
-            .nav-dropdown {
-                display: flex;
-                .nav-item, .nav-item:hover {
-                    border-bottom-style: hidden;
-                    border-bottom-width: 0;
-                }
             }
         }
     }
@@ -185,6 +178,9 @@ $nav-background: rgba(13, 13, 13, 0.91);
             flex-flow: column;
             padding-top: 8px;
             padding-bottom: 8px;
+            &.active {
+                display: flex;
+            }
             .nav-item {
                 justify-content: flex-start;
                 padding-top: 0.4rem;
@@ -222,12 +218,6 @@ $nav-background: rgba(13, 13, 13, 0.91);
                     }
                 }
             }
-        }
-        .nav-menu.active {
-            display: flex;
-        }
-        .nav-menu:focus {
-            display: flex;
         }
 
     }

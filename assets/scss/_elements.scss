@@ -38,9 +38,21 @@ hr.hr-1 {
 
 .hero-header-m {
     margin-top: 4rem;
-    maring-bottom: 1rem;
+    margin-bottom: 1rem;
 }
 
 .z-index-50 {
     z-index: 50;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.has-text-success {
+    color: hsl(141, 71%, 48%);
+}
+
+.has-text-danger {
+    color: hsl(348, 100%, 61%);
 }

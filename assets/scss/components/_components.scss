@@ -83,11 +83,7 @@ $hero-padding: 2rem;
 }
 
 .hero.full-height {
-    min-height: calc(100vh - 4rem);
-}
-
-.hero.nav-height {
-    min-height: calc(100vh - (60px + 2rem));
+    min-height: 100vh;
 }
 
 .l-container {
