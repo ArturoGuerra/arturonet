@@ -5,13 +5,13 @@
           <nuxt-link to="/" class="nav-item">
             <img src="./../assets/img/myface.jpg" class='img-navbar'>
           </nuxt-link>
-          <div class="nav-burger" id="navtoggle" v-on:click='toggleNav'>
+          <div class="nav-burger" v-on:click='toggleNav' :class='{ active: active }'>
             <span></span>
             <span></span>
             <span></span>
           </div>
       </div>
-      <div class="nav-menu" id='navmenu'>
+      <div class="nav-menu" :class='{ active: active }'>
         <div class="nav-start">
           <nuxt-link v-for="item in navitems" :id='item.id' :key="item.id" :to="item.href" class="nav-item" exact>
             <span>{{ item.name }}</span>
@@ -57,13 +57,13 @@ export default {
       usernav: [
         { id: 'images', href: '/images', name: 'Images' },
         { id: 'logout', href: '/auth/logout', name: 'Logout' }
-      ]
+      ],
+      active: false
     }
   },
   methods: {
     toggleNav () {
-      document.getElementById('navtoggle').classList.toggle('active')
-      document.getElementById('navmenu').classList.toggle('active')
+      this.active = !this.active
     }
   },
   computed: {
