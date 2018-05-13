@@ -88,6 +88,7 @@ $nav-background: rgba(13, 13, 13, 0.91);
             margin-left: auto;
         }
         .nav-item {
+            position: relative;
             padding: 0.6rem 0.6rem;
         }
         .nav-item:hover {
@@ -97,17 +98,26 @@ $nav-background: rgba(13, 13, 13, 0.91);
             color: $primary;
         }
         @media screen and (min-width: 1056px) {
-            .nav-item:hover {
-                border-bottom-style: solid;
-                border-bottom-color: $whitesmoke;
-                border-bottom-width: 1px;
-                padding-bottom: calc(0.5rem - 1px);
+            .nav-item::before {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin: auto;
+                width: 0%;
+                content: '.';
+                color: transparent;
+                background: #aaa;
+                height: 1px;
             }
-            .nav-item.active {
-                border-bottom-style: solid;
-                border-bottom-color: $primary;
-                border-bottom-width: 2px;
-                padding-bottom: calc(0.5rem - 2px);
+            .nav-item:hover:before {
+                transition: all .5s;
+                width: 100%;
+            }
+            .nav-item.active:before {
+                transition: all .5s;
+                width: 100%;
+                background: $primary;
             }
         }
         .nav-item.hover {
@@ -150,16 +160,16 @@ $nav-background: rgba(13, 13, 13, 0.91);
                     min-height: 25px;
                     font-size: 0.9rem;
                     padding: 6px 10px;
-                    border-bottom-style: hidden;
                 }
                 .nav-item:hover {
                     color: $whitesmoke;
                 }
+                .nav-item:before, .nav-item:hover:before {
+                    content: none;
+                }
             }
             &:hover {
                 color: $white;
-                padding: 0.6rem;
-                border-bottom-style: hidden;
                 .nav-dropdown {
                     display: flex;
                 }
