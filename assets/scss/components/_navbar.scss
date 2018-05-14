@@ -165,6 +165,9 @@ $nav-background: rgba(13, 13, 13, 0.91);
                 .nav-item:before, .nav-item:hover:before {
                     content: none;
                 }
+                .nav-item.active:hover {
+                    color: $primary;
+                }
             }
             &:hover {
                 color: $white;
