@@ -31,6 +31,22 @@
             </div>
             <p class='help' :class="[color]">{{ result }}</p>
           </div>
+          <div class='grid-contact-social is-hidden-mobile'>
+            <div class='flex flex-j-center flex-column m-bottom-auto m-right-auto m-left-auto m-top-1'>
+              <a href='https://github.com/ArturoGuerra'>
+                <div class='fab fa-github contact-fa-padding font-3'>
+                </div>
+              </a>
+              <a href='https://twitter.com/Ar2roGuerra'>
+                <div class='fab fa-twitter contact-fa-padding font-3'>
+                </div>
+              </a>
+              <a href='https://www.facebook.com/ar2roguerra'>
+                <div class='fab fa-facebook contact-fa-padding font-3'>
+                </div>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
