@@ -1,5 +1,5 @@
 $nav-background: rgba(13, 13, 13, 0.91);
-
+$desktop-width: 1056px;
 .navbar {
     background-color: $nav-background;
     z-index: 999;
@@ -8,9 +8,14 @@ $nav-background: rgba(13, 13, 13, 0.91);
     flex-grow: 1;
     flex-flow: row;
     justify-content: flex-start;
-    &.l-container {
+    .l-container {
         width: 100%;
         max-width: 987px;
+    }
+    @media screen and (min-width: $desktop-width) {
+        .l-container {
+            display: flex;
+        }
     }
     &.fixed {
         position: fixed;
@@ -24,13 +29,18 @@ $nav-background: rgba(13, 13, 13, 0.91);
     .nav-brand {
       display: flex;
       .nav-item {
-          padding: 0.6rem 0.6rem;
+            padding: 0.6rem 0.6rem;
       }
       .nav-burger {
-          padding: 0.6rem 0.6rem;
-          width: 40px;
-          display: none;
-          margin-left: auto;
+            padding: 0.6rem 0.6rem;
+            width: 40px;
+            display: none;
+            margin-left: auto;
+            @media screen and (max-width: $desktop-width) {
+                & {
+                    display: block;
+                }
+            }
       }
       .nav-burger span {
           background-color: $white;
@@ -62,18 +72,6 @@ $nav-background: rgba(13, 13, 13, 0.91);
           transform: translateY(-5px) rotate(-45deg);
       }
     }
-    @media screen and (max-width: 1056px) {
-        .nav-brand {
-            .nav-burger {
-                display: block;
-            }
-        }
-    }
-    @media screen and (min-width: 1056px) {
-        .l-container {
-            display: flex;
-        }
-    }
     .nav-menu {
         display: flex;
         flex-grow: 1;
@@ -89,101 +87,101 @@ $nav-background: rgba(13, 13, 13, 0.91);
         .nav-item {
             position: relative;
             padding: 0.6rem 0.6rem;
-        }
-        .nav-item:hover {
-            color: $whitesmoke;
-        }
-        .nav-item.active {
-            color: $primary;
-        }
-        @media screen and (min-width: 1056px) {
-            .nav-item::before {
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                margin: auto;
-                width: 0%;
-                content: '.';
-                color: transparent;
-                background: #aaa;
-                height: 1px;
-            }
-            .nav-item:hover:before {
-                transition: all .5s;
-                width: 100%;
-            }
-            .nav-item.active:before, .nav-item.active:hover:before {
-                width: 100%;
-                background: $primary;
-                height: 2px;
-            }
-        }
-        .nav-item.hover {
-            position: relative;
-            .nav-link {
-              display: flex;
-              min-width: 70px;
-              justify-content: flex-end;
-              padding-right: 25px;
-            }
-            .nav-link::after {
-              border: 3px solid transparent;
-              border-color: $white;
-              border-radius: 2px;
-              border-right: 0;
-              border-top: 0;
-              content: " ";
-              display: block;
-              margin-top: 0.56rem;
-              right: 0.8rem;
-              pointer-events: none;
-              position: absolute;
-              width: 0.4rem;
-              height: 0.4rem;
-              transform: rotate(-45deg);
-              transform-origin: center;
-            }
-            .nav-dropdown {
-                display: none;
-                flex-flow: column;
-                justify-content: flex-start;
-                top: 100%;
-                right: 0;
-                padding-bottom: 5px;
-                border-radius: 0 0 5px 5px;
-                position: absolute;
-                .nav-item, .nav-item:hover {
-                    justify-content: flex-start;
-                    min-height: 25px;
-                    font-size: 0.9rem;
-                    padding: 6px 10px;
-                }
-                .nav-item:hover {
-                    color: $whitesmoke;
-                }
-                .nav-item:before, .nav-item:hover:before {
-                    content: none;
-                }
-                .nav-item.active:hover {
-                    color: $primary;
-                }
-            }
             &:hover {
-                color: $white;
-                .nav-dropdown {
-                    display: flex;
+                color: $whitesmoke;
+            }
+            &.active, &.active:hover {
+                color: $primary;
+            }
+            @media screen and (min-width: $desktop-width) {
+                &:before {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                    width: 0%;
+                    content: '.';
+                    color: transparent;
+                    background: #aaa;
+                    height: 1px;
+                }
+                &:hover:before {
+                    transition: all .5s;
+                    width: 100%;
+                }
+                &.active:before, &.active:hover:before {
+                    width: 100%;
+                    background: $primary;
+                    height: 2px;
                 }
             }
-            @media screen and (min-width: 1056px) {
+            &.hover {
+                position: relative;
+                .nav-link {
+                  display: flex;
+                  min-width: 70px;
+                  justify-content: flex-end;
+                  padding-right: 25px;
+                }
+                .nav-link::after {
+                  border: 3px solid transparent;
+                  border-color: $white;
+                  border-radius: 2px;
+                  border-right: 0;
+                  border-top: 0;
+                  content: " ";
+                  display: block;
+                  margin-top: 0.56rem;
+                  right: 0.8rem;
+                  pointer-events: none;
+                  position: absolute;
+                  width: 0.4rem;
+                  height: 0.4rem;
+                  transform: rotate(-45deg);
+                  transform-origin: center;
+                }
                 .nav-dropdown {
-                  background-color: $nav-background;
-                  box-shadow: 0px 1rem 3rem -1rem rgba(136, 136, 136, 0.12);
+                    display: none;
+                    flex-flow: column;
+                    justify-content: flex-start;
+                    top: 100%;
+                    right: 0;
+                    padding-bottom: 5px;
+                    border-radius: 0 0 5px 5px;
+                    position: absolute;
+                    .nav-item, .nav-item:hover {
+                        justify-content: flex-start;
+                        min-height: 25px;
+                        font-size: 0.9rem;
+                        padding: 6px 10px;
+                    }
+                    .nav-item:hover {
+                        color: $whitesmoke;
+                    }
+                    .nav-item:before, .nav-item:hover:before {
+                        content: none;
+                    }
+                    .nav-item.active:hover {
+                        color: $primary;
+                    }
+                }
+                &:hover {
+                    color: $white;
+                    .nav-dropdown {
+                        display: flex;
+                    }
+                }
+                @media screen and (min-width: $desktop-width) {
+                    .nav-dropdown {
+                      background-color: $nav-background;
+                      box-shadow: 0px 1rem 3rem -1rem rgba(136, 136, 136, 0.12);
+                    }
                 }
             }
         }
     }
-    @media screen and (max-width: 1056px) {
+    @media screen and (max-width: $desktop-width) {
         .nav-menu {
             display: none;
             flex-flow: column;
@@ -235,7 +233,7 @@ $nav-background: rgba(13, 13, 13, 0.91);
     }
 }
 
-@media screen and (max-width: 1056px) {
+@media screen and (max-width: $desktop-width) {
     .navbar {
         flex-flow: column;
     }
