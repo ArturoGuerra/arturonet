@@ -29,7 +29,6 @@ $nav-background: rgba(13, 13, 13, 0.91);
       .nav-burger {
           padding: 0.6rem 0.6rem;
           width: 40px;
-          //height: 40px;
           display: none;
           margin-left: auto;
       }
@@ -114,8 +113,7 @@ $nav-background: rgba(13, 13, 13, 0.91);
                 transition: all .5s;
                 width: 100%;
             }
-            .nav-item.active:before {
-                transition: all .5s;
+            .nav-item.active:before, .nav-item.active:hover:before {
                 width: 100%;
                 background: $primary;
                 height: 2px;
@@ -151,8 +149,7 @@ $nav-background: rgba(13, 13, 13, 0.91);
                 flex-flow: column;
                 justify-content: flex-start;
                 top: 100%;
-                //left: 0;
-                //right: 0;
+                right: 0;
                 padding-bottom: 5px;
                 border-radius: 0 0 5px 5px;
                 position: absolute;
@@ -176,10 +173,10 @@ $nav-background: rgba(13, 13, 13, 0.91);
                 }
             }
             @media screen and (min-width: 1056px) {
-              .nav-dropdown {
-                background-color: $nav-background;
-                box-shadow: 0px 1rem 3rem -1rem rgba(136, 136, 136, 0.12);
-              }
+                .nav-dropdown {
+                  background-color: $nav-background;
+                  box-shadow: 0px 1rem 3rem -1rem rgba(136, 136, 136, 0.12);
+                }
             }
         }
     }
@@ -194,10 +191,10 @@ $nav-background: rgba(13, 13, 13, 0.91);
             }
             .nav-item {
                 justify-content: flex-start;
-                padding-top: 0.4rem;
-                padding-bottom: 0.4rem;
-                font-size: 1.1rem;
-                height: 20px;
+                padding-top: 0.1rem;
+                padding-bottom: 0.1rem;
+                font-size: 1rem;
+                min-height: 25px !important;
             }
             .nav-start, .nav-end {
                 flex-flow: column;
@@ -221,10 +218,11 @@ $nav-background: rgba(13, 13, 13, 0.91);
                         display: flex;
                         position: relative;
                         .nav-item {
-                            font-size: 1rem;
+                            min-height: 20px !important;
+                            font-size: 0.9rem;
                             padding-left: 5px;
-                            padding-bottom: 0.3rem;
-                            padding-top: 0.3rem;
+                            padding-bottom: 0.1rem;
+                            padding-top: 0.1rem;
                         }
                     }
                 }
