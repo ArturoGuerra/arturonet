@@ -27,12 +27,12 @@
           </thead>
           <tbody>
             <tr v-for='result in results'>
-              <td>
-                <img class='table-img' :src='result.bucket + result.key'>
-              </td>
-              <td>
-                <a  :href="result.url + '/' + result.key" target='_blank'>{{ result.url + '/' + result.key }}</a>
-              </td>
+              <th>
+                <img class='table-img' :src='result.url'>
+              </th>
+              <th>
+                <a  :href="result.url" target='_blank'>{{ result.url }}</a>
+              </th>
             </tr>
           </tbody>
         </table>
@@ -119,7 +119,7 @@ export default {
       }
       this.message = 'Uploading..'
       try {
-        let resp = await this.$nuxt.$axios.$post('https://img.dixionary.com/post', form)
+        let resp = await this.$nuxt.$axios.$post('https://imgapi.arturonet.com/post', form, { headers: { url: 'https://tim.came-on.me' } })
         this.results = resp
         this.validresp = true
       } catch (e) {
