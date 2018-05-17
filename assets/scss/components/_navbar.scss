@@ -38,15 +38,14 @@ $n-item-padding: 0.6rem;
                 padding-right: 1rem;
             }
             .nav-dropdown {
-                display: none;
-                &:hover {
-                    display: flex;
-                }
+                display: flex;
+                opacity: 0;
                 top: 100%;
                 right: 0;
                 padding: 5px;
                 border-radius: 0 0 5px 5px;
                 flex-flow: column;
+                min-width: 100%;
                 .drop-item {
                     min-height: 25px;
                     font-size: 0.9rem;
@@ -166,7 +165,8 @@ $n-item-padding: 0.6rem;
             }
             .nav-item.dropdown:hover {
                 .nav-dropdown {
-                    display: flex !important;
+                    opacity: 100;
+                    transition: opacity 300ms ease-in;
                 }
             }
         }
@@ -193,8 +193,8 @@ $n-item-padding: 0.6rem;
                 flex-flow: column;
                 align-items: flex-start;
                 .nav-dropdown {
-                    display: flex !important;
                     position: relative;
+                    opacity: 100;
                 }
             }
         }
