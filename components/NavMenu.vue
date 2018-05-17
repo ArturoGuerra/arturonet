@@ -18,13 +18,13 @@
           </nuxt-link>
         </div>
         <div class='nav-end' v-if='isAuthenticated'>
-          <div class='nav-item hover'>
+          <div class='nav-item dropdown'>
             <span class='nav-link'>{{ user.nickname ? user.nickname : user.name }}</span>
             <div class='nav-dropdown'>
-              <nuxt-link v-if='admin' v-for='item in adminnav' :id='item.id' :key='item.id' :to='item.href' class='nav-item' exact>
+              <nuxt-link v-if='admin' v-for='item in adminnav' :id='item.id' :key='item.id' :to='item.href' class='drop-item' exact>
                 <span>{{ item.name }}</span>
               </nuxt-link>
-              <nuxt-link v-for='item in usernav' :id='item.id' :key='item.id' :to='item.href' class='nav-item' exact>
+              <nuxt-link v-for='item in usernav' :id='item.id' :key='item.id' :to='item.href' class='drop-item' exact>
                 <span>{{ item.name }}</span>
               </nuxt-link>
             </div>

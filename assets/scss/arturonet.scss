@@ -1,9 +1,19 @@
 //$primary: #3273dc;
-$primary: #0070fa;
+
+$nav-background: rgba(13, 13, 13, 0.91);
+$desktop-width: 1056px;
+$text: #f5f5f5;
+$htext: #cecece;
+$atext: #0070fa;
+$background: black;
+$l-container: 987px;
+$n-item-padding: 0.6rem;
+
+$primary: $atext;
 $dark: #131313;
 $background: #131313;
-$white: #f5f5f5;
-$whitesmoke: #cecece;
+$white: $text;
+$whitesmoke: $htext;
 $invert-background: $white;
 
 *, *::after, *::before {

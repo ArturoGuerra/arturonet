@@ -1,100 +1,111 @@
 $nav-background: rgba(13, 13, 13, 0.91);
 $desktop-width: 1056px;
+$text: #f5f5f5;
+$htext: #cecece;
+$atext: #0070fa;
+$background: black;
+$l-container: 987px;
+$n-item-padding: 0.6rem;
+
 .navbar {
     background-color: $nav-background;
     z-index: 999;
     width: 100%;
     display: flex;
-    flex-grow: 1;
-    flex-flow: row;
-    justify-content: flex-start;
-    .l-container {
-        width: 100%;
-        max-width: 987px;
-    }
-    @media screen and (min-width: $desktop-width) {
-        .l-container {
-            display: flex;
-        }
-    }
     &.fixed {
         position: fixed;
         max-width: inherit;
     }
+    > .l-container {
+        width: 100%;
+        max-width: $l-container;
+    }
     .nav-item {
         display: flex;
+        position: relative;
         align-items: center;
-        justify-content: center;
-    }
-    .nav-brand {
-      display: flex;
-      .nav-item {
-            padding: 0.6rem 0.6rem;
-      }
-      .nav-burger {
-            padding: 0.6rem 0.6rem;
-            width: 40px;
-            display: none;
-            margin-left: auto;
-            @media screen and (max-width: $desktop-width) {
-                & {
-                    display: block;
+        justify-content: flex-start;
+        padding: $n-item-padding;
+        color: $text;
+        &:hover {
+            color: $htext;
+        }
+        &.active, &.active:hover {
+            color: $atext;
+        }
+        &.dropdown {
+            .nav-link {
+                padding-right: 1rem;
+            }
+            .nav-dropdown {
+                display: none;
+                &:hover {
+                    display: flex;
+                }
+                top: 100%;
+                right: 0;
+                padding: 5px;
+                border-radius: 0 0 5px 5px;
+                flex-flow: column;
+                .drop-item {
+                    min-height: 25px;
+                    font-size: 0.9rem;
+                    padding: 0.2rem;
+                    color: $text;
+                    &:hover {
+                        color: $htext;
+                    }
+                    &.active:hover,
+                    &.active {
+                        color: $atext;
+                    }
                 }
             }
-      }
-      .nav-burger span {
-          background-color: $white;
-          display: block;
-          height: 1px;
-          position: relative;
-          width: 16px;
-          margin: auto;
-      }
-      .nav-burger span:first-child {
-          top: calc(50% - 6px);
-      }
-      .nav-burger span:nth-child(2) {
-          top: calc(50% - 1px);
-      }
-      .nav-burger span:nth-child(3) {
-          top: calc(50% + 4px);
-      }
-      .nav-burger.active span:first-child {
-          top: calc(50% - 6px);
-          transform: translateY(6.7px) rotate(45deg);
-      }
-      .nav-burger.active span:nth-child(2) {
-          top: calc(50% - 1px);
-          opacity: 0;
-      }
-      .nav-burger.active span:nth-child(3) {
-          top: calc(50% + 4px);
-          transform: translateY(-5px) rotate(-45deg);
-      }
+        }
+    }
+    .nav-brand {
+        display: flex;
+        .nav-burger {
+            display: none;
+            padding: $n-item-padding;
+            width: 40px;
+            margin-left: auto;
+        }
+        .nav-burger span {
+            background-color: $text;
+            display: block;
+            height: 1px;
+            position: relative;
+            width: 16px;
+            margin: auto;
+            &:first-child {
+                top: calc(50% - 6px);
+            }
+            &:nth-child(2) {
+                top: calc(50% - 1px);
+            }
+            &:nth-child(3) {
+                top: calc(50% + 4px);
+            }
+        }
     }
     .nav-menu {
         display: flex;
         flex-grow: 1;
         .nav-start, .nav-end {
             display: flex;
+        }
+    }
+    @media screen and (min-width: $desktop-width) {
+        .l-container {
+            display: flex;
+        }
+        .nav-menu {
+            .nav-end {
+                margin-left: auto;
+            }
             .nav-item {
-                min-height: 40px;
-            }
-        }
-        .nav-end {
-            margin-left: auto;
-        }
-        .nav-item {
-            position: relative;
-            padding: 0.6rem 0.6rem;
-            &:hover {
-                color: $whitesmoke;
-            }
-            &.active, &.active:hover {
-                color: $primary;
-            }
-            @media screen and (min-width: $desktop-width) {
-                &:before {
+                &::after {
                     position: absolute;
                     bottom: 0;
                     left: 0;
@@ -106,130 +117,75 @@ $desktop-width: 1056px;
                     background: #aaa;
                     height: 1px;
                 }
-                &:hover:before {
+                &:hover:after {
                     transition: all .5s;
                     width: 100%;
                 }
-                &.active:before, &.active:hover:before {
+                &.active::after {
+                    transition: all .5s;
                     width: 100%;
-                    background: $primary;
+                    background: $atext;
                     height: 2px;
                 }
+                &.dropdown {
+                    .nav-dropdown {
+                        position: absolute;
+                        background-color: $nav-background;
+                        box-shadow: 0 1rem 3rem -1rem hsla(0,0%,53%,.12);
+                    }
+                    .nav-link::after {
+                        border: 3px solid transparent;
+                        border-color: $text;
+                        border-radius: 2px;
+                        border-right: 0;
+                        border-top: 0;
+                        content: " ";
+                        display: block;
+                        margin-top: -0.82rem;
+                        right: 0.8rem;
+                        pointer-events: none;
+                        position: absolute;
+                        width: 0.4rem;
+                        height: 0.4rem;
+                        transform: rotate(-45deg);
+                        transform-origin: center;
+                    }
+                }
             }
-            &.hover {
-                position: relative;
-                .nav-link {
-                  display: flex;
-                  min-width: 70px;
-                  justify-content: flex-end;
-                  padding-right: 25px;
-                }
-                .nav-link::after {
-                  border: 3px solid transparent;
-                  border-color: $white;
-                  border-radius: 2px;
-                  border-right: 0;
-                  border-top: 0;
-                  content: " ";
-                  display: block;
-                  margin-top: 0.56rem;
-                  right: 0.8rem;
-                  pointer-events: none;
-                  position: absolute;
-                  width: 0.4rem;
-                  height: 0.4rem;
-                  transform: rotate(-45deg);
-                  transform-origin: center;
-                }
+            .nav-item.dropdown:hover {
                 .nav-dropdown {
-                    display: none;
-                    flex-flow: column;
-                    justify-content: flex-start;
-                    top: 100%;
-                    right: 0;
-                    padding-bottom: 5px;
-                    border-radius: 0 0 5px 5px;
-                    position: absolute;
-                    .nav-item, .nav-item:hover {
-                        justify-content: flex-start;
-                        min-height: 25px;
-                        font-size: 0.9rem;
-                        padding: 6px 10px;
-                    }
-                    .nav-item:hover {
-                        color: $whitesmoke;
-                    }
-                    .nav-item:before, .nav-item:hover:before {
-                        content: none;
-                    }
-                    .nav-item.active:hover {
-                        color: $primary;
-                    }
-                }
-                &:hover {
-                    color: $white;
-                    .nav-dropdown {
-                        display: flex;
-                    }
-                }
-                @media screen and (min-width: $desktop-width) {
-                    .nav-dropdown {
-                      background-color: $nav-background;
-                      box-shadow: 0px 1rem 3rem -1rem rgba(136, 136, 136, 0.12);
-                    }
+                    display: flex !important;
                 }
             }
         }
     }
     @media screen and (max-width: $desktop-width) {
-        .nav-menu {
-            display: none;
-            flex-flow: column;
-            padding-top: 8px;
-            padding-bottom: 8px;
-            &.active {
-                display: flex;
+        .nav-brand {
+            .nav-burger {
+                display: block !important;
             }
-            .nav-item {
-                justify-content: flex-start;
-                padding-top: 0.1rem;
-                padding-bottom: 0.1rem;
-                font-size: 1rem;
-                min-height: 25px !important;
+        }
+        .nav-menu {
+            display: none !important;
+            flex-flow: column;
+            &.active {
+                display: flex !important;
             }
             .nav-start, .nav-end {
                 flex-flow: column;
-                margin-left: 0;
             }
-            .nav-end {
-                .nav-item.hover {
-                    height: auto;
-                    display: flex;
-                    align-items: flex-start;
-                    flex-flow: column;
-                    .nav-link {
-                        justify-content: flex-start;
-                    }
-                    .nav-link::after {
-                        content: none;
-                    }
-                    .nav-dropdown {
-                        padding-top: 5px;
-                        padding-bottom: 5px;
-                        display: flex;
-                        position: relative;
-                        .nav-item {
-                            min-height: 20px !important;
-                            font-size: 0.9rem;
-                            padding-left: 5px;
-                            padding-bottom: 0.1rem;
-                            padding-top: 0.1rem;
-                        }
-                    }
+            .nav-item {
+                padding: 0.3rem 0.6rem;
+            }
+            .nav-item.dropdown {
+                flex-flow: column;
+                align-items: flex-start;
+                .nav-dropdown {
+                    display: flex !important;
+                    position: relative;
                 }
             }
         }
-
     }
 }
 
