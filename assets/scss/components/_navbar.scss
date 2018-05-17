@@ -130,11 +130,11 @@ $n-item-padding: 0.6rem;
                     height: 1px;
                 }
                 &:hover:after {
-                    transition: all .5s;
+                    transition: width 500ms;
                     width: 100%;
                 }
                 &.active::after {
-                    transition: all .5s;
+                    transition: width 500ms, height 200ms;
                     width: 100%;
                     background: $atext;
                     height: 2px;
