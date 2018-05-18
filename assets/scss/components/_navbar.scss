@@ -69,6 +69,11 @@ $n-item-padding: 0.6rem;
             padding: $n-item-padding;
             width: 40px;
             margin-left: auto;
+            &:hover {
+                & span {
+                   background-color: $atext;
+                }
+            }
         }
         .nav-burger span {
             background-color: $text;
@@ -89,6 +94,7 @@ $n-item-padding: 0.6rem;
             }
         }
         .nav-burger.active span  {
+            background-color: $atext;
             &:first-child {
                 transform: translateY(6.7px) rotate(45deg);
             }
@@ -128,14 +134,15 @@ $n-item-padding: 0.6rem;
                     color: transparent;
                     background: #aaa;
                     height: 1px;
+                    border-radius: 4px 4px 0 0;
                 }
                 &:hover:after {
-                    transition: transform 500ms;
+                    transition: transform 300ms;
                     transform: scaleX(1);
                 }
                 &.active::after {
-                    transition: transform 500ms;
-                    transform: scaleX(1);
+                    transition: transform 300ms;
+                    transform: scaleX(0.9);
                     background: $atext;
                     height: 2px;
                 }
