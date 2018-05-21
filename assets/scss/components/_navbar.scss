@@ -186,6 +186,7 @@ $n-item-padding: 0.6rem;
         .nav-menu {
             display: none !important;
             flex-flow: column;
+            padding-bottom: 0.4rem;
             &.active {
                 display: flex !important;
             }
