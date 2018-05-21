@@ -109,6 +109,7 @@ $n-item-padding: 0.6rem;
     .nav-menu {
         display: flex;
         flex-grow: 1;
+        justify-content: space-between;
         .nav-start, .nav-end {
             display: flex;
         }
@@ -118,9 +119,6 @@ $n-item-padding: 0.6rem;
             display: flex;
         }
         .nav-menu {
-            .nav-end {
-                margin-left: auto;
-            }
             .nav-item {
                 &::after {
                     position: absolute;

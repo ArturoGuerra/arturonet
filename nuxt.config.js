@@ -113,7 +113,7 @@ module.exports = {
   router: {
     linkActiveClass: 'active',
     linkExactActiveClass: 'active',
-    middleware: 'check-auth'
+    middleware: ['check-auth', 'navstate']
   },
   loading: {
     color: '#0C66A1',

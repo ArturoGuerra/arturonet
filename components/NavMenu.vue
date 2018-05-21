@@ -39,7 +39,7 @@
 </template>
 
 <script>
-import { mapGetters, mapState } from 'vuex'
+import { mapGetters, mapState, mapMutations } from 'vuex'
 
 export default {
   name: 'NavMenu',
@@ -57,19 +57,18 @@ export default {
       usernav: [
         { id: 'images', href: '/images', name: 'Images' },
         { id: 'logout', href: '/auth/logout', name: 'Logout' }
-      ],
-      active: false
-    }
-  },
-  methods: {
-    toggleNav () {
-      this.active = !this.active
+      ]
     }
   },
   computed: {
     ...mapGetters(['isAuthenticated']),
-    ...mapState(['admin', 'user'])
+    ...mapState(['admin', 'user', 'active'])
+  },
+  methods: {
+    ...mapMutations({ navstate: 'NAV_STATE' }),
+    toggleNav () {
+      this.navstate(!this.active)
+    }
   }
-
 }
 </script>

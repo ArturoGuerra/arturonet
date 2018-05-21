@@ -4,7 +4,8 @@ export const state = () => ({
   user: null,
   token: null,
   atoken: null,
-  admin: false
+  admin: false,
+  active: false
 })
 
 export const mutations = {
@@ -13,6 +14,9 @@ export const mutations = {
     if (atoken) state.atoken = atoken
     if (user) state.user = user
     if (admin) state.admin = admin
+  },
+  NAV_STATE (state, active) {
+    state.active = active
   }
 }
 
