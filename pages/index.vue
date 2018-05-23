@@ -34,10 +34,9 @@
             <a href='#about'><div class='arrow'></div></a>
           </div>
         </div>
-        <div class='foot l-container'>
+        <div class='height-3 foot l-container'>
           <a class='z-index-50'v-for='item in foot' :id='item.id' :href='item.href'>
-            <div class='child'>
-              {{ item.content }}
+            <div class='child font-3 fab' :class='[item.cls]'>
             </div>
           </a>
         </div>
@@ -108,10 +107,10 @@ export default {
         'sudo rm -rf / --no-preserve-root'
       ],
       foot: [
-        { content: 'Github', href: 'https://github.com/ArturoGuerra' },
-        { content: 'Twitter', href: 'https://twitter.com/Ar2roGuerra' },
-        { content: 'Facebook', href: 'https://www.facebook.com/ar2roguerra' },
-        { content: 'Discord', href: 'https://invite.sslcommunity.io' }
+        { cls: 'fa-github-square github-color-blue', href: 'https://github.com/ArturoGuerra' },
+        { cls: 'fa-twitter-square twitter-color', href: 'https://twitter.com/Ar2roGuerra' },
+        { cls: 'fa-facebook facebook-color', href: 'https://www.facebook.com/ar2roguerra' },
+        { cls: 'fa-discord discord-color', href: 'https://invite.sslcommunity.io' }
       ]
     }
   }

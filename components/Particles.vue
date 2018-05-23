@@ -2,7 +2,7 @@
   <no-ssr>
     <vue-particles
       color="#dedede"
-      :particlesNumber='150'
+      :particlesNumber='50'
       :moveSpeed='5'
       >
     </vue-particles>
