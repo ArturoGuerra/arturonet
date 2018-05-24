@@ -4,7 +4,6 @@ $text: #f5f5f5;
 $htext: #cecece;
 $atext: #0070fa;
 $background: black;
-$l-container: 987px;
 $n-item-padding: 0.6rem;
 
 .navbar {
@@ -15,10 +14,6 @@ $n-item-padding: 0.6rem;
     &.fixed {
         position: fixed;
         max-width: inherit;
-    }
-    > .l-container {
-        width: 100%;
-        max-width: $l-container;
     }
     .nav-item {
         display: flex;
@@ -117,6 +112,8 @@ $n-item-padding: 0.6rem;
     @media screen and (min-width: $desktop-width) {
         .l-container {
             display: flex;
+            justify-content: inherit;
+            align-items: inherit;
         }
         .nav-menu {
             .nav-item {
