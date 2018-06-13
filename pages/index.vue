@@ -42,7 +42,7 @@
         </div>
       </div>
       <div class="hero full-height">
-        <a name='about'></a>
+        <!-- a name='about'></a>
         <div class='l-container'>
           <p class="title flex-text-align vertical-padding-50 blue-2">
             <img src="./../assets/img/myface.jpg" width="50" class='flex-img-style'> About Me
@@ -57,7 +57,7 @@
               language and consider myself a professional notepad coder looool. That last part was totaly serious. I'm currenly gettings into web development and thats why I made this website. If you want to see my
               other projects go to my <strong><a href="https://github.com/ArturoGuerra">GitHub</a></strong> or click on the projects tab at the top of the website.
           </p>
-        </div>
+        </div -->
         <hr class='hr-1'/>
         <div class="grid-container grid-container-padding">
           <div class="grid-twitter">
