@@ -1,11 +1,10 @@
-import cookieParser from 'cookie-parser'
-import bodyParser from 'body-parser'
-import { Nuxt, Builder } from 'nuxt'
-import express from 'express'
-import morgan from 'morgan'
-import http from 'http'
-import fs from 'fs'
-import api from './api'
+const cookieParser = require('cookie-parser')
+const bodyParser = require('body-parser')
+const { Nuxt, Builder } = require('nuxt')
+const express = require('express')
+const morgan = require('morgan')
+const api = require( './api')
+const http = require('http')
 
 require('dotenv').config()
 
@@ -62,5 +61,3 @@ function StartServer () {
 }
 
 StartServer()
-
-export { app }

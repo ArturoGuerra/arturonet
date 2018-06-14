@@ -59,4 +59,4 @@ function get_recipients () {
   }
 }
 
-export default router
+module.exports = router
