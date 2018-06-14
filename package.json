@@ -1,13 +1,13 @@
 {
   "name": "arturonet",
-  "version": "1.0.0",
-  "description": "Nuxt.js project",
+  "version": "2.0.0",
+  "description": "My personal website",
   "author": "Arturo Guerra <arturoguerra360@gmail.com>",
   "private": true,
   "scripts": {
-    "dev": "backpack dev",
-    "build": "nuxt build && backpack build",
-    "start": "cross-env NODE_ENV=production node build/main.js",
+    "dev": "HOST=0.0.0.0 nuxt",
+    "build": "nuxt build",
+    "start": "nuxt build && nuxt start",
     "precommit": "npm run lint",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
   },
