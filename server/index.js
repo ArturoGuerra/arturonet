@@ -14,6 +14,15 @@ const host = process.env.HOST || '0.0.0.0'
 const port = process.env.PORT || 3000
 const socket = process.env.SOCKET || null
 
+let blacklist
+if (process.env.BLACKLIST) {
+  blacklist = process.env.BLACKLIST.split(' ')
+} else {
+  blacklist = []
+}
+
+console.log(`Loaded blacklist: ${blacklist}`)
+
 app.set('port', port)
 app.set('host', host)
 app.set('socket', socket)
@@ -38,6 +47,14 @@ if (!config.dev) {
 app.use(cookieParser())
 app.use(bodyParser.json())
 app.use(morgan('short'))
+
+app.use((req, res, next) => {
+  if (blacklist.indexOf(req.ip) >= 0) {
+    res.send('fuck off ' + req.ip)
+  } else {
+    next()
+  }
+})
 
 // Import API Routes
 app.use('/api', api)

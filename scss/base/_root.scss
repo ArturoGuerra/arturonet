@@ -1,0 +1,89 @@
+// Breakpoints
+$bp-xsmall: 20em; // 320px
+$bp-small: 48em; // 768px
+$bp-medium: 64em; // 1024px
+$bp-large: 85.375em; // 1366px
+$bp-xlarge: 120em; // 1920px
+$bp-xxlarge: 160em; // 2560px
+
+// Media Queries
+$mq-small: "(min-width: #{$bp-small})";
+$mq-medium: "(min-width: #{$bp-medium})";
+$mq-large: "(min-width: #{$bp-large})";
+$mq-xlarge: "(min-width: #{$bp-xlarge})";
+$mq-xxlarge: "(min-width: #{$bp-xxlarge})";
+$mq-retina: "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)";
+
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+@mixin fluid-type($properties, $min-vw, $max-vw, $min-value, $max-value) {
+	& {
+		@each $property in $properties {
+			#{$property}: $min-value;
+		}
+        // changed media-query to use em
+        @media screen and (min-width: $min-vw) {
+			@each $property in $properties {
+				#{$property}: calc(#{$min-value} + #{strip-unit($max-value - $min-value)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+			}
+		}
+        // changed media-query to use em
+		@media screen and (min-width: $max-vw) {
+			@each $property in $properties {
+				#{$property}: $max-value;
+			}
+		}
+	}
+}
+
+@function strip-unit($value) {
+	@return $value / ($value * 0 + 1);
+}
+
+
+html {
+    font-size: 1rem;
+
+    --button-padding: 0.7em 2em;
+    --navbar-burger-display: block;
+    --navbar-menu-display: none;
+    --navbar-flexdirection: column;
+    --navbar-menu-flexdirection: column;
+    --navbar-menu-flex-align: flex-start;
+
+    @media #{$mq-medium} {
+        --button-padding: 0.16em 1em;
+        --navbar-burger-display: none;
+        --navbar-menu-display: flex;
+        --navbar-flexdirection: row;
+        --navbar-menu-flexdirection: row;
+        --navbar-menu-flex-align: center;
+    }
+}
+
+body {
+    color: $text;
+
+    font-family: $base-fonts;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
+
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+
+    line-height: $base-line-height;
+
+    @include fluid-type(font-size, $bp-xsmall, $bp-xxlarge, $min-font-size, $max-font-size);
+
+    @media #{$mq-medium} {
+        line-height: $base-line-height*1.2;
+    }
+}
