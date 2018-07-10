@@ -62,18 +62,30 @@ app.use('/api', api)
 // Give nuxt middleware to express
 app.use(nuxt.render)
 
-// Listen the server
+// Listening on
+httpServer.on('listening', onListening)
+function onListening () {
+  let msg
+  if (socket) {
+    msg = `[unix socket] Listening on ${socket}`
+  } else {
+    let address = this.type === 'tcp4' ? this.address().address : `[${this.address().address}]`
+    let name = this.type === 'tcp4' ? 'ipv4server' : 'ipv6server'
+    msg = `[${name}]` + ' Listening on http://' + `${address}:${this.address().port}` // eslint-disable-line no-console
+  }
+  console.log(msg)
+}
+
 function StartServer () {
   if (socket) {
     if (fs.existsSync(socket)) {
       fs.unlinkSync(socket)
     }
-    httpServer.listen(socket, () => { console.log('Server listening on ' + socket) })
-    fs.chmodSync(socket, '0777')
-  } else {
-    httpServer.listen(port, host, () => {
-      console.log('Server listening on ' + host + ':' + port) // eslint-disable-line no-console
+    httpServer.listen(socket, () => {
+      fs.chmodSync(socket, '0777')
     })
+  } else {
+    httpServer.listen(port, host)
   }
 }
 
