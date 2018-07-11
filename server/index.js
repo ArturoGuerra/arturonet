@@ -69,8 +69,8 @@ function onListening () {
   if (socket) {
     msg = `[unix socket] Listening on ${socket}`
   } else {
-    let address = this.type === 'tcp4' ? this.address().address : `[${this.address().address}]`
-    let name = this.type === 'tcp4' ? 'ipv4server' : 'ipv6server'
+    let address = this.address().family === 'IPv4' ? this.address().address : `[${this.address().address}]`
+    let name = this.address().family === 'IPv4' ? 'ipv4server' : 'ipv6server'
     msg = `[${name}]` + ' Listening on http://' + `${address}:${this.address().port}` // eslint-disable-line no-console
   }
   console.log(msg)
