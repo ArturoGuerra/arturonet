@@ -1,0 +1,15 @@
+.flex {
+    display: flex;
+    &.flex-column {
+        flex-flow: column;
+    }
+    &.flex-j-center {
+        justify-content: center;
+    }
+    &.flex-a-center {
+        align-items: center;
+    }
+    .flex-grow {
+        flex-grow: 1;
+    }
+}

@@ -1,0 +1,10 @@
+<template>
+  <no-ssr>
+    <vue-particles
+      color="#dedede"
+      :particlesNumber='50'
+      :moveSpeed='5'
+      >
+    </vue-particles>
+  </no-ssr>
+</template>

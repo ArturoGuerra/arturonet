@@ -1,0 +1,11 @@
+@media screen and (max-width: 1080px) {
+    .desktop-only {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1087px) {
+    .touch-item-hidden {
+        display: none!important;
+    }
+}

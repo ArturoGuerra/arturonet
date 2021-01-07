@@ -1,0 +1,62 @@
+.sk-padding {
+    padding: 50px 0px;
+}
+
+.sk-wave {
+  width: 75px;
+  height: 60px;
+  text-align: center;
+  margin: auto;
+  font-size: 0;
+}
+.sk-wave .sk-rect {
+    background-color: #363636;
+    height: 100%;
+    width: 6px;
+    margin: 0 3px 0 0;
+    display: inline-block;
+    -webkit-animation: sk-waveStretchDelay 1.2s infinite ease-in-out;
+            animation: sk-waveStretchDelay 1.2s infinite ease-in-out;
+}
+.sk-wave .sk-rect1 {
+    -webkit-animation-delay: -1.2s;
+            animation-delay: -1.2s;
+}
+.sk-wave .sk-rect2 {
+    -webkit-animation-delay: -1.1s;
+            animation-delay: -1.1s;
+}
+.sk-wave .sk-rect3 {
+    -webkit-animation-delay: -1s;
+            animation-delay: -1s;
+}
+.sk-wave .sk-rect4 {
+    -webkit-animation-delay: -0.9s;
+            animation-delay: -0.9s;
+}
+.sk-wave .sk-rect5 {
+    -webkit-animation-delay: -0.8s;
+            animation-delay: -0.8s;
+}
+
+@-webkit-keyframes sk-waveStretchDelay {
+  0%,
+  100%,
+  40% {
+        transform: scaleY(0.4);
+  }
+  20% {
+        transform: scaleY(1);
+  }
+}
+
+@keyframes sk-waveStretchDelay {
+  0%,
+  100%,
+  40% {
+        transform: scaleY(0.4);
+  }
+  20% {
+        transform: scaleY(1);
+  }
+}
