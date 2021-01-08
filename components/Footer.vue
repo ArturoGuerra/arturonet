@@ -1,7 +1,7 @@
 <template>
   <footer class="footer">
     <p class='footer-item item-hidden'>
-    <span><a href="/">ArturoNet.com </a>Written with VueJS, NuxtJS and custom CSS and inspired by bulma </span>
+    <span><a href="/">Arturonet.com </a> is written and maintained by Arturo Guerra </span>
     </p>
     <p class='footer-item'>
       <span>Your IP is {{ ip }}</span>
@@ -9,24 +9,29 @@
   </footer>
 </template>
 
-<script>
-import axios from 'axios'
-export default {
+<script lang="ts">
+import Vue from 'vue'
+
+export default Vue.extend({
   name: 'Footer',
   data () {
     return {
       ip: ''
     }
   },
+  methods: {
+    async iprequest (): Promise<void> {
+      try {
+        let result: any = await this.$nuxt.$axios.$get("https://httpbin.org/ip")
+        this.ip = result.origin
+      } catch (error: any) {
+        console.log(error)
+      }
+    } 
+
+  },
   mounted () {
-    axios({
-      method: 'GET',
-      url: 'https://httpbin.org/ip'
-    }).then(result => {
-      this.ip = result.data.origin
-    }, error => {
-      console.log(error)
-    })
+    this.iprequest()
   }
-}
+})
 </script>

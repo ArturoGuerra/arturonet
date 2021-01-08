@@ -17,31 +17,16 @@
             <span>{{ item.name }}</span>
           </nuxt-link>
         </div>
-        <div class='nav-end' v-if='isAuthenticated'>
-          <div class='nav-item dropdown'>
-            <span class='nav-link'>{{ user.nickname ? user.nickname : user.name }}</span>
-            <div class='nav-dropdown'>
-              <nuxt-link v-if='admin' v-for='item in adminnav' :id='item.id' :key='item.id' :to='item.href' class='drop-item' exact>
-                <span>{{ item.name }}</span>
-              </nuxt-link>
-              <nuxt-link v-for='item in usernav' :id='item.id' :key='item.id' :to='item.href' class='drop-item' exact>
-                <span>{{ item.name }}</span>
-              </nuxt-link>
-            </div>
-          </div>
-        </div>
-        <div class='nav-end' v-if='!isAuthenticated'>
-          <nuxt-link class='nav-item' to='/auth/login'>Login</nuxt-link>
-        </div>
       </div>
     </div>
   </nav>
 </template>
 
-<script>
-import { mapGetters, mapState, mapMutations } from 'vuex'
+<script lang='ts'>
+import Vue from 'vue'
+import { mapState, mapMutations } from 'vuex'
 
-export default {
+export default Vue.extend({
   name: 'NavMenu',
   data () {
     return {
@@ -50,25 +35,16 @@ export default {
         { id: 'projects', href: '/projects', name: 'Projects' },
         { id: 'contact', href: '/contact', name: 'Contact' }
       ],
-      adminnav: [
-        { id: 'plexstatus', href: '/plexstatus', name: 'PlexMonitor' },
-        { id: 'wakeonlan', href: '/wakeonlan', name: 'WakeOnlan' }
-      ],
-      usernav: [
-        { id: 'images', href: '/images', name: 'Images' },
-        { id: 'logout', href: '/auth/logout', name: 'Logout' }
-      ]
     }
   },
   computed: {
-    ...mapGetters(['isAuthenticated']),
-    ...mapState(['admin', 'user', 'active'])
+    ...mapState(['active'])
   },
   methods: {
     ...mapMutations({ navstate: 'NAV_STATE' }),
-    toggleNav () {
+    toggleNav (): void {
       this.navstate(!this.active)
     }
   }
-}
+})
 </script>

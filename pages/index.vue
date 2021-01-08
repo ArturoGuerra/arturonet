@@ -35,7 +35,7 @@
           </div>
         </div>
         <div class='height-3 foot l-container'>
-          <a class='z-index-50'v-for='item in foot' :id='item.id' :href='item.href'>
+          <a class='z-index-50' v-for='item in foot' :key='item.href' :href='item.href'>
             <div class='child font-3 fab' :class='[item.cls]'>
             </div>
           </a>
@@ -62,11 +62,10 @@
         <div class="grid-container grid-container-padding">
           <div class="grid-twitter">
             <p class="grid-title is-4 blue-2">
-            Follow me on twitter
-            its a great(Shit) social media platform.
+            Follow me on twitter or add me on discord
             </p>
             <p class="grid-subtitle is-6">
-            I don't tweet that much but I constantly check it, so follow me
+            I don't tweet much but i'm always lurking
             </p>
           </div>
           <div class="grid-github">
@@ -78,14 +77,21 @@
             </p>
           </div>
           <div class="grid-twitter-em wow slideInRight" data-wow-duration='3s'>
-            <a class="twitter-timeline" data-width="350" data-height="500" data-dnt="true" data-theme="dark" href="https://twitter.com/Ar2roGuerra?ref_src=twsrc%5Etfw">Tweets by Ar2roGuerra</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            <a class="twitter-timeline" data-width="350" data-height="500" data-dnt="true" data-theme="dark" href="https://twitter.com/Ar2ro_">Tweets</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
           </div>
         </div>
       </div>
     </div>
 </template>
-<script>
-export default {
+<script lang='ts'>
+import Vue from 'vue'
+
+interface footerItem {
+  cls: string
+  href: string
+}
+
+export default Vue.extend({
   name: 'Home',
   head: {
     title: 'Home',
@@ -100,19 +106,22 @@ export default {
     if (process.browser) { this.$nuxt.$wow.sync() }
   },
   data () {
+    const terminal: string[] = [
+      'sudo rm -rf gilbert',
+      ':(){ :|: & };:',
+      'sudo rm -rf / --no-preserve-root'
+    ]
+
+    const foot: footerItem[] = [
+      { cls: 'fa-github-square github-color-blue', href: 'https://github.com/ArturoGuerra' },
+      { cls: 'fa-twitter-square twitter-color', href: 'https://twitter.com/Ar2ro_' },
+      { cls: 'fa-discord discord-color', href: 'https://destinyarena.app' }
+    ]
+
     return {
-      terminal: [
-        'sudo rm -rf gilbert',
-        ':(){ :|: & };:',
-        'sudo rm -rf / --no-preserve-root'
-      ],
-      foot: [
-        { cls: 'fa-github-square github-color-blue', href: 'https://github.com/ArturoGuerra' },
-        { cls: 'fa-twitter-square twitter-color', href: 'https://twitter.com/Ar2roGuerra' },
-        { cls: 'fa-facebook facebook-color', href: 'https://www.facebook.com/ar2roguerra' },
-        { cls: 'fa-discord discord-color', href: 'https://invite.sslcommunity.io' }
-      ]
+      terminal,
+      foot
     }
   }
-}
+})
 </script>

@@ -1,16 +1,5 @@
-require('dotenv').config()
-
-module.exports = {
-  /*
-  ** Headers of the page
-  */
-  /* env
-    AUTH0_CLIENT_ID
-    AUTH0_CLIENT_DOMAIN
-    AUTH0_AUDIENCE
-    AUTH0_NAMESPACE
-    GOOGLE_ANALYTICS_ID
-  */
+export default {
+  // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
     titleTemplate: '%s - ArturoNet',
     meta: [
@@ -32,7 +21,6 @@ module.exports = {
       { hid: 'twitter:card', name: 'twitter:card', content: 'summary' },
       { hid: 'twitter:creator', name: 'twitter:creator', content: '@Ar2roGuerra' },
       { hid: 'apple-mobile-web-app-title', name: 'apple-mobile-web-app-title', content: 'ArturoNet' }
-
     ],
     link: [
       { rel: 'apple-touch-icon', sizes: '57x57', href: '/apple-icon-57x57.png' },
@@ -52,91 +40,51 @@ module.exports = {
       { rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.0.13/css/all.css', crossorigin: 'anonyous' }
     ]
   },
-  manifest: {
-    name: "arturonet",
-    short_name: "arturonet",
-    discription: "Arturo's Personal Website",
-    icons: [{
-      src: '/android-icon-192x192.png',
-      sizes: '192x192',
-      type: 'image/png'
-    },
-    {
-      src: '/favicon-32x32.png',
-      sizes: '32x32',
-      type: 'image/png'
-    },
-    {
-      src: '/favicon-96x96.png',
-      sizes: '96x96',
-      type: 'image/png'
-    },
-    {
-      src: '/favicon-16x16.png',
-      sizes: '16x16',
-      type: 'image/png'
-    }]
-  },
-  /*
-  ** Global CSS
-  */
+
+  // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
-    '~/assets/scss/arturonet.scss',
-    'colors.css/css/colors.min.css',
-    '~/assets/css/main.css',
-    '~/assets/css/gradients.css',
-    '~/assets/css/images.css',
-    '~/assets/css/plexstatus.css',
-    '~/assets/css/animations.css',
-    '~/assets/css/animate.css'
+    "@/assets/css/animate.css",
+    "@/assets/css/animations.css",
+    "@/assets/css/gradients.css",
+    "@/assets/css/images.css",
+    "@/assets/css/main.css",
+    "@/assets/css/plexstatus.css",
+    "@/assets/scss/arturonet.scss"
   ],
-  /*
-  ** Add axios globally
-  */
-  build: {
-    extractCSS: true,
-    vendor: ['axios', 'wowjs', 'auth0-lock', 'vue-typer', 'jwt-decode', 'js-cookie'],
-    /*
-    ** Run ESLINT on save
-    */
-    extend (config, ctx) {
-      if (ctx.isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/
-        })
-      }
-    }
-  },
-  router: {
-    linkActiveClass: 'active',
-    linkExactActiveClass: 'active',
-    middleware: ['check-auth', 'navstate']
-  },
-  loading: {
-    color: '#0C66A1',
-    height: '3px'
-  },
+
+  // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
     { src: '~/plugins/particles.js', ssr: false },
     { src: '~/plugins/vue-typer.js', ssr: false },
     { src: '~/plugins/wow.js', ssr: false }
   ],
-  modules: [
-    '@nuxtjs/pwa',
-    '@nuxtjs/axios',
-    '@nuxtjs/dotenv',
-    ['@nuxtjs/google-analytics', {
-      id: process.env.GOOGLE_ANALYTICS_ID
-    }]
+
+  // Auto import components (https://go.nuxtjs.dev/config-components)
+  components: true,
+
+  // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
+  buildModules: [
+    // https://go.nuxtjs.dev/typescript
+    '@nuxt/typescript-build'
   ],
-  axios: {
-    baseURL: 'https://www.arturonet.com',
-    browserBaseURL: '/api'
-  },
-  render: {
-    http2: true
+
+  // Modules (https://go.nuxtjs.dev/config-modules)
+  modules: [
+    // https://go.nuxtjs.dev/axios
+    '@nuxtjs/axios',
+    // https://go.nuxtjs.dev/pwa
+    '@nuxtjs/pwa',
+    // https://go.nuxtjs.dev/content
+    '@nuxt/content'
+  ],
+
+  // Axios module configuration (https://go.nuxtjs.dev/config-axios)
+  axios: {},
+
+  // Content module configuration (https://go.nuxtjs.dev/config-content)
+  content: {},
+
+  // Build Configuration (https://go.nuxtjs.dev/config-build)
+  build: {
   }
 }
