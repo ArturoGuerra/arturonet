@@ -28,10 +28,9 @@ export default Vue.extend({
         console.log(error)
       }
     } 
-
   },
-  mounted () {
-    this.iprequest()
+  async mounted () {
+    await this.iprequest()
   }
 })
 </script>

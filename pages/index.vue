@@ -107,7 +107,6 @@ export default Vue.extend({
   },
   data () {
     const terminal: string[] = [
-      'sudo rm -rf gilbert',
       ':(){ :|: & };:',
       'sudo rm -rf / --no-preserve-root'
     ]

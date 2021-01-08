@@ -26,16 +26,22 @@
 import Vue from 'vue'
 import { mapState, mapMutations } from 'vuex'
 
+interface navItem {
+  id: string
+  href: string
+  name: string
+}
+
 export default Vue.extend({
   name: 'NavMenu',
   data () {
-    return {
-      navitems: [
-        { id: 'home', href: '/', name: 'Home' },
-        { id: 'projects', href: '/projects', name: 'Projects' },
-        { id: 'contact', href: '/contact', name: 'Contact' }
-      ],
-    }
+    const navitems: navItem[] = [
+      { id: 'home', href: '/', name: 'Home' },
+      { id: 'projects', href: '/projects', name: 'Projects' },
+      { id: 'contact', href: '/contact', name: 'Contact' }
+    ]
+
+    return { navitems }
   },
   computed: {
     ...mapState(['active'])

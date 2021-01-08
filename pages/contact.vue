@@ -86,18 +86,26 @@ export default Vue.extend({
       { hid: 'twitter:description', name: 'twitter:description', content: "Arturo's website" }
     ]
   },
-  mounted () {
+  async mounted () {
     if (process.browser) { this.$nuxt.$wow.sync() }
+    try {
+      await this.$recaptcha.init()
+    } catch (err) {
+      console.error(err)
+    }
   },
   methods: {
     async sendEmail (): Promise<void> {
       try {
-        const result = await this.$axios.$post(
+        const token: string = await this.$recaptcha.execute('login')
+        console.log(token)
+        const result: any = await this.$axios.$post(
           '/post',
           {
             message: this.message,
             email: this.email,
-            name: this.name
+            name: this.name,
+            recaptcha: token
           }
         )
         this.result = result.data
@@ -106,7 +114,7 @@ export default Vue.extend({
         this.validmessage = result.status
         this.color = result.status
       } catch (error) {
-        console.log(error)
+        console.error(error)
       }
     },
     async send () {
