@@ -11,13 +11,13 @@ export default {
       { property: 'og:title', hid: 'og:title', content: 'ArturoNet' },
       { property: 'og:description', hid: 'og:description', content: "Arturo's website" },
       { property: 'og:type', hid: 'og:type', content: 'website' },
-      { property: 'og:image', hid: 'og:image', content: 'https://www.arturonet.com/favicon.ico' },
-      { hid: 'twitter:url', name: 'twitter:url', content: 'https://www.arturonet.com' },
+      { property: 'og:image', hid: 'og:image', content: 'https://arturonet.com/favicon.ico' },
+      { hid: 'twitter:url', name: 'twitter:url', content: 'https://arturonet.com' },
       { hid: 'twitter:title', name: 'twitter:title', content: 'ArturoNet' },
       { hid: 'twitter:description', name: 'twitter:description', content: "Arturo's website" },
       { hid: 'twitter:type', name: 'twitter:type', content: 'website' },
-      { hid: 'twitter:image', name: 'twitter:image', content: 'https://www.arturonet.com/favicon.ico' },
-      { hid: 'twitter:url', name: 'twitter:url', content: 'https://www.arturonet.com' },
+      { hid: 'twitter:image', name: 'twitter:image', content: 'https://arturonet.com/favicon.ico' },
+      { hid: 'twitter:url', name: 'twitter:url', content: 'https://arturonet.com' },
       { hid: 'twitter:card', name: 'twitter:card', content: 'summary' },
       { hid: 'twitter:creator', name: 'twitter:creator', content: '@Ar2roGuerra' },
       { hid: 'apple-mobile-web-app-title', name: 'apple-mobile-web-app-title', content: 'ArturoNet' }
@@ -54,9 +54,9 @@ export default {
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
-    { src: '~/plugins/particles.js', ssr: false },
-    { src: '~/plugins/vue-typer.js', ssr: false },
-    { src: '~/plugins/wow.js', ssr: false }
+    { src: '~/plugins/particles.js', mode: 'client' },
+    { src: '~/plugins/vue-typer.js', mode: 'client'},
+    { src: '~/plugins/wow.js', mode: 'client' }
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
