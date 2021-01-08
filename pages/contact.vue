@@ -37,12 +37,12 @@
                 <div class='fab fa-github contact-fa-padding font-3'>
                 </div>
               </a>
-              <a href='https://twitter.com/Ar2roGuerra'>
+              <a href='https://twitter.com/Ar2ro_'>
                 <div class='fab fa-twitter contact-fa-padding font-3'>
                 </div>
               </a>
-              <a href='https://www.facebook.com/ar2roguerra'>
-                <div class='fab fa-facebook contact-fa-padding font-3'>
+              <a href='https://destinyarena.app'>
+                <div class='fab fa-discord contact-fa-padding font-3'>
                 </div>
               </a>
             </div>
@@ -53,19 +53,28 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang='ts'>
+import Vue from 'vue'
+export default Vue.extend({
   name: 'contact',
   data () {
+    let message: any = null
+    let name: any = null
+    let email: any = null
+    let result: any = null
+    let color: any = null
+    let validname: any = null
+    let validemail: any = null
+    let validmessage: any = null
     return {
-      message: null,
-      name: null,
-      email: null,
-      result: null,
-      color: null,
-      validname: null,
-      validemail: null,
-      validmessage: null
+      message,
+      name,
+      email,
+      result,
+      color,
+      validname,
+      validemail,
+      validmessage
     }
   },
   head: {
@@ -81,7 +90,7 @@ export default {
     if (process.browser) { this.$nuxt.$wow.sync() }
   },
   methods: {
-    async sendEmail () {
+    async sendEmail (): Promise<void> {
       try {
         const result = await this.$axios.$post(
           '/post',
@@ -139,5 +148,5 @@ export default {
       await this.sendEmail()
     }
   }
-}
+})
 </script>

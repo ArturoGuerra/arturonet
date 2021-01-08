@@ -46,8 +46,18 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang='ts'>
+import Vue from 'vue'
+
+interface Repo {
+  name: string,
+  url: string,
+  language: string,
+  forks: number,
+  forked: boolean
+}
+
+export default Vue.extend({
   name: 'projects',
   head: {
     title: 'Projects',
@@ -59,28 +69,41 @@ export default {
     ]
   },
   data () {
+    let projects: Repo[] = []
+    let show: boolean = false
     return {
-      projects: [],
-      show: false
+      projects,
+      show
+    }
+  },
+  methods: {
+    async loadgitrepos(): Promise<any> {
+      try {
+        let result: any = await this.$nuxt.$axios.$get('https://api.github.com/users/ArturoGuerra/repos')
+        for (let i = 0; i < result.length; i++) {
+          let project: Repo = {
+            name: result[i].name,
+            url: result[i].html_url,
+            language: result[i].language,
+            forks: result[i].forks_count,
+            forked: result[i].fork
+          }
+
+          this.projects.push(project)
+          setTimeout(() => {
+            this.show = true
+          }, 2000)
+        }
+      } catch (err: any) {
+        console.error(err)
+
+      }
+
     }
   },
   mounted () {
     if (process.browser) { this.$nuxt.$wow.sync() }
-    this.$nuxt.$axios.$get('https://api.github.com/users/ArturoGuerra/repos').then(response => {
-      var r = response
-      for (let y = 0; y < r.length; y++) {
-        this.projects.push({
-          name: r[y].name,
-          url: r[y].html_url,
-          language: r[y].language,
-          forks: r[y].forks_count,
-          forked: r[y].fork
-        })
-        setTimeout(() => {
-          this.show = true
-        }, 2000)
-      }
-    }).catch(console.error)
+    this.loadgitrepos()
   }
-}
+})
 </script>

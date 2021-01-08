@@ -6,15 +6,8 @@
   </div>
 </template>
 
-<script>
-import NavMenu from '~/components/NavMenu'
-import Footer from '~/components/Footer'
-
-export default {
-  components: {
-    NavMenu,
-    Footer
-  }
-}
+<script lang='ts'>
+import Vue from 'vue'
+export default Vue.extend({})
 </script>
 

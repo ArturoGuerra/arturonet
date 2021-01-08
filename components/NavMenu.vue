@@ -22,10 +22,11 @@
   </nav>
 </template>
 
-<script>
+<script lang='ts'>
+import Vue from 'vue'
 import { mapState, mapMutations } from 'vuex'
 
-export default {
+export default Vue.extend({
   name: 'NavMenu',
   data () {
     return {
@@ -37,13 +38,13 @@ export default {
     }
   },
   computed: {
-    ...mapState(['admin', 'user', 'active'])
+    ...mapState(['active'])
   },
   methods: {
     ...mapMutations({ navstate: 'NAV_STATE' }),
-    toggleNav () {
+    toggleNav (): void {
       this.navstate(!this.active)
     }
   }
-}
+})
 </script>
