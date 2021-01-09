@@ -38,7 +38,7 @@ jobs:
     - name: Checkout Helm Repo
       uses: actions/checkout@v2
       with:
-        repository: arturoguerra/arturonet-chart
+        repository: arturoguerra/arturonet-charts
         token: ${{ secrets.REPO_ACCESS }}
     - name: Installs yq
       run: |
