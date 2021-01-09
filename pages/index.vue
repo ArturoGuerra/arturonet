@@ -42,22 +42,6 @@
         </div>
       </div>
       <div class="hero full-height">
-        <!-- a name='about'></a>
-        <div class='l-container'>
-          <p class="title flex-text-align vertical-padding-50 blue-2">
-            <img src="./../assets/img/myface.jpg" width="50" class='flex-img-style'> About Me
-          </p>
-          <p>
-              My name is Arturo Guerra, I'm 18 and planning to study Computer Science in the near future. I love messing with computers which has developed my love and interest for fixing hardware and programing.
-              I'm currently one of the main developers of <strong><a href="auttaja.us">Auttaja</a></strong> a very nice <strong><a href='https://discordapp.com'>Discord</a></strong> bot that currenly serves around
-              400 servers. I also enjoy fixing computer hardware ie. Phones and Computer, and I did that as a job when I was living in canada.
-          </p>
-          <p>
-              I have about year and a half of experience programing in python and consider myself fairly experienced on it. I also have knowledge in JavaScript and some C, But of cource TXT is my main programing
-              language and consider myself a professional notepad coder looool. That last part was totaly serious. I'm currenly gettings into web development and thats why I made this website. If you want to see my
-              other projects go to my <strong><a href="https://github.com/ArturoGuerra">GitHub</a></strong> or click on the projects tab at the top of the website.
-          </p>
-        </div -->
         <hr class='hr-1'/>
         <div class="grid-container grid-container-padding">
           <div class="grid-twitter">
