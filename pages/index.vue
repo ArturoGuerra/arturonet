@@ -60,7 +60,7 @@
             Most of my projects are open-sourced so feel free to use them
             </p>
           </div>
-          <div class="grid-twitter-em wow slideInRight" data-wow-duration='3s'>
+          <div class="grid-twitter-em">
             <a class="twitter-timeline" data-width="350" data-height="500" data-dnt="true" data-theme="dark" href="https://twitter.com/Ar2ro_">Tweets</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
           </div>
         </div>
