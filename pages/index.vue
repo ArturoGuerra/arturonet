@@ -86,7 +86,7 @@ export default Vue.extend({
       { hid: 'twitter:description', name: 'twitter:description', content: "Arturo's website" }
     ]
   },
-  mounted () {
+  async mounted () {
     if (process.browser) { this.$nuxt.$wow.sync() }
   },
   data () {
