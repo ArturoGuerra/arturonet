@@ -28,7 +28,7 @@
       "@nuxt/types",
       "@nuxtjs/axios",
       "@nuxtjs/recaptcha",
-      "./utils/types/wow"
+      "@/utils/types"
     ]
   },
   "exclude": [
