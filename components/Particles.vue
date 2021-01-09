@@ -1,10 +1,10 @@
 <template>
-  <no-ssr>
+  <client-only>
     <vue-particles
       color="#dedede"
       :particlesNumber='50'
       :moveSpeed='5'
       >
     </vue-particles>
-  </no-ssr>
+  </client-only>
 </template>

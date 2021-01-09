@@ -94,16 +94,14 @@ export default Vue.extend({
             this.show = true
           }, 2000)
         }
-      } catch (err: any) {
-        console.error(err)
-
+      } catch (error: any) {
+        console.error(error)
       }
-
     }
   },
-  mounted () {
+  async mounted () {
     if (process.browser) { this.$nuxt.$wow.sync() }
-    this.loadgitrepos()
+    await this.loadgitrepos()
   }
 })
 </script>
