@@ -80,7 +80,9 @@ export default {
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
-  axios: {},
+  axios: {
+    prefix: '/api'
+  },
 
   // Content module configuration (https://go.nuxtjs.dev/config-content)
   content: {},
@@ -89,6 +91,18 @@ export default {
     hideBadge: true,
     siteKey: '6LcLWiYaAAAAACTKlD6Y3DkpwjgEQo77dWRq-W3g',
     version: 3
+  },
+  
+  publicRuntimeConfig: {
+    axios: {
+      browserBaseURL: process.env.BROWSER_BASE_URL
+    }
+  },
+
+  privateRuntimeConfig: {
+    axios: {
+      baseURL: process.env.BASE_URL
+    }
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)

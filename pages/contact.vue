@@ -100,7 +100,7 @@ export default Vue.extend({
         const token: string = await this.$recaptcha.execute('login')
         console.log(token)
         const result: any = await this.$axios.$post(
-          '/post',
+          '/email',
           {
             message: this.message,
             email: this.email,
