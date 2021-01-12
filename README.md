@@ -1,5 +1,7 @@
 # arturoswebsite
 
+![Build and Deploy](https://github.com/ArturoGuerra/arturonet/workflows/Build%20and%20Deploy/badge.svg) ![CodeQL](https://github.com/ArturoGuerra/arturonet/workflows/CodeQL/badge.svg)
+
 ## Build Setup
 
 ```bash
