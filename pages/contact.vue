@@ -11,19 +11,19 @@
             <div class='field'>
               <label class='label'>Name</label>
               <div class='control'>
-                <input v-model='name' :class='[validname]' class='input' type='text' placeholder='name'>
+                <input v-model='name' class='input' type='text' placeholder='name'>
               </div>
             </div>
             <div class='field'>
               <label class='label'>Email</label>
               <div class='control'>
-                <input v-model='email' :class='[validemail]' class='input' type='email' placeholder='email' required>
+                <input v-model='email' class='input' type='email' placeholder='email' required>
               </div>
             </div>
             <div class='field'>
               <label class='label'>Message</label>
               <div class='control'>
-                <textarea v-model='message' :class='[validmessage]' class='textarea' placeholder='email content'></textarea>
+                <textarea v-model='message' class='textarea' placeholder='email content'></textarea>
               </div>
             </div>
             <div class="field">
@@ -63,18 +63,12 @@ export default Vue.extend({
     let email: any = null
     let result: any = null
     let color: any = null
-    let validname: any = null
-    let validemail: any = null
-    let validmessage: any = null
     return {
       message,
       name,
       email,
       result,
       color,
-      validname,
-      validemail,
-      validmessage
     }
   },
   head: {
@@ -98,7 +92,6 @@ export default Vue.extend({
     async sendEmail (): Promise<void> {
       try {
         const token: string = await this.$recaptcha.execute('login')
-        console.log(token)
         const result: any = await this.$axios.$post(
           '/email',
           {
@@ -108,10 +101,7 @@ export default Vue.extend({
             recaptcha: token
           }
         )
-        this.result = result.data
-        this.validname = result.status
-        this.validemail = result.status
-        this.validmessage = result.status
+        this.result = "Email successfuly sent"
         this.color = result.status
       } catch (error) {
         console.error(error)
@@ -121,26 +111,17 @@ export default Vue.extend({
       let pass = true
 
       if (!this.message) {
-        this.validmessage = 'is-danger'
         pass = false
-      } else {
-        this.validmessage = 'is-success'
       }
 
       if (!this.name) {
-        this.validname = 'is-danger'
         pass = false
       } else {
-        this.validname = 'is-success'
       }
 
       if (!this.email) {
-        this.validemail = 'is-danger'
         pass = false
-      } else if (this.email.indexOf('@') > -1) {
-        this.validemail = 'is-success'
-      } else {
-        this.validemail = 'is-danger'
+      } else if (!(this.email.indexOf('@') > -1)) {
         pass = false
       }
 
@@ -150,9 +131,6 @@ export default Vue.extend({
         return
       }
 
-      this.validmessage = 'is-success'
-      this.validemail = 'is-success'
-      this.validname = 'is-success'
       await this.sendEmail()
     }
   }

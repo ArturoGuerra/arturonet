@@ -63,4 +63,8 @@ input:focus,
 
 .button.is-info {
     background-color: #0074d9;
+    &:hover {
+        border-color: rgba(22, 167, 87, 0.952);
+        background-color: rgba(22, 167, 87, 0.952);
+    }
 }
