@@ -48,7 +48,8 @@ export default {
     "@/assets/css/gradients.css",
     "@/assets/css/images.css",
     "@/assets/css/main.css",
-    "@/assets/scss/arturonet.scss"
+    "@/assets/scss/arturonet.scss",
+    "colors.css/css/colors.min.css"
   ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)

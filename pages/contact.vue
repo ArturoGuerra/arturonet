@@ -101,7 +101,7 @@ export default Vue.extend({
           }
         )
         this.result = "Email successfuly sent"
-        this.color = result.status
+        this.color = "blue"
       } catch (error) {
         console.error(error)
       }
@@ -125,7 +125,7 @@ export default Vue.extend({
       }
 
       if (!pass) {
-        this.color = 'is-danger'
+        this.color = 'red'
         this.result = 'Missing fields'
         return
       }
