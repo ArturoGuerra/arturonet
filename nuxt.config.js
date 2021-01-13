@@ -48,7 +48,6 @@ export default {
     "@/assets/css/gradients.css",
     "@/assets/css/images.css",
     "@/assets/css/main.css",
-    "@/assets/css/plexstatus.css",
     "@/assets/scss/arturonet.scss"
   ],
 
