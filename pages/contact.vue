@@ -4,8 +4,8 @@
       <div class='l-container'>
         <div class='grid grid-t-shape'>
           <div class='grid-item grid-contact-head flex flex-column flex-j-center'>
-            <h1 class="hero-title blue">Contact Me</h1>
-            <h3 class='hero-subtitle m-auto'><vue-typer :pre-type-delay='1500' :repeat='0' text='Mark is a lizard'/></h3>
+            <h1 class="hero-title center blue">Contact Me</h1>
+            <h3 class='hero-subtitle m-auto'><vue-typer :pre-type-delay='1500' :repeat='0' text="Send me an email i'll reply as soon as possible"/></h3>
           </div>
           <div class='grid-contact-contact'>
             <div class='field'>
@@ -81,7 +81,6 @@ export default Vue.extend({
     ]
   },
   async mounted () {
-    if (process.browser) { this.$nuxt.$wow.sync() }
     try {
       await this.$recaptcha.init()
     } catch (err) {

@@ -4,7 +4,7 @@
         <div class='flex flex-column flex-a-center flex-j-center'>
           <div class='hero-header-m'>
             <h1 class="hero-title center blue">Projects</h1>
-            <h3 class='subtitle center'>&lt;<vue-typer :pre-type-delay='1500' :repeat='0' text='drunk code is best code'/>/&gt;</h3>
+            <h3 class='subtitle center'>&lt;<vue-typer :pre-type-delay='1500' :repeat='0' text='these are all my public github projects'/>/&gt;</h3>
           </div>
           <div class='flex-grow full-width'>
             <div v-if='show'>
@@ -100,7 +100,6 @@ export default Vue.extend({
     }
   },
   async mounted () {
-    if (process.browser) { this.$nuxt.$wow.sync() }
     await this.loadgitrepos()
   }
 })
