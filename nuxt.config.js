@@ -49,7 +49,8 @@ export default {
     "@/assets/css/images.css",
     "@/assets/css/main.css",
     "@/assets/scss/arturonet.scss",
-    "colors.css/css/colors.min.css"
+    "colors.css/css/colors.min.css",
+    "@fortawesome/fontawesome-free/css/fontawesome.min.css"
   ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
