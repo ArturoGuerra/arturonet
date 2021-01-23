@@ -21,8 +21,8 @@
               </div>
               <div class='gh-footer'>
                 <span class='gh-stars'>
-                  <!-- star icon -->
                   {{ repo.stars }}
+                  <span class='fa fa-star checked'></span>
                 </span>
 
                 <span class='gh-language'>
