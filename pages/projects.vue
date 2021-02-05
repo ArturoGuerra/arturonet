@@ -82,8 +82,7 @@ export default Vue.extend({
   methods: {
     async loadgitrepos(): Promise<any> {
       try {
-        let result: any = await this.$nuxt.$axios.$get('https://api.github.com/orgs/destinyarena/repos')
-        //let result: any = await this.$nuxt.$axios.$get('/projects')
+        let result: any = await this.$nuxt.$axios.$get('/projects')
         for (let i = 0; i < result.length; i++) {
           let project: Repo = {
             name: result[i].name,
