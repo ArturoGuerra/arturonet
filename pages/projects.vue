@@ -11,7 +11,9 @@
             <div class='github-card' v-for='repo in projects' :key='repo.url'>
               <div class='gh-head'>
                 <span class='gh-name'>
-                  <a :href="repo.url">{{ repo.name }}</a>
+                  <a :href="repo.url">
+                  <span class="gh-org-repo" v-if="repo.organization">{{ repo.owner }}/</span><span>{{ repo.name }}</span>
+                  </a>
                 </span>
               </div>
               <div class='gh-body'>
@@ -57,7 +59,9 @@ interface Repo {
   language: string,
   stars: number,
   forks: number,
-  forked: boolean
+  forked: boolean,
+  organization: boolean,
+  owner: string,
 }
 
 export default Vue.extend({
@@ -86,6 +90,8 @@ export default Vue.extend({
         for (let i = 0; i < result.length; i++) {
           let project: Repo = {
             name: result[i].name,
+            organization: (result[i].owner.type == "Organization" ? true : false),
+            owner: result[i].owner.login,
             url: result[i].html_url,
             language: result[i].language,
             forks: result[i].forks_count,
