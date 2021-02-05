@@ -91,7 +91,7 @@ export default Vue.extend({
     async sendEmail (): Promise<void> {
       try {
         const token: string = await this.$recaptcha.execute('login')
-        const result: any = await this.$axios.$post(
+        await this.$axios.$post(
           '/email',
           {
             message: this.message,
@@ -115,12 +115,9 @@ export default Vue.extend({
 
       if (!this.name) {
         pass = false
-      } else {
       }
 
-      if (!this.email) {
-        pass = false
-      } else if (!(this.email.indexOf('@') > -1)) {
+      if (!this.email && this.email.indexOf('@') <= -1) {
         pass = false
       }
 
