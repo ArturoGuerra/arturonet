@@ -45,6 +45,11 @@
             .gh-description {
                 word-wrap: break-word;
                 max-width: inherit;
+                display: -webkit-box;
+                overflow : hidden;
+                text-overflow: ellipsis;
+                -webkit-line-clamp: 4;
+                -webkit-box-orient: vertical;
 
             }
 
