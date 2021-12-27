@@ -92,7 +92,7 @@ export default {
     siteKey: '6LcLWiYaAAAAACTKlD6Y3DkpwjgEQo77dWRq-W3g',
     version: 3
   },
-  
+
   publicRuntimeConfig: {
     axios: {
       browserBaseURL: process.env.BROWSER_BASE_URL
