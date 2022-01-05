@@ -11,25 +11,25 @@
             <div class='field'>
               <label class='label'>Name</label>
               <div class='control'>
-                <input v-model='name' class='input' type='text' placeholder='name'>
+                <input v-model='contact.name' class='input' type='text' placeholder='name'>
               </div>
             </div>
             <div class='field'>
               <label class='label'>Email</label>
               <div class='control'>
-                <input v-model='email' class='input' type='email' placeholder='email' required>
+                <input v-model='contact.email' class='input' type='email' placeholder='email' required>
               </div>
             </div>
             <div class='field'>
               <label class='label'>Message</label>
               <div class='control'>
-                <textarea v-model='message' class='textarea' placeholder='email content'></textarea>
+                <textarea v-model='contact.message' class='textarea' placeholder='email content'></textarea>
               </div>
             </div>
             <div class="field">
               <a @click='send' class="button is-info">Submit</a>
             </div>
-            <p class='help' :class="[color]">{{ result }}</p>
+            <p class='help' :class="[response.color]">{{ response.result }}</p>
           </div>
           <div class='grid-contact-social is-hidden-mobile'>
             <div class='flex flex-j-center flex-column m-bottom-auto m-right-auto m-left-auto m-top-1'>
@@ -54,21 +54,37 @@
 </template>
 
 <script lang='ts'>
+import { Exception } from 'sass'
 import Vue from 'vue'
+
+interface Contact {
+  name: string
+  email: string
+  message: string
+}
+
+interface Response {
+  result: string
+  color: string
+}
+
 export default Vue.extend({
   name: 'contact',
   data () {
-    let message: any = null
-    let name: any = null
-    let email: any = null
-    let result: any = null
-    let color: any = null
+
+    let contact: Contact = {
+      name: '',
+      email: '',
+      message: ''
+    }
+
+    let response: Response = {
+      result: '',
+      color: ''
+    }
     return {
-      message,
-      name,
-      email,
-      result,
-      color,
+      contact,
+      response
     }
   },
   head: {
@@ -94,36 +110,24 @@ export default Vue.extend({
         await this.$axios.$post(
           '/email',
           {
-            message: this.message,
-            email: this.email,
-            name: this.name,
+            message: this.contact.message,
+            email: this.contact.email,
+            name: this.contact.name,
             recaptcha: token
           }
         )
-        this.result = "Email successfuly sent"
-        this.color = "blue"
+        this.response.result = "Email successfuly sent"
+        this.response.color = "blue"
       } catch (error) {
         console.error(error)
       }
     },
     async send () {
-      let pass = true
+      let pass: boolean = true
 
-      if (!this.message) {
-        pass = false
-      }
-
-      if (!this.name) {
-        pass = false
-      }
-
-      if (!this.email && this.email.indexOf('@') <= -1) {
-        pass = false
-      }
-
-      if (!pass) {
-        this.color = 'red'
-        this.result = 'Missing fields'
+      if (this.contact.message.length == 0 || this.contact.name.length == 0 || this.contact.email.indexOf('@') <= -1) {
+        this.response.color = 'red'
+        this.response.result = 'Missing fields'
         return
       }
 

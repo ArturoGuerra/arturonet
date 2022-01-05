@@ -79,6 +79,13 @@ export default {
     '@nuxtjs/recaptcha'
   ],
 
+  // PWA Module setup
+  pwa: {
+    icon: {
+      fileName: 'favicon.jpeg'
+    }
+  },
+
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {
     prefix: '/api'
